@@ -113,7 +113,7 @@
   }
   else
   {
-    header('location:https://apps.facebook.com//160936377399430/');
+    header('location:https://apps.facebook.com/160936377399430/');
     exit();
 
   }
