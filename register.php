@@ -108,7 +108,7 @@
              
             echo '</ul>';
         }
-        header( "refresh:1;url=https://apps.facebook.com//160936377399430/");
+        header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
     }
   }
   else
