@@ -44,7 +44,7 @@ require_once('utils.php');
 
 require_once('sdk/src/facebook.php');
 
-$app_namespace = '134173260097515';
+$app_namespace = '160936377399430';
     $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
     $scope = 'email,publish_actions';
 
