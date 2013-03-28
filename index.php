@@ -396,6 +396,7 @@ $app_name = idx($app_info, 'name', '');
               else
               {
                 echo count($result2);
+                echo " people are registered.";
               }
                 
               ?>
