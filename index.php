@@ -381,8 +381,17 @@ $app_name = idx($app_info, 'name', '');
               <?php
               if($flag)
               {
-                echo "You and ";
+               
+                if(count($result2)-1==0)
+                {
+                  echo "You are registered.";
+                }
+                else
+                {
+                  echo "You and ";
                 echo count($result2)-1;
+                echo " people are registered.";
+               }
               }
               else
               {
@@ -390,7 +399,7 @@ $app_name = idx($app_info, 'name', '');
               }
                 
               ?>
-             people registered.
+            
             </span>
             </li>
               <?php
