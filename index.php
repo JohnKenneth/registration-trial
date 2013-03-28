@@ -384,7 +384,7 @@ $app_name = idx($app_info, 'name', '');
                 echo "You and ";
               }
               
-                echo $result;
+                echo count($result2);
               ?>
               are registered.
             </span>
