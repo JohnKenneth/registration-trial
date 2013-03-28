@@ -382,11 +382,15 @@ $app_name = idx($app_info, 'name', '');
               if($flag)
               {
                 echo "You and ";
+                echo count($result2)-1;
               }
-              
+              else
+              {
                 echo count($result2);
+              }
+                
               ?>
-              are registered.
+             people are registered.
             </span>
             </li>
               <?php
