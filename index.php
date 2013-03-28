@@ -472,7 +472,7 @@ $app_name = idx($app_info, 'name', '');
                                           {"name":"email"},
                                           {"name":"birthday"}
                                            ]' 
-                        data-redirect-uri="https://quiet-caverns-8622.herokuapp.com/register.php?uid=<?php echo $user_id;   ?>">
+                        data-redirect-uri="https://damp-temple-4190.herokuapp.com/register.php?uid=<?php echo $user_id;   ?>">
                 </div>
               </div>
             </div>
