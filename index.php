@@ -10,7 +10,18 @@
 
 // Provides access to app specific values such as your app id and app secret.
 // Defined in 'AppInfo.php'
-require_once('AppInfo.php');
+
+   require_once('sdk/src/facebook.php');
+    require_once 'config.php';
+    require_once('AppInfo.php');
+  require_once('utils.php');
+
+function __autoload($class_name) 
+    {
+        require_once 'lib/' . strtolower($class_name) . '.php';
+    }
+
+
 
 // Enforce https on production
 if (substr(AppInfo::getUrl(), 0, 8) != 'https://' && $_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
@@ -33,14 +44,24 @@ require_once('utils.php');
 
 require_once('sdk/src/facebook.php');
 
+$app_namespace = '134173260097515';
+    $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
+    $scope = 'email,publish_actions';
+
+
 $facebook = new Facebook(array(
   'appId'  => AppInfo::appID(),
   'secret' => AppInfo::appSecret(),
+  'status'  => true, // check login status
+  'cookie'  => true, // enable cookies to allow the server to access the session
+  'oauth'    => true, // enable OAuth 2.0
+  'xfbml'    => true,  // parse XFBML
   'sharedSession' => true,
-  'trustForwarded' => true,
+  'trustForwarded' => true
 ));
 
 $user_id = $facebook->getUser();
+
 if ($user_id) {
   try {
     // Fetch the viewer's basic information
@@ -73,10 +94,15 @@ if ($user_id) {
   ));
 }
 
+
 // Fetch the basic info of the app that they are using
 $app_info = $facebook->api('/'. AppInfo::appID());
 
 $app_name = idx($app_info, 'name', '');
+
+ 
+  
+
 
 ?>
 <!DOCTYPE html>
@@ -114,8 +140,14 @@ $app_name = idx($app_info, 'name', '');
           console.log('The response was', response);
         }
       }
+  $(document).ready(function()
 
+    {
+      $("#cont").hide();
+       $("#fai").hide();
+    });
       $(function(){
+      
         // Set up so we handle click on the buttons
         $('#postToWall').click(function() {
           FB.ui(
@@ -133,6 +165,7 @@ $app_name = idx($app_info, 'name', '');
         });
 
         $('#sendToFriends').click(function() {
+
           FB.ui(
             {
               method : 'send',
@@ -140,24 +173,67 @@ $app_name = idx($app_info, 'name', '');
             },
             function (response) {
               // If response is null the user canceled the dialog
+
               if (response != null) {
-                logResponse(response);
+                 
+                  logResponse(response);
               }
             }
           );
         });
 
         $('#sendRequest').click(function() {
+         
           FB.ui(
             {
               method  : 'apprequests',
               message : $(this).attr('data-message')
-            },
+            }
+            ,
+            // ,
             function (response) {
-              // If response is null the user canceled the dialog
-              if (response != null) {
-                logResponse(response);
+                
+              if(response!=null)
+              {
+                 var al=response.to;
+                 if(al.length>=10)
+                 {
+                    
+                    $("#cont").show();
+                    $("#fai").hide();
+                 }
+                 else
+                 {
+                  $("#cont").hide();
+                  $("#fai").show();
+                 
+                 }
+            
               }
+             
+              // logResponse(response);
+              
+              
+
+          //     // If response is null the user canceled the dialog
+                  
+          //     if (response != null) {
+          //   var user_ids = document.getElementsByName('checkableitems[]');
+          //     for(i=0;i<user_ids.length;i++)
+          //     {
+          //       if(user_ids[i].checked==true)
+          //       {
+          //         al+=1;
+          //       }
+          //     }
+
+              
+          //     alert("send");
+          // }
+          // else
+          // {
+          //   alert("cancel");
+          // }
             }
           );
         });
@@ -196,6 +272,10 @@ $app_name = idx($app_info, 'name', '');
         });
 
         FB.Canvas.setAutoGrow();
+        FB.Event.subscribe('edge.create', function(response) {
+      // A user liked the item, read the response and handle
+          window.location = window.location;
+    });
       };
 
       // Load the SDK Asynchronously
@@ -213,7 +293,7 @@ $app_name = idx($app_info, 'name', '');
       <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
 
       <div>
-        <h1>Welcome, <strong><?php echo he(idx($basic, 'name')); ?></strong></h1>
+        <h1>Welcome , <strong><?php echo he(idx($basic, 'name')); ?></strong></h1>
         <p class="tagline">
           This is your app
           <a href="<?php echo he(idx($app_info, 'link'));?>" target="_top"><?php echo he($app_name); ?></a>
@@ -232,153 +312,191 @@ $app_name = idx($app_info, 'name', '');
                 <span class="speech-bubble">Send Message</span>
               </a>
             </li>
-            <li>
+           <!--  <li>
               <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
                 <span class="apprequests">Send Requests</span>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
-      <?php } else { ?>
-      <div>
+
+      <?php } 
+      else { 
+        if(!$user_id)
+
+    {
+        $loginUrl = $facebook->getLoginUrl(array(
+        'scope' => $scope,
+        'redirect_uri' => $app_url,
+        ));
+
+        print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
+      }
+
+
+        ?>
+      <!-- <div>
         <h1>Welcome</h1>
         <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
-      </div>
+      </div> -->
       <?php } ?>
     </header>
 
-    <section id="get-started">
-      <p>Welcome to your Facebook app, running on <span>heroku</span>!</p>
-      <a href="https://devcenter.heroku.com/articles/facebook" target="_top" class="button">Learn How to Edit This App</a>
-    </section>
+    <!-- dito -->
 
-    <?php
-      if ($user_id) {
-    ?>
+    <!-- <section id="get-started"> -->
+      <!-- <p>Welcome to alpogipogi land, running on <span>heroku</span>!</p> -->
+      <?php
+      $likes = $facebook->api("/me/likes/137303712986482");
 
-    <section id="samples" class="clearfix">
-      <h1>Examples of the Facebook Graph API</h1>
+      try{
+         $db = Db::init();
+  $sth=$db->prepare("select * from test where uid= ? ");
+  $sth->execute(array($user_id));
+  $result= $sth->fetch();
+  $sth=$db->prepare("select * from test ");
+  $result2=$sth->fetch();
 
-      <div class="list">
-        <h3>A few of your friends</h3>
-        <ul class="friends">
-          <?php
-            foreach ($friends as $friend) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($friend, 'id');
-              $name = idx($friend, 'name');
-          ?>
-          <li>
-            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
-              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($name); ?>">
-              <?php echo he($name); ?>
-            </a>
-          </li>
-          <?php
+  if($result)
+  {
+      $flag=true;
+  }
+  else
+  {
+    $flag=false;
+  }}
+  catch(Exception $e)
+  {
+    echo "error";
+  }
+
+      if(isset($basic))
+
+      {?>
+        <div>
+          <ul> 
+            <li>
+              <span>
+              <?php
+              if($flag)
+              {
+                echo "You and ";
+              }
+              
+                echo $result;
+              ?>
+              are registered.
+            </span>
+            </li>
+              <?php
+              if (empty($likes['data']))
+              {
+                echo "<li>";
+                echo "1. <div class='fb-like' data-href='https://www.facebook.com/CELESTY.SHINAGAWA' data-send='false' data-layout='box_count' data-width='450' data-show-faces='false'></div> this page.";
+                echo "</li>";
+
+             echo  "<li>";
+         
+                echo "<span class='apprequests' >2. SHARE this app to atleast 10 friends  </span>
+                </li>"; 
+
+               echo " <li>
+                
+                    <span> 3. POST</span>
+                
+                  your photo and share your story.
+            </li> ";
             }
-          ?>
-        </ul>
-      </div>
+            else
+            {
+              echo "<li>";
+              echo "1. <span> You liked<a href='https://www.facebook.com/CELESTY.SHINAGAWA'> CELESTY SHINAGAWA</a> page.</span>";
+              echo "</li>";
 
-      <div class="list inline">
-        <h3>Recent photos</h3>
-        <ul class="photos">
-          <?php
-            $i = 0;
-            foreach ($photos as $photo) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($photo, 'id');
-              $picture = idx($photo, 'picture');
-              $link = idx($photo, 'link');
+              if($flag==true)
+              {
+                echo  "<li>";
+                echo "<span  id='ins'>2. SHARED  this app to atleast 10 friends</span> </li>"; 
 
-              $class = ($i++ % 4 === 0) ? 'first-column' : '';
-          ?>
-          <li style="background-image: url(<?php echo he($picture); ?>);" class="<?php echo $class; ?>">
-            <a href="<?php echo he($link); ?>" target="_top"></a>
-          </li>
-          <?php
+                echo " <li>
+                
+                   <a href='#'> <span> 3. POST</span></a>
+                
+                  your photo and share your story.
+            </li> ";
+          
+              }
+              else
+              {
+                 echo  "<li>";
+             echo "<a href='#'' class='text' id='sendRequest' data-message='Test this awesome app'>";
+                echo "<span class='apprequests' id='ins'>2. SHARE</span>  </a>  this app to atleast 10 friends.  <span id='fai'> (Shared should atleast 10).</span> </li>"; 
+
+                echo " <li>
+                
+                    <span> 3. POST</span>
+                
+                  your photo and share your story.
+            </li> ";
+           
+              }
+
             }
-          ?>
+              ?>
+              <!-- <a href="https://www.facebook.com/plugins/like.php?api_key=134173260097515&locale=en_US&sdk=joey&channel_url=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D19%23cb%3Df7401f0b4%26origin%3Dhttps%253A%252F%252Fyoung-hamlet-1498.herokuapp.com%252Ff2bc99367c%26domain%3Dyoung-hamlet-1498.herokuapp.com%26relation%3Dparent.parent&href=https%3A%2F%2Fwww.facebook.com%2FCELESTY.SHINAGAWA&node_type=link&width=450&layout=box_count&colorscheme=light&show_faces=false&send=false&extended_social_context=false#"> Like </a> this page -->
+            
+           <!--  <li>
+             <a href="#" class="text" id="sendRequest" data-message="Test this awesome app">
+                <span class="apprequests" id="ins">2. SHARE</span> 
+              </a>
+            this app to atleast 10 friends
+            </li> -->
+           
+
         </ul>
-      </div>
+       
+        <?php
+       // try {
+   // $likes = $facebook->api("/me/likes/137303712986482");
+   // { echo "I like!"; ?>
+        <div id="cont">
+       <h1>Registration</h1>
+                 
+                <div style="float: left; margin-right: 15px;">
+                     
+                    <div class="fb-registration"
+                        data-fields='[{"name":"name"},
+                                        {"name":"mobileno","description":"Mobile No.","type":"text"},
+                                         {"name":"address","description":"Address","type":"text"},
+                                          {"name":"email"},
+                                          {"name":"birthday"}
+                                           ]' 
+                        data-redirect-uri="https://quiet-caverns-8622.herokuapp.com/register.php?uid=<?php echo $user_id;   ?>">
+                </div>
+              </div>
+            </div>
+   
+    <?php // }
 
-      <div class="list">
-        <h3>Things you like</h3>
-        <ul class="things">
-          <?php
-            foreach ($likes as $like) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($like, 'id');
-              $item = idx($like, 'name');
+   // else
+   // {
+       // echo "not a fan!";
+      
+ // }
+ // } catch (FacebookApiException $e) {
+   // error_log($e);
+  //  $user = null;
+//  }
+  ?>
 
-              // This display's the object that the user liked as a link to
-              // that object's page.
-          ?>
-          <li>
-            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
-              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($item); ?>">
-              <?php echo he($item); ?>
-            </a>
-          </li>
-          <?php
-            }
-          ?>
-        </ul>
-      </div>
+    
+</div>
+      <?php } ?>
+      <!-- <a href="https://www.facebook.com/CELESTY.SHINAGAWA" target="_top" class="text">1.&nbsp<b>LIKE</b></a>&nbspthis page -->
+    <!-- </section> -->
 
-      <div class="list">
-        <h3>Friends using this app</h3>
-        <ul class="friends">
-          <?php
-            foreach ($app_using_friends as $auf) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($auf, 'uid');
-              $name = idx($auf, 'name');
-          ?>
-          <li>
-            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
-              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($name); ?>">
-              <?php echo he($name); ?>
-            </a>
-          </li>
-          <?php
-            }
-          ?>
-        </ul>
-      </div>
-    </section>
-
-    <?php
-      }
-    ?>
-
-    <section id="guides" class="clearfix">
-      <h1>Learn More About Heroku &amp; Facebook Apps</h1>
-      <ul>
-        <li>
-          <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon heroku">Heroku</a>
-          <p>Learn more about <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top">Heroku</a>, or read developer docs in the Heroku <a href="https://devcenter.heroku.com/" target="_top">Dev Center</a>.</p>
-        </li>
-        <li>
-          <a href="https://developers.facebook.com/docs/guides/web/" target="_top" class="icon websites">Websites</a>
-          <p>
-            Drive growth and engagement on your site with
-            Facebook Login and Social Plugins.
-          </p>
-        </li>
-        <li>
-          <a href="https://developers.facebook.com/docs/guides/mobile/" target="_top" class="icon mobile-apps">Mobile Apps</a>
-          <p>
-            Integrate with our core experience by building apps
-            that operate within Facebook.
-          </p>
-        </li>
-        <li>
-          <a href="https://developers.facebook.com/docs/guides/canvas/" target="_top" class="icon apps-on-facebook">Apps on Facebook</a>
-          <p>Let users find and connect to their friends in mobile apps and games.</p>
-        </li>
-      </ul>
-    </section>
+                 
   </body>
 </html>
+
