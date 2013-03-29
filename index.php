@@ -354,9 +354,10 @@ $app_name = idx($app_info, 'name', '');
          $db = Db::init();
   $sth=$db->prepare("select * from test where uid= ? ");
   $sth->execute(array($user_id));
-  $result= $sth->fetch();
-  $sth=$db->prepare("select uid from test ");
-  $result2=$sth->fetch();
+  $result= $sth->rowCount();
+  $sth=$db->prepare("select *from test ");
+ $sth->execute();
+  $result2=$sth->rowCount();
  
   if($result)
   {
