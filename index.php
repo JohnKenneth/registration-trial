@@ -405,11 +405,21 @@ $app_name = idx($app_info, 'name', '');
             </span>
             </li>
               <?php
+              if($user_id)
+              {
+              try{
               $likes = $facebook->api("/me/likes/137303712986482");
               echo print_r($likes);
+            }
+            catch(FacebookApiException $s)
+            {
+              error_log($s);
+              $user_id=null;
+            }
+          }
 
               if (empty($likes['data']))
-              {
+              { 
                 echo "<li>";
                 echo "1. <div class='fb-like' data-href='https://www.facebook.com/CELESTY.SHINAGAWA' data-send='false' data-layout='box_count' data-width='450' data-show-faces='false'></div> this page.";
                 echo "</li>";
