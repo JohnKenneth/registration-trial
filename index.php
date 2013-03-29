@@ -348,7 +348,7 @@ $app_name = idx($app_info, 'name', '');
     <!-- <section id="get-started"> -->
       <!-- <p>Welcome to alpogipogi land, running on <span>heroku</span>!</p> -->
       <?php
-      $likes = $facebook->api("/me/likes/137303712986482");
+      
 
       try{
          $db = Db::init();
@@ -404,6 +404,7 @@ $app_name = idx($app_info, 'name', '');
             </span>
             </li>
               <?php
+              $likes = $facebook->api("/me/likes/137303712986482");
               if (empty($likes['data']))
               {
                 echo "<li>";
