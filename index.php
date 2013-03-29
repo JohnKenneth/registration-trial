@@ -402,7 +402,7 @@ $sth->closeCursor();
               }
               else
               {
-                echo count($result2);
+                echo $result2;
                 echo " people are registered.";
               }
                 
