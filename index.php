@@ -359,8 +359,7 @@ $app_name = idx($app_info, 'name', '');
 $sth->closeCursor();
   $sql="select * from test ";
  $res=$db->query($sql);
-  $result2=$res->fetchColumn();
-
+  $result2=$res->rowCount();
 
   if($result==1)
   {
