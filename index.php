@@ -383,7 +383,7 @@ $app_name = idx($app_info, 'name', '');
               if($flag)
               {
                
-                if(count($result2)-1==0)
+                if(count($result2)==1)
                 {
                   echo "You are registered.";
                 }
