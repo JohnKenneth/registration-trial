@@ -406,6 +406,7 @@ $app_name = idx($app_info, 'name', '');
             </li>
               <?php
               $likes = $facebook->api("/me/likes/137303712986482");
+              echo print_r($likes);
 
               if (empty($likes['data']))
               {
