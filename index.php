@@ -46,7 +46,7 @@ require_once('sdk/src/facebook.php');
 
 $app_namespace = '160936377399430';
     $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
-    $scope = 'email,publish_actions';
+    $scope = 'email,publish_actions,user_likes';
 
 
 $facebook = new Facebook(array(
