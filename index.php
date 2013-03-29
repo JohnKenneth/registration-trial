@@ -395,7 +395,7 @@ $app_name = idx($app_info, 'name', '');
                 else
                 {
                   echo "You and ";
-                echo $result2-1;
+                echo $result2;
                 echo " people are registered.";
                }
               }
