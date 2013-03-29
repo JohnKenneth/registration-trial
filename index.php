@@ -387,7 +387,7 @@ $app_name = idx($app_info, 'name', '');
                 if(count($result2)==1)
                 {
                   echo "You are registered.";
-                 
+
                 }
                 else
                 {
@@ -468,6 +468,26 @@ $app_name = idx($app_info, 'name', '');
                 
                   your photo and share your story.
             </li> ";
+
+            ?>
+               <div id="cont">
+                <h1>Registration</h1>
+                 
+                <div style="float: left; margin-right: 15px;">
+                     
+                    <div class="fb-registration"
+                        data-fields='[{"name":"name"},
+                                        {"name":"mobileno","description":"Mobile No.","type":"text"},
+                                         {"name":"address","description":"Address","type":"text"},
+                                          {"name":"email"},
+                                          {"name":"birthday"}
+                                           ]' 
+                        data-redirect-uri="http://damp-temple-4190.herokuapp.com/register.php?uid=<?php echo $user_id;   ?>">
+                </div>
+              </div>
+            </div>
+
+            <?php
            
               }
 
@@ -490,22 +510,7 @@ $app_name = idx($app_info, 'name', '');
    // $likes = $facebook->api("/me/likes/137303712986482");
    // { echo "I like!"; 
       }?>
-        <div id="cont">
-       <h1>Registration</h1>
-                 
-                <div style="float: left; margin-right: 15px;">
-                     
-                    <div class="fb-registration"
-                        data-fields='[{"name":"name"},
-                                        {"name":"mobileno","description":"Mobile No.","type":"text"},
-                                         {"name":"address","description":"Address","type":"text"},
-                                          {"name":"email"},
-                                          {"name":"birthday"}
-                                           ]' 
-                        data-redirect-uri="http://damp-temple-4190.herokuapp.com/register.php?uid=<?php echo $user_id;   ?>">
-                </div>
-              </div>
-            </div>
+     
 
 
     
