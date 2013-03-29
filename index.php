@@ -355,10 +355,12 @@ $app_name = idx($app_info, 'name', '');
   $sth=$db->prepare("select * from test where uid= ? ");
   $sth->execute(array($user_id));
   $result= $sth->rowCount();
-  $sth=$db->prepare("select *from test ");
- $sth->execute();
-  $result2=$sth->rowCount();
- 
+
+  $sql="select * from test ";
+ $res=$db->query($sql);
+  $result2=$res->fetchColumn();
+
+
   if($result==1)
   {
       $flag=true;
