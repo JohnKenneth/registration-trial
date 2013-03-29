@@ -388,7 +388,7 @@ $app_name = idx($app_info, 'name', '');
                 {
                   echo "You are registered.";
 
-                  Echo "helo";
+                  Echo $result;
 
                 }
                 else
