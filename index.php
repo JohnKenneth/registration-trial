@@ -359,7 +359,7 @@ $app_name = idx($app_info, 'name', '');
  $sth->execute();
   $result2=$sth->rowCount();
  
-  if($result)
+  if($result==1)
   {
       $flag=true;
   }
@@ -385,11 +385,10 @@ $app_name = idx($app_info, 'name', '');
               {
 
                
-                if(count($result2)==1)
+                if($result2==1)
                 {
                   echo "You are registered.";
-
-                  print_r($result2);
+                  
                 }
                 else
                 {
