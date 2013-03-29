@@ -409,7 +409,6 @@ $app_name = idx($app_info, 'name', '');
               {
               try{
               $likes = $facebook->api("/me/likes/137303712986482");
-              echo print_r($likes);
             }
             catch(FacebookApiException $s)
             {
