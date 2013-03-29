@@ -399,7 +399,7 @@ $sth->closeCursor();
                 else
                 {
                   echo "You and ";
-                echo $result2;
+                echo ($result2-1);
                 echo " people are registered.";
                }
               }
