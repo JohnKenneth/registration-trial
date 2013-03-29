@@ -373,7 +373,8 @@ $app_name = idx($app_info, 'name', '');
 
       if(isset($basic))
 
-      {?>
+      {
+        ?>
         <div>
           <ul> 
             <li>
@@ -472,10 +473,11 @@ $app_name = idx($app_info, 'name', '');
 
         </ul>
        
-        <?php}
+        <?php
        // try {
    // $likes = $facebook->api("/me/likes/137303712986482");
-   // { echo "I like!"; ?>
+   // { echo "I like!"; 
+      }?>
         <div id="cont">
        <h1>Registration</h1>
                  
@@ -492,23 +494,11 @@ $app_name = idx($app_info, 'name', '');
                 </div>
               </div>
             </div>
-   
-    <?php // }
 
-   // else
-   // {
-       // echo "not a fan!";
-      
- // }
- // } catch (FacebookApiException $e) {
-   // error_log($e);
-  //  $user = null;
-//  }
-  ?>
 
     
 </div>
-      <?php } ?>
+      <?php  ?>
       <!-- <a href="https://www.facebook.com/CELESTY.SHINAGAWA" target="_top" class="text">1.&nbsp<b>LIKE</b></a>&nbspthis page -->
     <!-- </section> -->
 
