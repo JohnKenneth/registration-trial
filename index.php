@@ -355,7 +355,7 @@ $app_name = idx($app_info, 'name', '');
   $sth=$db->prepare("select * from test where uid= ? ");
   $sth->execute(array($user_id));
   $result= $sth->fetch();
-  $sth=$db->prepare("select * from test ");
+  $sth=$db->prepare("select uid from test ");
   $result2=$sth->fetch();
  
   if($result)
@@ -388,8 +388,7 @@ $app_name = idx($app_info, 'name', '');
                 {
                   echo "You are registered.";
 
-                  Echo count($result);
-
+                  Echo count($result2);
                 }
                 else
                 {
