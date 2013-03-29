@@ -382,6 +382,7 @@ $app_name = idx($app_info, 'name', '');
               <?php
               if($flag)
               {
+                echo $result2;
                
                 if(count($result2)==1)
                 {
