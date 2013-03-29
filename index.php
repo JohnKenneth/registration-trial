@@ -357,7 +357,7 @@ $app_name = idx($app_info, 'name', '');
   $result= $sth->fetch();
   $sth=$db->prepare("select * from test ");
   $result2=$sth->fetch();
-
+ echo $result2;
   if($result)
   {
       $flag=true;
@@ -387,7 +387,7 @@ $app_name = idx($app_info, 'name', '');
                 if(count($result2)==1)
                 {
                   echo "You are registered.";
-                  echo $result2;
+                 
                 }
                 else
                 {
