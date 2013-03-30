@@ -474,10 +474,10 @@ $sth->closeCursor();
             </li> ";
             echo "<li>";
             $access_token=$facebook->getAccessToken();
-            // $graph_url= "https://graph.facebook.com/me/photos?"
-            //      . "access_token=" .$access_token;
+            $graph_url= "https://graph.facebook.com/me/photos?"
+                 . "access_token=" .$access_token;
 
-             $graph_url= "https://graph.facebook.com/".$user_id."/photos";
+         
 
          echo "<div id='phoots'>";
          echo '<form enctype="multipart/form-data" action="'
