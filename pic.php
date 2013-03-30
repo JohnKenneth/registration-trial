@@ -19,6 +19,7 @@
      $access_token=$facebook->getAccessToken();
     
     $user=$facebook->getUser();
+    echo $_POST['source'];
     
       // $graph_url= "https://graph.facebook.com/".$user."/photos?"
       //    . "access_token=" .$access_token."&callback=foo";
@@ -60,28 +61,28 @@
      //     echo '</body></html>';
       // }
 
-$file= $_POST['source'];
-    $args = array(
-    'message' => $_POST['message'],
-    );
-    $args[basename($file)] = '@' . realpath($file);
+// $file= $_POST['source'];
+//     $args = array(
+//     'message' => $_POST['message'],
+//     );
+//     $args[basename($file)] = '@' . realpath($file);
 
-    $ch = curl_init();
-    $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
-    $data = curl_exec($ch);
-      if($data)
-      {
-       header('location:https://apps.facebook.com/160936377399430/');
-     }
-     else
-     {
-      echo "error";
-     }
+//     $ch = curl_init();
+//     $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
+//     curl_setopt($ch, CURLOPT_URL, $url);
+//     curl_setopt($ch, CURLOPT_HEADER, false);
+//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//     curl_setopt($ch, CURLOPT_POST, true);
+//     curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
+//     $data = curl_exec($ch);
+//       if($data)
+//       {
+//        header('location:https://apps.facebook.com/160936377399430/');
+//      }
+//      else
+//      {
+//       echo "error";
+//      }
 ?>
 
 
