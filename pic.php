@@ -23,7 +23,6 @@
       // $graph_url= "https://graph.facebook.com/".$user."/photos?"
       //    . "access_token=" .$access_token."&callback=foo";
       //   echo "al ".$_REQUEST['foo'];
-print_r($facebook->getSignedRequest());
        //Obtain the access_token with publish_stream permission 
        // if(empty($code)){ 
        //    $dialog_url= "http://www.facebook.com/dialog/oauth?"
@@ -60,7 +59,23 @@ print_r($facebook->getSignedRequest());
      //     echo '</form>';
      //     echo '</body></html>';
       // }
-       
+
+$file= $_POST['source'];
+    $args = array(
+    'message' => $_POST['message'],
+    );
+    $args[basename($file)] = '@' . realpath($file);
+
+    $ch = curl_init();
+    $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
+    $data = curl_exec($ch);
+
+       header('location:index.php');
 ?>
 
 
