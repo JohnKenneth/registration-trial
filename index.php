@@ -145,7 +145,7 @@ $app_name = idx($app_info, 'name', '');
     {
       $("#cont").hide();
        $("#fai").hide();
-       $("phoots").hide();
+       $("#phoots").hide();
     });
       $(function(){
       
