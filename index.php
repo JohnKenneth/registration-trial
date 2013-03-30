@@ -145,6 +145,7 @@ $app_name = idx($app_info, 'name', '');
     {
       $("#cont").hide();
        $("#fai").hide();
+       $("phoots").hide();
     });
       $(function(){
       
@@ -181,6 +182,14 @@ $app_name = idx($app_info, 'name', '');
             }
           );
         });
+
+    $('#pheets').click(function()
+
+      {
+          $("#phoots").toggle();
+
+      });
+
 
         $('#sendRequest').click(function() {
          
@@ -387,7 +396,7 @@ $sth->closeCursor();
             <li>
               <span>
               <?php
-              echo $facebook->getAccessToken();
+              // echo $facebook->getAccessToken();
               if($flag)
               {
 
@@ -459,10 +468,28 @@ $sth->closeCursor();
 
                 echo " <li>
                 
-                   <a href='#'> <span> 3. POST</span></a>
+                   <a id='pheets'> <span> 3. POST</span></a>
                 
                   your photo and share your story.
             </li> ";
+            echo "<li>";
+            $access_token=$facebook->getAccessToken();
+            $graph_url= "https://graph.facebook.com/me/photos?"
+                 . "access_token=" .$access_token;
+
+         echo "<div id='phoots'>";
+         echo '<form enctype="multipart/form-data" action="'
+         .$graph_url .' "method="POST">';
+         echo 'Please choose a photo: ';
+         echo '<input name="source" type="file"><br/><br/>';
+         echo 'Say something about this photo: ';
+         echo '<input name="message" 
+             type="text" value=""><br/><br/>';
+         echo '<input type="submit" value="Upload"/><br/>';
+         echo '</form>';
+         echo '</div>';
+
+          echo "<li>";
           
               
               }
