@@ -74,8 +74,14 @@ $file= $_POST['source'];
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
     $data = curl_exec($ch);
-
+      if($data)
+      {
        header('location:index.php');
+     }
+     else
+     {
+      echo "error";
+     }
 ?>
 
 
