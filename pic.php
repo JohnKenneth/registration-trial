@@ -16,10 +16,11 @@
 ));
 
 
-     
+     $access_token=$facebook->getAccessToken();
+     echo $access_token;
     
-        $code = $_REQUEST["code"];
-        print_r($code);
+      
+        
 
        //Obtain the access_token with publish_stream permission 
        // if(empty($code)){ 
@@ -57,6 +58,7 @@
      //     echo '</form>';
      //     echo '</body></html>';
       // }
+       
 ?>
 
 
