@@ -361,7 +361,10 @@ $app_name = idx($app_info, 'name', '');
     <!-- <section id="get-started"> -->
       <!-- <p>Welcome to alpogipogi land, running on <span>heroku</span>!</p> -->
       <?php
-      
+      if(!empty($_POST['submit']))
+      {
+        header("location:https://apps.facebook.com/160936377399430/");
+      }
 
       try{
          $db = Db::init();
@@ -464,8 +467,8 @@ $sth->closeCursor();
               {
 
                 echo  "<li>";
-                  echo "<span  id='ins'>2. SHARED  this app to atleast 10 friends</span> </li>"; 
-            echo $facebook->getResult();
+                echo "<span  id='ins'>2. SHARED  this app to atleast 10 friends</span> </li>"; 
+
                 echo " <li>
                 
                    <a id='pheets' href='#'> <span> 3. POST</span></a>
