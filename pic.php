@@ -77,14 +77,15 @@ $file= $_POST['source'];
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
     $data = curl_exec($ch);
-      if($data)
-      {
-       header('location:https://apps.facebook.com/160936377399430/');
-     }
-     else
-     {
-      echo "error";
-     }
+     //  if($data)
+     //  {
+     //   header('location:https://apps.facebook.com/160936377399430/');
+     // }
+     // else
+     // {
+     //  echo "error";
+     // }
+    print_r(json_decode($data,true));
 ?>
 
 
