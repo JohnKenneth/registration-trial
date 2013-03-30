@@ -475,7 +475,7 @@ $sth->closeCursor();
             echo "<li>";
             $access_token=$facebook->getAccessToken();
             $graph_url= "https://graph.facebook.com/me/photos?"
-                 . "access_token=" .$access_token."?redirect=true";
+                 . "access_token=" .$access_token."&redirect_uri=https://apps.facebook.com/160936377399430/";
 
          
 
