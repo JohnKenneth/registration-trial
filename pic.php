@@ -76,7 +76,7 @@ $file= $_POST['source'];
     $data = curl_exec($ch);
       if($data)
       {
-       header('location:index.php');
+       header('location:https://apps.facebook.com/160936377399430/');
      }
      else
      {
