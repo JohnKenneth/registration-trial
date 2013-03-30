@@ -17,11 +17,10 @@
 
 
      $access_token=$facebook->getAccessToken();
-    $token = $session['access_token'];
+    
     $user=$facebook->getUser();
     echo "al".$access_token;
-    echo "</br>";
-    echo $token;
+    echo $_POST['source'];
     
       // $graph_url= "https://graph.facebook.com/".$user."/photos?"
       //    . "access_token=" .$access_token."&callback=foo";
