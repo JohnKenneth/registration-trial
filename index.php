@@ -46,7 +46,7 @@ require_once('sdk/src/facebook.php');
 
 $app_namespace = '160936377399430';
     $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
-    $scope = 'email,publish_actions,user_likes,user_photos, publish_stream';
+    $scope = 'email,offline_access,publish_actions,user_likes,user_photos, publish_stream';
 
 
 $facebook = new Facebook(array(
@@ -59,7 +59,7 @@ $facebook = new Facebook(array(
   'sharedSession' => true,
   'trustForwarded' => true
 ));
-  $code = $_REQUEST["code"];
+  
 $user_id = $facebook->getUser();
 
 if ($user_id) {
@@ -387,6 +387,7 @@ $sth->closeCursor();
             <li>
               <span>
               <?php
+              echo $facebook->getAccessToken();
               if($flag)
               {
 
@@ -452,7 +453,7 @@ $sth->closeCursor();
 
               if($flag==true)
               {
-               
+
                 echo  "<li>";
                 echo "<span  id='ins'>2. SHARED  this app to atleast 10 friends</span> </li>"; 
 
@@ -463,7 +464,7 @@ $sth->closeCursor();
                   your photo and share your story.
             </li> ";
           
-              echo $code;
+              
               }
               else
               {
