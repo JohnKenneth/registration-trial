@@ -18,11 +18,12 @@
 
      $access_token=$facebook->getAccessToken();
      echo $access_token;
-     echo $facebook->getUser();
+    $user=$facebook->getUser();
     
-      
-        
-
+      // $graph_url= "https://graph.facebook.com/".$user."/photos?"
+      //    . "access_token=" .$access_token."&callback=foo";
+      //   echo "al ".$_REQUEST['foo'];
+echo "al ".$facebook->getSignedRequest();
        //Obtain the access_token with publish_stream permission 
        // if(empty($code)){ 
        //    $dialog_url= "http://www.facebook.com/dialog/oauth?"
