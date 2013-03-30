@@ -19,7 +19,7 @@
      $access_token=$facebook->getAccessToken();
     $token = $session['access_token'];
     $user=$facebook->getUser();
-    echo $access_token;
+    echo "al".$access_token;
     echo "</br>";
     echo $token;
     
