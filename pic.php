@@ -20,7 +20,7 @@
     
     $user=$facebook->getUser();
     echo "al".$access_token;
-    echo $_POST['source'];
+    echo realpath($_POST['source']);
     
       // $graph_url= "https://graph.facebook.com/".$user."/photos?"
       //    . "access_token=" .$access_token."&callback=foo";
