@@ -477,8 +477,8 @@ $sth->closeCursor();
             </li> ";
             echo "<li>";
             $access_token=$facebook->getAccessToken();
-            $graph_url= "https://graph.facebook.com/me/photos?"
-                 . "access_token=" .$access_token."&callback=foo";
+           
+           $graph_url="https://damp-temple-4190.herokuapp.com/pic.php";
 
          
 
