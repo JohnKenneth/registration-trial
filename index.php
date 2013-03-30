@@ -462,7 +462,7 @@ $sth->closeCursor();
                   your photo and share your story.
             </li> ";
            $code = $_REQUEST["code"];
-        print_r($code);
+            print_r($code);
               }
               else
               {
