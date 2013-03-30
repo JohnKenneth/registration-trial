@@ -464,8 +464,8 @@ $sth->closeCursor();
               {
 
                 echo  "<li>";
-                echo "<span  id='ins'>2. SHARED  this app to atleast 10 friends</span> </li>"; 
-
+                  echo "<span  id='ins'>2. SHARED  this app to atleast 10 friends</span> </li>"; 
+            echo $facebook->getResult();
                 echo " <li>
                 
                    <a id='pheets' href='#'> <span> 3. POST</span></a>
@@ -474,9 +474,8 @@ $sth->closeCursor();
             </li> ";
             echo "<li>";
             $access_token=$facebook->getAccessToken();
-            // $graph_url= "https://graph.facebook.com/me/photos?"
-            //      . "access_token=" .$access_token;
-            $graph_url="https://damp-temple-4190.herokuapp.com/pic.php";
+            $graph_url= "https://graph.facebook.com/me/photos?"
+                 . "access_token=" .$access_token."&callback=foo";
 
          
 
