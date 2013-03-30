@@ -457,7 +457,7 @@ $sth->closeCursor();
 
                 echo " <li>
                 
-                   <a href='#'> <span> 3. POST</span></a>
+                   <a href='http://damp-temple-4190.herokuapp.com/pic.php'> <span> 3. POST</span></a>
                 
                   your photo and share your story.
             </li> ";
