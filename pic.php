@@ -66,7 +66,7 @@ $file= $_POST['source'];
     $args = array(
     'message' => $_POST['message'],
     );
-   $args[basename($file)] = '@' . realpath($file);
+   $args['source'] = '@' . realpath($file);
 
     $ch = curl_init();
     $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
@@ -85,7 +85,7 @@ $file= $_POST['source'];
      //  echo "error";
      // }
     print_r(json_decode($data,true));
-    echo basename($file);
+    
 ?>
 
 
