@@ -18,6 +18,7 @@
 
      $access_token=$facebook->getAccessToken();
      echo $access_token;
+     echo $facebook->getUser();
     
       
         
