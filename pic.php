@@ -85,7 +85,7 @@ $file= $_POST['source'];
      //  echo "error";
      // }
     print_r(json_decode($data,true));
-    echo $file;
+    echo basename($file);
 ?>
 
 
