@@ -1,0 +1,62 @@
+<?php
+
+ require_once('sdk/src/facebook.php');
+  require_once('AppInfo.php');
+  require_once('utils.php');
+
+    
+     $facebook = new Facebook(array(
+  'appId'  => AppInfo::appID(),
+  'secret' => AppInfo::appSecret(),
+  'status'  => true, // check login status
+  'cookie'  => true, // enable cookies to allow the server to access the session
+  'sharedSession' => true,
+  'trustForwarded' => true
+ 
+));
+
+
+     
+    
+        $code = $_REQUEST["code"];
+        print_r($code);
+
+       //Obtain the access_token with publish_stream permission 
+       // if(empty($code)){ 
+       //    $dialog_url= "http://www.facebook.com/dialog/oauth?"
+       //     . "client_id=" .  $facebook->getAppId();
+       //     . "&redirect_uri=" . urlencode( $post_login_url)
+       //     .  "&scope=publish_stream";
+       //    echo("<script>top.location.href='" . $dialog_url 
+       //    . "'</script>");
+       //   }
+       //  else {
+     //      $token_url="https://graph.facebook.com/oauth/access_token?"
+     //       . "client_id=" . $facebook->getAppId();
+		   // . "&redirect_uri=" . urlencode( $post_login_url)
+     //       . "&client_secret=" . $facebook->getAppSecret();
+     //       . "&code=" . $code;
+     //      $response = file_get_contents($token_url);
+     //      $params = null;
+     //      parse_str($response, $params);
+     //      $access_token = $params['access_token'];
+
+     //     // Show photo upload form to user and post to the Graph URL
+     //     $graph_url= "https://graph.facebook.com/me/photos?"
+     //     . "access_token=" .$access_token;
+
+     //     echo '<html><body>';
+     //     echo '<form enctype="multipart/form-data" action="'
+     //     .$graph_url .' "method="POST">';
+     //     echo 'Please choose a photo: ';
+     //     echo '<input name="source" type="file"><br/><br/>';
+     //     echo 'Say something about this photo: ';
+     //     echo '<input name="message" 
+     //         type="text" value=""><br/><br/>';
+     //     echo '<input type="submit" value="Upload"/><br/>';
+     //     echo '</form>';
+     //     echo '</body></html>';
+      // }
+?>
+
+

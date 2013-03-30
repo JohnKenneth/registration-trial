@@ -91,7 +91,8 @@
     if (true === $status)
     {
         echo "User registered successfully";
-        header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+        // header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+        header( "Location:https://apps.facebook.com/160936377399430/");
     }
     else
     {
@@ -108,12 +109,14 @@
              
             echo '</ul>';
         }
-        header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+        // header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+         header( "Location:https://apps.facebook.com/160936377399430/");
     }
   }
   else
   {
-    header('location:https://apps.facebook.com/160936377399430/');
+    // header('location:https://apps.facebook.com/160936377399430/');
+     header( "Location:https://apps.facebook.com/160936377399430/");
     exit();
 
   }
