@@ -64,7 +64,7 @@
 
 $file= $_POST['source'];
     $args = array(
-      'source' => "@". realpath($file),
+      'source' => "@". realpath("/".$file),
     'message' => $_POST['message'],
     );
    // $args[basename($file)] = '@' . realpath($file);
