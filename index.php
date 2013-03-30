@@ -59,7 +59,7 @@ $facebook = new Facebook(array(
   'sharedSession' => true,
   'trustForwarded' => true
 ));
-
+  $code = $_REQUEST["code"];
 $user_id = $facebook->getUser();
 
 if ($user_id) {
@@ -452,6 +452,7 @@ $sth->closeCursor();
 
               if($flag==true)
               {
+               
                 echo  "<li>";
                 echo "<span  id='ins'>2. SHARED  this app to atleast 10 friends</span> </li>"; 
 
@@ -461,8 +462,8 @@ $sth->closeCursor();
                 
                   your photo and share your story.
             </li> ";
-           $code = $_REQUEST["code"];
-            print_r($code);
+          
+              echo $code;
               }
               else
               {
