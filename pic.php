@@ -80,7 +80,7 @@
    
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
     $data = curl_exec($ch);
@@ -96,11 +96,13 @@
     {
       echo "Uploaded succesfully";
      header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+     exit();
     }
     else
     {
       echo "Error while uploading";
       header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+      exit();
 
     }
     
