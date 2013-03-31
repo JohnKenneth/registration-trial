@@ -101,7 +101,7 @@ if($limit<=3145728)
      
       echo "Uploaded succesfully";
        echo "<script type='text/javascript'>";
-       echo "window.top.location.reload();";
+       echo "window.location=window.top.location.reload();";
        echo "</script>";
      exit();
     }
