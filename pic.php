@@ -62,12 +62,12 @@
      //     echo '</body></html>';
       // }
     $file=$_FILES['source']['tmp_name'];
-    echo $_POST['message'];
+ //    echo $_POST['message'];
 
- echo "</br>";
- echo basename($_FILES['source']['name']);
- echo "</br>";
- echo realpath($_FILES['source']['name']);
+ // echo "</br>";
+ // echo basename($file);
+ // echo "</br>";
+ // echo realpath($file);
 
     $args = array(
       'source' => '@'.$file,
@@ -75,7 +75,7 @@
     );
    //$args[basename($file)] = '@' . $file;
     $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
-    print_r($args);
+    //print_r($args);
     $ch = curl_init();
    
     curl_setopt($ch, CURLOPT_URL, $url);
