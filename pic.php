@@ -92,7 +92,16 @@
      // {
      //  echo "error";
      // }
-    print_r(json_decode($data,true));
+    if($data)
+    {
+      header('location:https://apps.facebook.com/160936377399430/');
+    }
+    else
+    {
+      echo "Error while uploading";
+      header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+
+    }
     
 ?>
 
