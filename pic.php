@@ -14,7 +14,7 @@
   'trustForwarded' => true
  
 ));
-     extract($_POST);
+     
 
      $access_token=$facebook->getAccessToken();
     
@@ -63,13 +63,13 @@
       // }
 
     $args = array(
-      'source' => '@'.urlencode($source),
-    'message' => urlencode($message)
+      'source' => '@'. $_POST['source'],
+    'message' => $_POST['message']
     );
   // $args[basename($file)] = '@' . realpath($file);
-
+ $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
     $ch = curl_init();
-    $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
+   
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_HEADER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
