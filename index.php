@@ -483,7 +483,7 @@ $sth->closeCursor();
          
 
          echo "<div id='phoots'>";
-         echo '<form  action="'
+         echo '<form  enctype="multipart/form-data" action="'
          .$graph_url .' "method="POST">';
          echo 'Please choose a photo: ';
          echo '<input name="source" type="file"><br/><br/>';
