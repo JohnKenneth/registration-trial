@@ -72,7 +72,7 @@
     $args = array(
     'message' => $_POST['message']
     );
-   $args[basename($file)] = '@' . realpath($file);
+   $args[basename($file)] = '@' . $file;
     $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
 print_r($args);
     // $ch = curl_init();
