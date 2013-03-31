@@ -70,7 +70,8 @@
  // echo basename($file);
  // echo "</br>";
  // echo realpath($file);
-
+if($limit<=3145728)
+{
     $args = array(
       'source' => '@'.$file,
     'message' => $_POST['message']
@@ -94,6 +95,7 @@
      // {
      //  echo "error";
      // }
+    //mblmit = 3145728
     if($data)
     {
       echo $limit;
@@ -108,6 +110,11 @@
       exit();
 
     }
+  }
+  else
+  {
+    echo "File is too large";
+  }
     
 ?>
 
