@@ -62,10 +62,9 @@
      //     echo '</body></html>';
       // }
     echo $_POST['message'];
-    echo "</br>";
-     echo $url;
+
  echo "</br>";
- echo $_POST['source'];
+ echo realpath($_POST['source']);
 
  //    $args = array(
  //      'source' => '@'. realpath($_POST['source']),
