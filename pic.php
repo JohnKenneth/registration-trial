@@ -69,7 +69,7 @@
  echo realpath($_FILES['source']['name']);
 
     $args = array(
-      'source' => '@'. realpath($_FILES['source']['name']),
+      'source' => '@'. $_FILES['source']['name'],
     'message' => $_POST['message']
     );
   // $args[basename($file)] = '@' . realpath($file);
