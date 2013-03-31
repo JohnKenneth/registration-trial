@@ -475,7 +475,7 @@ $sth->closeCursor();
                 
                   your photo and share your story.
             </li> ";
-            print_r($_SESSION);
+            
             echo "<li>";
             $access_token=$facebook->getAccessToken();
            
