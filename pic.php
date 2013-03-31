@@ -68,30 +68,30 @@
  echo "</br>";
  echo $_FILES['source']['name'];
 
- //    $args = array(
- //      'source' => '@'. realpath($_POST['source']),
- //    'message' => $_POST['message']
- //    );
- //  // $args[basename($file)] = '@' . realpath($file);
- // $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
+    $args = array(
+      'source' => '@'. realpath($_FILES['source']['name']),
+    'message' => $_POST['message']
+    );
+  // $args[basename($file)] = '@' . realpath($file);
+ $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
 
- //    $ch = curl_init();
+    $ch = curl_init();
    
- //    curl_setopt($ch, CURLOPT_URL, $url);
- //    curl_setopt($ch, CURLOPT_HEADER, false);
- //    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
- //    curl_setopt($ch, CURLOPT_POST, true);
- //    curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
- //    $data = curl_exec($ch);
- //     //  if($data)
- //     //  {
- //     //   header('location:https://apps.facebook.com/160936377399430/');
- //     // }
- //     // else
- //     // {
- //     //  echo "error";
- //     // }
- //    print_r(json_decode($data,true));
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
+    $data = curl_exec($ch);
+     //  if($data)
+     //  {
+     //   header('location:https://apps.facebook.com/160936377399430/');
+     // }
+     // else
+     // {
+     //  echo "error";
+     // }
+    print_r(json_decode($data,true));
     
 ?>
 
