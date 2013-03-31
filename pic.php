@@ -95,7 +95,7 @@
     if($data)
     {
       echo "Uploaded succesfully";
-     header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+     header( "Location:https://apps.facebook.com/160936377399430/");
      exit();
     }
     else

@@ -93,6 +93,7 @@
         echo "User registered successfully";
         // header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
         header( "Location:https://apps.facebook.com/160936377399430/");
+        exit();
     }
     else
     {
@@ -111,6 +112,7 @@
         }
         // header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
          header( "Location:https://apps.facebook.com/160936377399430/");
+         exit();
     }
   }
   else
