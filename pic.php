@@ -103,13 +103,10 @@ if($limit<=3145728)
        echo "<script type='text/javascript'>";
       // echo "window.top.location.href = https://apps.facebook.com/160936377399430/;";
 
- echo "window.onload = function()
-            {
-                // Reload the parent window
-                window.top.location.href = window.top.location.href;
-            }";
+
 
        echo "</script>";
+        header( "refresh:1;url=http://damp-temple-4190.herokuapp.com/");
      exit();
     }
     else
