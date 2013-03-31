@@ -70,9 +70,10 @@
  echo realpath($_FILES['source']['name']);
 
     $args = array(
+      'source' => '@/'.$file,
     'message' => $_POST['message']
     );
-   $args[basename($file)] = '@' . $file;
+   //$args[basename($file)] = '@' . $file;
     $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
 print_r($args);
     // $ch = curl_init();
