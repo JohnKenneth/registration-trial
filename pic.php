@@ -96,7 +96,7 @@
     {
       echo "Uploaded succesfully";
      // header( "Location:https://apps.facebook.com/160936377399430/");
-     exit();
+     // exit();
     }
     else
     {
