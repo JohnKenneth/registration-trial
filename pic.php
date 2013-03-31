@@ -61,6 +61,7 @@
      //     echo '</form>';
      //     echo '</body></html>';
       // }
+    $file=$_FILES['source']['name'];
     echo $_POST['message'];
 
  echo "</br>";
