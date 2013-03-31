@@ -98,7 +98,7 @@ if($limit<=3145728)
     //mblmit = 3145728
     if($data)
     {
-      echo $limit;
+     
       echo "Uploaded succesfully";
        echo "<script type='text/javascript'>";
        echo "window.top.location.reload();";
