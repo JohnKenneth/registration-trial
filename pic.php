@@ -68,6 +68,7 @@
     );
   // $args[basename($file)] = '@' . realpath($file);
  $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
+ echo $url;
     $ch = curl_init();
    
     curl_setopt($ch, CURLOPT_URL, $url);
