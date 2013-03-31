@@ -101,7 +101,7 @@ if($limit<=3145728)
      
       echo "Uploaded succesfully";
        echo "<script type='text/javascript'>";
-       echo "window.top.location.href = window.top.location.href;";
+       echo "window.top.location.href = https://apps.facebook.com/160936377399430/;";
 
  // echo "window.onload = function()
  //            {
