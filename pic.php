@@ -102,6 +102,13 @@ if($limit<=3145728)
       echo "Uploaded succesfully";
        echo "<script type='text/javascript'>";
        echo "window.top.location.href = window.top.location.href;";
+
+ // echo "window.onload = function()
+ //            {
+ //                // Reload the parent window
+ //                window.top.location.href = window.top.location.href;
+ //            }";
+
        echo "</script>";
      exit();
     }
