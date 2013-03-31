@@ -19,7 +19,7 @@
      $access_token=$facebook->getAccessToken();
     
     $user=$facebook->getUser();
-    echo "al".$access_token;
+  
 
     
       // $graph_url= "https://graph.facebook.com/".$user."/photos?"
