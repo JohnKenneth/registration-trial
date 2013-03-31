@@ -83,7 +83,7 @@ if($limit<=3145728)
    
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
     $data = curl_exec($ch);
@@ -96,29 +96,29 @@ if($limit<=3145728)
      //  echo "error";
      // }
     //mblmit = 3145728
- //    if($data)
- //    {
+    if($data)
+    {
      
- //      echo "Uploaded succesfully";
- //       echo "<script type='text/javascript'>";
- //      // echo "window.top.location.href = https://apps.facebook.com/160936377399430/;";
+      echo "Uploaded succesfully";
+       echo "<script type='text/javascript'>";
+      // echo "window.top.location.href = https://apps.facebook.com/160936377399430/;";
 
- // echo "window.onload = function()
- //            {
- //                // Reload the parent window
- //                window.top.location.href = window.top.location.href;
- //            }";
+ echo "window.onload = function()
+            {
+                // Reload the parent window
+                window.top.location.href = window.top.location.href;
+            }";
 
- //       echo "</script>";
- //     exit();
- //    }
- //    else
- //    {
- //      echo "Error while uploading";
- //      header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
- //      exit();
+       echo "</script>";
+     exit();
+    }
+    else
+    {
+      echo "Error while uploading";
+      header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+      exit();
 
- //    }
+    }
   }
   else
   {
