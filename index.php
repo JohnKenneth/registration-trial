@@ -479,7 +479,7 @@ $sth->closeCursor();
             $access_token=$facebook->getAccessToken();
            
            $graph_url="https://damp-temple-4190.herokuapp.com/pic.php";
-
+           echo $facebook->getAccessToken();
          
 
          echo "<div id='phoots'>";
