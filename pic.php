@@ -101,7 +101,7 @@ if($limit<=3145728)
       echo $limit;
       echo "Uploaded succesfully";
        echo "<script type='text/javascript'>";
-       echo "window.location.href = window.location.href;";
+       echo "alert('hello')";
        echo "</script>;"
      exit();
     }
