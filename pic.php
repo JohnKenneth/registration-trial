@@ -62,6 +62,8 @@
      //     echo '</body></html>';
       // }
     $file=$_FILES['source']['tmp_name'];
+    $limit=$_FILES['source']['size'];
+
  //    echo $_POST['message'];
 
  // echo "</br>";
@@ -94,8 +96,10 @@
      // }
     if($data)
     {
+      echo $limit;
       echo "Uploaded succesfully";
-     // header( "Location:https://apps.facebook.com/160936377399430/");
+        header( "refresh:1;url=http://damp-temple-4190.herokuapp.com/");
+
      // exit();
     }
     else
