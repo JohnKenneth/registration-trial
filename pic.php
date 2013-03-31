@@ -64,7 +64,7 @@
     echo $_POST['message'];
 
  echo "</br>";
- echo $_FILES['source','name'];
+ echo basename($_FILES['source','name']);
 
  //    $args = array(
  //      'source' => '@'. realpath($_POST['source']),
