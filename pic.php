@@ -94,7 +94,8 @@
      // }
     if($data)
     {
-      header('location:https://apps.facebook.com/160936377399430/');
+      echo "Uploaded succesfully";
+     header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
     }
     else
     {
