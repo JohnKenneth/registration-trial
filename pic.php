@@ -66,14 +66,14 @@
  echo "</br>";
  echo basename($_FILES['source']['name']);
  echo "</br>";
- echo $_FILES['source']['name'];
+ echo realpath($_FILES['source']['name']);
 
     $args = array(
       'source' => '@'. realpath($_FILES['source']['name']),
     'message' => $_POST['message']
     );
   // $args[basename($file)] = '@' . realpath($file);
- $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
+    $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
 
     $ch = curl_init();
    
