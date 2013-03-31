@@ -95,13 +95,13 @@
     if($data)
     {
       echo "Uploaded succesfully";
-     header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+     header('Location: '.$_SERVER['REQUEST_URI']);
      exit();
     }
     else
     {
       echo "Error while uploading";
-      header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+      header('Location: '.$_SERVER['REQUEST_URI']);
       exit();
 
     }
