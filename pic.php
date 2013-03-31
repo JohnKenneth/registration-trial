@@ -99,8 +99,7 @@
       echo $limit;
       echo "Uploaded succesfully";
         header( "refresh:1;url=http://damp-temple-4190.herokuapp.com/");
-
-     // exit();
+     exit();
     }
     else
     {
