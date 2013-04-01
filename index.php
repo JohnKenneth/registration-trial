@@ -406,6 +406,11 @@ $sth->closeCursor();
           $data_album=$album->execute(array($user_id));
         
           echo $data_album;
+
+          if($data_album==null || $data_album=="")
+          {
+            $album=$db->prepare("insert into test (albumid) values ('".$album_id."')");
+          }
             $access_token=$facebook->getAccessToken();
 
            $file=$_FILES['source']['tmp_name'];
@@ -479,8 +484,8 @@ if($limit<=3145728)
       echo "Uploaded succesfully";
       // echo "<img src='https://facebook.com/photo.php?fbid=".$data['id']."'>";
       // echo"</img>";
-    //   $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
-    // print_r($user_profile);
+      $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
+    echo (count($user_profile));
     }
     else
     {
