@@ -738,26 +738,9 @@ echo $out['photos']['data'][$x]['link'];
 
               ?>
       
-        
-              <!-- <a href="https://www.facebook.com/plugins/like.php?api_key=134173260097515&locale=en_US&sdk=joey&channel_url=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D19%23cb%3Df7401f0b4%26origin%3Dhttps%253A%252F%252Fyoung-hamlet-1498.herokuapp.com%252Ff2bc99367c%26domain%3Dyoung-hamlet-1498.herokuapp.com%26relation%3Dparent.parent&href=https%3A%2F%2Fwww.facebook.com%2FCELESTY.SHINAGAWA&node_type=link&width=450&layout=box_count&colorscheme=light&show_faces=false&send=false&extended_social_context=false#"> Like </a> this page -->
-            
-           <!--  <li>
-             <a href="#" class="text" id="sendRequest" data-message="Test this awesome app">
-                <span class="apprequests" id="ins">2. SHARE</span> 
-              </a>
-            this app to atleast 10 friends
-            </li> -->
-           
 
         </ul>
        
-    
-      <!--  // try {
-   // $likes = $facebook->api("/me/likes/137303712986482");
-   // { echo "I like!";  -->
-     
-     
-
 
     
 </div>
