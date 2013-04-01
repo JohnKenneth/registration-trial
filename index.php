@@ -411,16 +411,7 @@ $sth->closeCursor();
         if(isset($_POST['submit']))
         {
           
-          $album=$db->prepare("select albumid from test where uid= ? ");
-          $data_album=$album->execute(array($user_id));
-        
-          echo $data_album;
-
-          if($data_album==null || $data_album=="")
-          {
-            $album=$db->query("insert into test (albumid) values ('".$album_id."')");
-
-          }
+          
             $access_token=$facebook->getAccessToken();
 
            $file=$_FILES['source']['tmp_name'];
@@ -438,7 +429,14 @@ $sth->closeCursor();
 if($limit<=3145728)
 {
   //create new album
-      $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
+  $album=$db->prepare("select albumid from test where uid= ? ");
+          $data_album=$album->execute(array($user_id));
+        
+          echo $data_album;
+
+          if($data_album==null || $data_album=="")
+          {
+          $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
          . "access_token=". $access_token;
    
          $postdata = http_build_query(
@@ -460,8 +458,20 @@ if($limit<=3145728)
            $context));
 
          // Get the new album ID
-         $album_id = $result->id;
+           $album_id = $result->id;
+
+            $album=$db->query("insert into test (albumid) values ('".$album_id."')");
+
+          }
+          else
+          {
+            $ei=$db->prepare("select albumid from test where uid=?");
+            $album_id=$ei->execute(array($user_id));
+
+          }
+     
         
+
 
 
     $args = array(
