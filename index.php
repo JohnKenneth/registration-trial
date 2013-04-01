@@ -446,10 +446,10 @@ if($limit<=3145728)
           }
           else
           {
-            $ei=$db->prepare("select albumid from test where uid=?");
-            $ei->execute(array($user_id));
-            $album_id_f=$ei->fetch(PDO::FETCH_ASSOC);
-            $album_id=$album_id_f['albumid']; 
+            // $ei=$db->prepare("select albumid from test where uid=?");
+            // $ei->execute(array($user_id));
+            // $album_id_f=$ei->fetch(PDO::FETCH_ASSOC);
+            $album_id=$data_album['albumid']; 
 
           }
      
