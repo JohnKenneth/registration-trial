@@ -440,7 +440,7 @@ if($limit<=3145728)
          // Get the new album ID
            $album_id = $result->id;
 
-            $album=$db->prepare ("INSERT INTO test (albumid) values (?) where uid= ?");
+            $album=$db->prepare ("update test set albumid=?  where uid= ?");
             $album->execute(array($album_id,$user_id));
 
           }
