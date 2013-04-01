@@ -26,7 +26,7 @@
         echo "<div id='s2' style='position:relative;'>";
 
 
-        if($resu['albumid']!=null || $res['albumid']!="")
+        if($resu['albumid']!=null || $resu['albumid']!="")
         {
            $t2=curl_init();
      $url4='https://graph.facebook.com/'.$resu['albumid'].'?access_token='.$access;
