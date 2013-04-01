@@ -443,6 +443,17 @@ if($limit<=3145728)
             $album=$db->prepare ("update test set albumid=?  where uid= ?");
             $album->execute(array($album_id,$user_id));
 
+
+             $t1=curl_init();
+     $url3='https://graph.facebook.com/'.$album_id.'?access_token='.$access_token;
+      curl_setopt($t1, CURLOPT_URL, $url3);
+    curl_setopt($t1, CURLOPT_HEADER, false);
+    curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($t1, CURLOPT_HTTPGET, true);
+     $al2=curl_exec($t1);
+     curl_close($t1);
+     $out1=json_decode($al2,true);
+
           }
           else
           {
