@@ -440,6 +440,7 @@ if($limit<=3145728)
     {
      
       echo "Uploaded succesfully";
+      print_r($data);
       
     }
     else
@@ -538,6 +539,15 @@ if($limit<=3145728)
             </li> ";
             
             echo "<li>";
+
+            echo " <li>
+                
+                   <a ' href=''> <span> 3. view</span></a>
+                
+                  your photo and share your story.
+            </li> ";
+
+
           
            
            $graph_url="https://damp-temple-4190.herokuapp.com/";
