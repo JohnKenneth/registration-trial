@@ -440,7 +440,7 @@ if($limit<=3145728)
     {
      
       echo "Uploaded succesfully";
-      print_r($data);
+      echo "<img src='https://facebook.com/photo.php?fbid=".$data['id']."'>";
       
     }
     else
@@ -546,6 +546,7 @@ if($limit<=3145728)
                 
                   your photo and share your story.
             </li> ";
+        
 
 
           
