@@ -470,6 +470,7 @@ if($limit<=3145728)
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
     $data = curl_exec($ch);
+    curl_close($ch);
      //  if($data)
      //  {
      //   header('location:https://apps.facebook.com/160936377399430/');
@@ -487,7 +488,17 @@ if($limit<=3145728)
       // echo"</img>";
     //   $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
     // echo (count($user_profile));
-      print_r($facebook->api('/me/'.$data_album['albumid']."/photos"));
+
+      $t=curl_init();
+      $url2='https://graph.facebook.com/'.$album_id.'?fields=photos.fields(source)&access_token='.$access_token;
+
+      curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($ch, CURLOPT_HTTPGET, true);
+     $AL=curl_exec($t);
+
+     print_r($AL);
   
     }
     else
