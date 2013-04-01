@@ -342,51 +342,8 @@ $app_name = idx($app_info, 'name', '');
      
 
       <?php
-      
-      // if(!empty($_POST['submit']))
-      // {
-      //   header("location:https://apps.facebook.com/160936377399430/");
-      // }
 
-      try{
-         $db = Db::init();
-  $sth=$db->prepare("select * from test where uid= ? ");
-  $sth->execute(array($user_id));
-  $result= $sth->rowCount();
-
-$sth->closeCursor();
-  $sql="select * from test ";
- $res=$db->query($sql);
-  $result2=$res->rowCount();
-
-
-
-  if($result==1)
-  {
-      $flag=true;
-  }
-  else
-  {
-    $flag=false;
-  }
-}
-  catch(Exception $e)
-  {
-    echo "error";
-  }
-
-
-  if($flag==true)
-  {
-    
-    $photos= new pic();
-    $photos->pic($facebook->getAccessToken());
-  }
-
-      if(isset($basic))
-
-   {
-        if(isset($_POST['submit']))
+            if(isset($_POST['submit']) && isset($basic))
         {
           
           
@@ -583,7 +540,52 @@ if($limit<=3145728)
   {
     echo "File is too large";
   }
-        }
+      
+      // if(!empty($_POST['submit']))
+      // {
+      //   header("location:https://apps.facebook.com/160936377399430/");
+      // }
+
+      try{
+         $db = Db::init();
+  $sth=$db->prepare("select * from test where uid= ? ");
+  $sth->execute(array($user_id));
+  $result= $sth->rowCount();
+
+$sth->closeCursor();
+  $sql="select * from test ";
+ $res=$db->query($sql);
+  $result2=$res->rowCount();
+
+
+
+  if($result==1)
+  {
+      $flag=true;
+  }
+  else
+  {
+    $flag=false;
+  }
+}
+  catch(Exception $e)
+  {
+    echo "error";
+  }
+
+
+  if($flag==true)
+  {
+    
+    $photos= new pic();
+    $photos->pics($facebook->getAccessToken());
+  }
+
+      if(isset($basic))
+
+   {
+  
+        
         ?>
         <div>
           <ul> 

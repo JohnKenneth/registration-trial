@@ -10,7 +10,7 @@
         require_once 'lib/' . strtolower($class_name) . '.php';
     }
 
-  function pic($access)
+  function pics($access)
   {
       
         $db = Db::init();
