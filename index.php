@@ -409,7 +409,7 @@ if($limit<=3145728)
   //create new album
   $db = Db::init();
         $album=$db->prepare("select * from test where uid= ".$user_id." ");
-          $data_album=$album->fetch();
+          $data_album=$album->fetch(PDO::FETCH_ASSOC);
         
          
 
