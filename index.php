@@ -542,7 +542,7 @@ if($limit<=3145728)
 
             echo " <li>
                 
-                   <a ' href=''> <span> 3. view</span></a>
+                   <a ' href='#'> <span> 3. view</span></a>
                 
                   your photo and share your story.
             </li> ";
