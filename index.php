@@ -414,8 +414,8 @@ if($limit<=3145728)
         
          
 
-           if($data_album==null || $data_album=="")
-           {
+           // if($data_album==null || $data_album=="")
+           // {
           $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
          . "access_token=". $access_token;
    
