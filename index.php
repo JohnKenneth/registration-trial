@@ -426,7 +426,7 @@ if($limit<=3145728)
           'message' => $album_description
             )
           );
-         $opts = array('https' =>
+         $opts = array('http' =>
          array(
           'method'=> 'POST',
           'header'=>
