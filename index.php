@@ -15,6 +15,7 @@
     require_once 'config.php';
     require_once('AppInfo.php');
   require_once('utils.php');
+  require_once('pic.php');
 
 function __autoload($class_name) 
     {
@@ -377,10 +378,9 @@ $sth->closeCursor();
 
   if($flag==true)
   {
-    echo "<img src='' >";
-
-
-    echo "</img>";
+    
+    $photos= new pic();
+    $photos->pic($facebook->getAccessToken());
   }
 
       if(isset($basic))
@@ -540,32 +540,33 @@ if($limit<=3145728)
     //   $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
     // echo (count($user_profile));
 
-      $t=curl_init();
-      $url2='https://graph.facebook.com/'.$album_id.'?fields=photos.fields(link,source)&access_token='.$access_token;
+    //   $t=curl_init();
+    //   $url2='https://graph.facebook.com/'.$album_id.'?fields=photos.fields(link,source)&access_token='.$access_token;
 
-      curl_setopt($t, CURLOPT_URL, $url2);
-    curl_setopt($t, CURLOPT_HEADER, false);
-    curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
-     curl_setopt($t, CURLOPT_HTTPGET, true);
-     $AL=curl_exec($t);
-     curl_close($t);
-     $out=json_decode($AL,true);
+    //   curl_setopt($t, CURLOPT_URL, $url2);
+    // curl_setopt($t, CURLOPT_HEADER, false);
+    // curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
+    //  curl_setopt($t, CURLOPT_HTTPGET, true);
+    //  $AL=curl_exec($t);
+    //  curl_close($t);
+    //  $out=json_decode($AL,true);
+
 
     
 
      // echo $out1['count'];
      // echo "</br>";
        
-    for($x=0;$x<$out1['count'];$x++)
-    {
-      //echo "</br>";
-      echo "<a href='".$out['photos']['data'][$x]['link']."'>";
-      echo "<img src='".$out['photos']['data'][$x]['source']."' width='300' height='300'>";
-      echo "</img>";
-      echo "</a>";
+    // for($x=0;$x<$out1['count'];$x++)
+    // {
+    //   //echo "</br>";
+    //   echo "<a href='".$out['photos']['data'][$x]['link']."'>";
+    //   echo "<img src='".$out['photos']['data'][$x]['source']."' width='300' height='300'>";
+    //   echo "</img>";
+    //   echo "</a>";
    
 
-    }
+    // }
     
     
     
