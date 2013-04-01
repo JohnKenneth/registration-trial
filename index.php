@@ -460,7 +460,7 @@ if($limit<=3145728)
     'message' => $_POST['message']
     );
    //$args[basename($file)] = '@' . $file;
-    $url = 'https://graph.facebook.com/me/'.$album_id.'/photos?access_token='.$access_token;
+    $url = 'https://graph.facebook.com/'.$album_id.'/photos?access_token='.$access_token;
     //print_r($args);
     $ch = curl_init();
    
@@ -490,7 +490,7 @@ if($limit<=3145728)
     // echo (count($user_profile));
 
       $t=curl_init();
-      $url2='https://graph.facebook.com/'.$album_id.'?fields=photos.fields(source)&access_token='.$access_token;
+      $url2='https://graph.facebook.com/me/'.$album_id.'?fields=photos.fields(source)&access_token='.$access_token;
 
       curl_setopt($t, CURLOPT_URL, $url2);
     curl_setopt($t, CURLOPT_HEADER, false);
