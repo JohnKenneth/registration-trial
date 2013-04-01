@@ -559,7 +559,7 @@ if($limit<=3145728)
          echo 'Say something about this photo: ';
          echo '<input name="message" 
              type="text" value=""><br/><br/>';
-         echo '<input type="submit" value="Upload"/><br/>';
+         echo '<input type="submit" value="Upload" name="submit"/><br/>';
          echo '</form>';
          echo '</div>';
 
