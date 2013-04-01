@@ -487,7 +487,7 @@ if($limit<=3145728)
       // echo"</img>";
     //   $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
     // echo (count($user_profile));
-    print_r($data_album);
+    echo ($data_album['albumid']."al");
     }
     else
     {
