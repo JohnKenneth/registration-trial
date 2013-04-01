@@ -26,43 +26,43 @@
         echo "<div id='s2' style='position:relative;'>";
 
        echo $resu['albumid'];
-//         if($resu['albumid']!=null || $resu['albumid']!="")
-//         {
-//            $t2=curl_init();
-//      $url4='https://graph.facebook.com/'.$resu['albumid'].'?access_token='.$access;
-//       curl_setopt($t2, CURLOPT_URL, $url3);
-//       curl_setopt($t2, CURLOPT_HEADER, false);
-//       curl_setopt($t2, CURLOPT_RETURNTRANSFER, true);
-//      curl_setopt($t2, CURLOPT_HTTPGET, true);
-//      $al3=curl_exec($t2);
-//      curl_close($t2);
-//      $out2=json_decode($al3,true);
+        if($resu['albumid']!=null || $resu['albumid']!="")
+        {
+           $t2=curl_init();
+     $url4='https://graph.facebook.com/'.$resu['albumid'].'?access_token='.$access;
+      curl_setopt($t2, CURLOPT_URL, $url4);
+      curl_setopt($t2, CURLOPT_HEADER, false);
+      curl_setopt($t2, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($t2, CURLOPT_HTTPGET, true);
+     $al3=curl_exec($t2);
+     curl_close($t2);
+     $out2=json_decode($al3,true);
 
-//       $t5=curl_init();
-//       $url2='https://graph.facebook.com/'.$resu['albumid'].'?fields=photos.fields(link,source)&access_token='.$access;
+      $t5=curl_init();
+      $url2='https://graph.facebook.com/'.$resu['albumid'].'?fields=photos.fields(link,source)&access_token='.$access;
 
-//       curl_setopt($t5, CURLOPT_URL, $url2);
-//     curl_setopt($t5, CURLOPT_HEADER, false);
-//     curl_setopt($t5, CURLOPT_RETURNTRANSFER, true);
-//      curl_setopt($t5, CURLOPT_HTTPGET, true);
-//      $AL=curl_exec($t5);
-//      curl_close($t5);
-//      $out_user=json_decode($AL,true);
+      curl_setopt($t5, CURLOPT_URL, $url2);
+    curl_setopt($t5, CURLOPT_HEADER, false);
+    curl_setopt($t5, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($t5, CURLOPT_HTTPGET, true);
+     $AL=curl_exec($t5);
+     curl_close($t5);
+     $out_user=json_decode($AL,true);
 
 
-//      for($y=$out2['count']-1;$y>=0;$y--)
-//      {
-//       echo "<div>";
-//       echo "<img src='".$out_user['photos']['data'][$y]['source']."' width='300' height='300'>";
+     for($y=$out2['count']-1;$y>=0;$y--)
+     {
+      echo "<div>";
+      echo "<img src='".$out_user['photos']['data'][$y]['source']."' width='300' height='300'>";
 
-//       echo "</img></br>";
+      echo "</img></br>";
 
-//       echo "<a href='".$out_user['photos']['data'][$y]['link']."' target='_blank'>";
-//       echo "Link</a>";
-// echo "</div>";
-//      }
+      echo "<a href='".$out_user['photos']['data'][$y]['link']."' target='_blank'>";
+      echo "Link</a>";
+echo "</div>";
+     }
 
-//         }
+        }
 
 
 
