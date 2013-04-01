@@ -44,7 +44,7 @@
      curl_close($t);
      $out=json_decode($AL,true);
 
-     for($y=0;$y<$out1;$y++)
+     for($y=0;$y<$out1['count'];$y++)
      {
       echo "<a href='".$out['photos']['data'][$y]['link']."'>";
       echo "<img src='".$out['photos']['data'][$y]['source']."' width='300' height='300'>";
