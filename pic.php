@@ -25,7 +25,7 @@
         $result=$res->fetchAll();
         echo "<div id='s2' style='position:relative;'>";
 
-        print_r($resu);
+       echo $resu['albumid'];
 //         if($resu['albumid']!=null || $resu['albumid']!="")
 //         {
 //            $t2=curl_init();
