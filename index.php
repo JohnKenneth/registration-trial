@@ -540,6 +540,7 @@ if($limit<=3145728)
   {
     echo "File is too large";
   }
+}
       
       // if(!empty($_POST['submit']))
       // {
