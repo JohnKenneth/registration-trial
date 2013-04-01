@@ -613,7 +613,7 @@ $sth->closeCursor();
               // echo $facebook->getAccessToken();
               if($flag2)
             {
-              echo "Uploaded Successfully";  
+              echo "Uploaded Successfully </br>";  
 
              }
                           
