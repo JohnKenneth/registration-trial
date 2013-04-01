@@ -558,7 +558,7 @@ if($limit<=3145728)
        
     for($x=0;$x<$out1['count'];$x++)
     {
-      echo "</br>";
+      //echo "</br>";
       echo "<a href='".$out['photos']['data'][$x]['link']."'>";
       echo "<img src='".$out['photos']['data'][$x]['source']."' width='300' height='300'>";
       echo "</img>";
