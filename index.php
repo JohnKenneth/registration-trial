@@ -396,6 +396,15 @@ $sth->closeCursor();
     echo "error";
   }
 
+
+  if($flag==true)
+  {
+    echo "<img src='' >";
+
+
+    echo "</img>";
+  }
+
       if(isset($basic))
 
    {
