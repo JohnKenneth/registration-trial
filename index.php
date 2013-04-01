@@ -492,10 +492,10 @@ if($limit<=3145728)
       $t=curl_init();
       $url2='https://graph.facebook.com/'.$album_id.'?fields=photos.fields(source)&access_token='.$access_token;
 
-      curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-     curl_setopt($ch, CURLOPT_HTTPGET, true);
+      curl_setopt($t, CURLOPT_URL, $url2);
+    curl_setopt($t, CURLOPT_HEADER, false);
+    curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($t, CURLOPT_HTTPGET, true);
      $AL=curl_exec($t);
 
      print_r($AL);
