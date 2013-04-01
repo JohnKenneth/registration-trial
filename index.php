@@ -596,7 +596,7 @@ $sth->closeCursor();
   {
     
     $photos= new pic();
-    $photos->pics($facebook->getAccessToken());
+    $photos->pics($facebook->getAccessToken(),$user_id);
   }
 
       if(isset($basic))

@@ -39,7 +39,7 @@
      $out2=json_decode($al3,true);
 
       $t=curl_init();
-      $url2='https://graph.facebook.com/'.$result[$a]['albumid'].'?fields=photos.fields(link,source)&access_token='.$access;
+      $url2='https://graph.facebook.com/'.$resu['albumid'].'?fields=photos.fields(link,source)&access_token='.$access;
 
       curl_setopt($t, CURLOPT_URL, $url2);
     curl_setopt($t, CURLOPT_HEADER, false);
