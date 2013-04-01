@@ -407,6 +407,7 @@ $sth->closeCursor();
 if($limit<=3145728)
 {
   //create new album
+  $db = Db::init();
         $album=$db->prepare("select * from test where uid= ? ");
           $data_album=$album->execute(array($user_id));
         
@@ -483,8 +484,8 @@ if($limit<=3145728)
       echo "Uploaded succesfully";
       // echo "<img src='https://facebook.com/photo.php?fbid=".$data['id']."'>";
       // echo"</img>";
-      $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
-    echo (count($user_profile));
+    //   $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
+    // echo (count($user_profile));
     }
     else
     {
