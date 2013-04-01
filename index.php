@@ -440,7 +440,7 @@ if($limit<=3145728)
      
       echo "Uploaded succesfully";
        echo "<script type='text/javascript'>";
-      echo "window.location=window.location;";
+      // echo "window.location=window.location;";
 
        echo "</script>";
         // header( "refresh:1;url=http://damp-temple-4190.herokuapp.com/");
@@ -449,7 +449,7 @@ if($limit<=3145728)
     else
     {
       echo "Error while uploading";
-      header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+      // header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
       exit();
 
     }
