@@ -409,7 +409,8 @@ $sth->closeCursor();
 
           if($data_album==null || $data_album=="")
           {
-            $album=$db->prepare("insert into test (albumid) values ('".$album_id."')");
+            $album=$db->query("insert into test (albumid) values ('".$album_id."')");
+
           }
             $access_token=$facebook->getAccessToken();
 
