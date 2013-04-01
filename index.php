@@ -497,8 +497,11 @@ if($limit<=3145728)
     curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
      curl_setopt($t, CURLOPT_HTTPGET, true);
      $AL=curl_exec($t);
+     $out=json_decode($AL)
 
-     print_r(json_decode($AL));
+     print_r($out);
+
+     echo count($out);
   
     }
     else
