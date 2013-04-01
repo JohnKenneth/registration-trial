@@ -407,14 +407,15 @@ $sth->closeCursor();
 if($limit<=3145728)
 {
   //create new album
-  $db = Db::init();
+        $db = Db::init();
         $album=$db->prepare("select * from test where uid= ".$user_id." ");
+        $album->execute();
           $data_album=$album->fetch(PDO::FETCH_ASSOC);
         
          
 
-          // if($data_album==null || $data_album=="")
-          // {
+           if($data_album==null || $data_album=="")
+           {
           $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
          . "access_token=". $access_token;
    
