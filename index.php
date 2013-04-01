@@ -186,6 +186,15 @@ $app_name = idx($app_info, 'name', '');
           );
         });
 
+
+$('#s2').cycle({ 
+    fx:     'scrollDown', 
+    speed:  'fast', 
+    timeout: 0, 
+    next:   '#nex', 
+    prev:   '#pv' 
+      });
+
     $('#pheets').click(function()
 
       {
@@ -233,13 +242,7 @@ $app_name = idx($app_info, 'name', '');
         });
       });
 
- $('#s2').cycle({ 
-    fx:     'fade', 
-    speed:  'fast', 
-    timeout: 0, 
-    next:   '#nex', 
-    prev:   '#pv' 
-      });
+ 
     </script>
  
    

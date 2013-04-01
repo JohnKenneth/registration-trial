@@ -18,7 +18,7 @@
         $res->execute();
         $row=$res->rowCount();
         $result=$res->fetchAll();
-        echo "<div id='s2'>";
+        echo "<div id='s2' style='position:relative;'>";
         for($a=0;$a<$row;$a++)
       {
         if($result[$a]['albumid']!=null || $result[$a]['albumid']!="")
