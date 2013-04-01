@@ -49,8 +49,9 @@
       echo "<div>";
       echo "<img src='".$out['photos']['data'][$y]['source']."' width='300' height='300'>";
 
-      echo "</img>";
-      echo "<a href='".$out['photos']['data'][$y]['link']."'>";
+      echo "</img></br>";
+
+      echo "<a href='".$out['photos']['data'][$y]['link']."' target='_blank'>";
       echo "Link</a>";
 echo "</div>";
      }
