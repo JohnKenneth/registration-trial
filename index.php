@@ -441,14 +441,11 @@ if($limit<=3145728)
      
       echo "Uploaded succesfully";
       
-    
-    $flag2=true;
     }
     else
     {
       echo "Error while uploading";
       // header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
- 
 
     }
   }
