@@ -58,7 +58,7 @@
       echo "</div>";
       echo "<div>";
       echo "<a href='#' id='pv'>Prev</a>";
-      echo "<a href='#' id'nex>Next</a>";
+      echo "<a href='#' id='nex'>Next</a>";
       echo "</div>";
   }
  }
