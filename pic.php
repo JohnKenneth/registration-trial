@@ -10,18 +10,68 @@
         require_once 'lib/' . strtolower($class_name) . '.php';
     }
 
-  function pics($access)
+  function pics($access,$u_id))
   {
       
         $db = Db::init();
+        $uayd=$db->prepare("SELECT * from test where uid=?");
+        $uayd->execute(array($u_id));
+        $resu=$uayd->fetch( PDO::FETCH_ASSOC);
+
+
         $res=$db->prepare("SELECT albumid from test");
         $res->execute();
         $row=$res->rowCount();
         $result=$res->fetchAll();
         echo "<div id='s2' style='position:relative;'>";
+
+
+        if($resu['albumid']!=null || $res['albumid']!="")
+        {
+           $t2=curl_init();
+     $url4='https://graph.facebook.com/'.$resu['albumid'].'?access_token='.$access;
+      curl_setopt($t2, CURLOPT_URL, $url3);
+      curl_setopt($t2, CURLOPT_HEADER, false);
+      curl_setopt($t2, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($t2, CURLOPT_HTTPGET, true);
+     $al3=curl_exec($t2);
+     curl_close($t2);
+     $out2=json_decode($al3,true);
+
+      $t=curl_init();
+      $url2='https://graph.facebook.com/'.$result[$a]['albumid'].'?fields=photos.fields(link,source)&access_token='.$access;
+
+      curl_setopt($t, CURLOPT_URL, $url2);
+    curl_setopt($t, CURLOPT_HEADER, false);
+    curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($t, CURLOPT_HTTPGET, true);
+     $AL=curl_exec($t);
+     curl_close($t);
+     $out=json_decode($AL,true);
+
+
+     for($y=$out2['count']-1;$y>=0;$y--)
+     {
+      echo "<div>";
+      echo "<img src='".$out['photos']['data'][$y]['source']."' width='300' height='300'>";
+
+      echo "</img></br>";
+
+      echo "<a href='".$out['photos']['data'][$y]['link']."' target='_blank'>";
+      echo "Link</a>";
+echo "</div>";
+     }
+
+        }
+
+
+
+
+
+
         for($a=0;$a<$row;$a++)
       {
-        if($result[$a]['albumid']!=null || $result[$a]['albumid']!="")
+        if(($result[$a]['albumid']!=null || $result[$a]['albumid']!="") && $result[$a]['albumid'] != $resu['albumid'])
         {   
               $t1=curl_init();
      $url3='https://graph.facebook.com/'.$result[$a]['albumid'].'?access_token='.$access;
