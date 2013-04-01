@@ -466,7 +466,7 @@ if($limit<=3145728)
           else
           {
             $ei=$db->prepare("select albumid from test where uid=?");
-            $album_id=$ei->execute(array($user_id))
+            $album_id=$ei->execute(array($user_id));
 
           }
      
