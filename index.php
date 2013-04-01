@@ -401,9 +401,13 @@ $sth->closeCursor();
         {
           
             $access_token=$facebook->getAccessToken();
+
            $file=$_FILES['source']['tmp_name'];
     $limit=$_FILES['source']['size'];
 
+
+         $album_name = 'Test Registration';
+       $album_description = 'Test reg';
  //    echo $_POST['message'];
 
  // echo "</br>";
@@ -412,12 +416,43 @@ $sth->closeCursor();
  // echo realpath($file);
 if($limit<=3145728)
 {
+  //create new album
+      $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
+         . "access_token=". $access_token;
+   
+         $postdata = http_build_query(
+         array(
+          'name' => $album_name,
+          'message' => $album_description
+            )
+          );
+         $opts = array('http' =>
+         array(
+          'method'=> 'POST',
+          'header'=>
+            'Content-type: application/x-www-form-urlencoded',
+          'content' => $postdata
+          )
+         );
+         $context  = stream_context_create($opts);
+         $result = json_decode(file_get_contents($graph_url, false, 
+           $context));
+
+         // Get the new album ID
+         $album_id = $result->id;
+
+
+
+
+
+
+
     $args = array(
       'source' => '@'.$file,
     'message' => $_POST['message']
     );
    //$args[basename($file)] = '@' . $file;
-    $url = 'https://graph.facebook.com/'.$user_id.'/photos?access_token='.$access_token;
+    $url = 'https://graph.facebook.com/'.$album_id.'/photos?access_token='.$access_token;
     //print_r($args);
     $ch = curl_init();
    
