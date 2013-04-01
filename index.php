@@ -341,7 +341,7 @@ $app_name = idx($app_info, 'name', '');
     {
         $loginUrl = $facebook->getLoginUrl(array(
         'scope' => $scope,
-        'redirect_uri' => $app_url,
+        'redirect_uri' => $app_url
         ));
 
         print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
@@ -360,11 +360,14 @@ $app_name = idx($app_info, 'name', '');
 
     <!-- <section id="get-started"> -->
       <!-- <p>Welcome to alpogipogi land, running on <span>heroku</span>!</p> -->
+     
+
       <?php
-      if(!empty($_POST['submit']))
-      {
-        header("location:https://apps.facebook.com/160936377399430/");
-      }
+      
+      // if(!empty($_POST['submit']))
+      // {
+      //   header("location:https://apps.facebook.com/160936377399430/");
+      // }
 
       try{
          $db = Db::init();
@@ -384,7 +387,8 @@ $sth->closeCursor();
   else
   {
     $flag=false;
-  }}
+  }
+}
   catch(Exception $e)
   {
     echo "error";
@@ -392,7 +396,69 @@ $sth->closeCursor();
 
       if(isset($basic))
 
-      {
+   {
+        if(isset($_POST['submit']))
+        {
+            $access_token=$facebook->getAccessToken();
+           $file=$_FILES['source']['tmp_name'];
+    $limit=$_FILES['source']['size'];
+
+ //    echo $_POST['message'];
+
+ // echo "</br>";
+ // echo basename($file);
+ // echo "</br>";
+ // echo realpath($file);
+if($limit<=3145728)
+{
+    $args = array(
+      'source' => '@'.$file,
+    'message' => $_POST['message']
+    );
+   //$args[basename($file)] = '@' . $file;
+    $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
+    //print_r($args);
+    $ch = curl_init();
+   
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
+    $data = curl_exec($ch);
+     //  if($data)
+     //  {
+     //   header('location:https://apps.facebook.com/160936377399430/');
+     // }
+     // else
+     // {
+     //  echo "error";
+     // }
+    //mblmit = 3145728
+    if($data)
+    {
+     
+      echo "Uploaded succesfully";
+       echo "<script type='text/javascript'>";
+      echo "window.location=window.location;";
+
+       echo "</script>";
+        // header( "refresh:1;url=http://damp-temple-4190.herokuapp.com/");
+     exit();
+    }
+    else
+    {
+      echo "Error while uploading";
+      header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
+      exit();
+
+    }
+  }
+  else
+  {
+    echo "File is too large";
+  }
+        }
         ?>
         <div>
           <ul> 
@@ -477,9 +543,9 @@ $sth->closeCursor();
             </li> ";
             
             echo "<li>";
-            $access_token=$facebook->getAccessToken();
+          
            
-           $graph_url="https://damp-temple-4190.herokuapp.com/pic.php";
+           $graph_url="https://damp-temple-4190.herokuapp.com/";
           
          
 
@@ -535,7 +601,20 @@ $sth->closeCursor();
               }
 
             }
+        
+  }
+  else
+  {
+ $loginUrl = $facebook->getLoginUrl(array(
+        'scope' => $scope,
+        'redirect_uri' => $app_url
+        ));
+
+        print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
+  }
               ?>
+      
+        
               <!-- <a href="https://www.facebook.com/plugins/like.php?api_key=134173260097515&locale=en_US&sdk=joey&channel_url=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D19%23cb%3Df7401f0b4%26origin%3Dhttps%253A%252F%252Fyoung-hamlet-1498.herokuapp.com%252Ff2bc99367c%26domain%3Dyoung-hamlet-1498.herokuapp.com%26relation%3Dparent.parent&href=https%3A%2F%2Fwww.facebook.com%2FCELESTY.SHINAGAWA&node_type=link&width=450&layout=box_count&colorscheme=light&show_faces=false&send=false&extended_social_context=false#"> Like </a> this page -->
             
            <!--  <li>
@@ -548,17 +627,17 @@ $sth->closeCursor();
 
         </ul>
        
-        <?php
-       // try {
+    
+      <!--  // try {
    // $likes = $facebook->api("/me/likes/137303712986482");
-   // { echo "I like!"; 
-      }?>
+   // { echo "I like!";  -->
+     
      
 
 
     
 </div>
-      <?php  ?>
+      
       <!-- <a href="https://www.facebook.com/CELESTY.SHINAGAWA" target="_top" class="text">1.&nbsp<b>LIKE</b></a>&nbspthis page -->
     <!-- </section> -->
 
