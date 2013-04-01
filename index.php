@@ -231,6 +231,16 @@ $app_name = idx($app_info, 'name', '');
         });
       });
     </script>
+    <script type="text/javascript" src="/javascript/jquery.cycle.all.js">
+    $('#s2').cycle({ 
+    fx:     'fade', 
+    speed:  'fast', 
+    timeout: 0, 
+    next:   '#nex', 
+    prev:   '#pv' 
+      });
+
+    </script>
 
     <!--[if IE]>
       <script type="text/javascript">

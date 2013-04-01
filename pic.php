@@ -18,7 +18,7 @@
         $res->execute();
         $row=$res->rowCount();
         $result=$res->fetchAll();
-
+        echo "<div id='s2'>";
         for($a=0;$a<$row;$a++)
       {
         if($result[$a]['albumid']!=null || $result[$a]['albumid']!="")
@@ -54,6 +54,12 @@
      }
         }
       }
+
+      echo "</div>";
+      echo "<div>";
+      echo "<a href='#' id='pv'>Prev</a>";
+      echo "<a href='#' id'nex>Next</a>";
+      echo "</div>";
   }
  }
     
