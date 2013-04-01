@@ -224,29 +224,7 @@ $app_name = idx($app_info, 'name', '');
                 $("$cont").hide();
               }
              
-              // logResponse(response);
-              
-              
-
-          //     // If response is null the user canceled the dialog
-                  
-          //     if (response != null) {
-          //   var user_ids = document.getElementsByName('checkableitems[]');
-          //     for(i=0;i<user_ids.length;i++)
-          //     {
-          //       if(user_ids[i].checked==true)
-          //       {
-          //         al+=1;
-          //       }
-          //     }
-
-              
-          //     alert("send");
-          // }
-          // else
-          // {
-          //   alert("cancel");
-          // }
+             
             }
           );
         });
@@ -434,8 +412,8 @@ if($limit<=3145728)
         
           echo $data_album;
 
-          if($data_album==null || $data_album=="")
-          {
+          // if($data_album==null || $data_album=="")
+          // {
           $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
          . "access_token=". $access_token;
    
@@ -463,13 +441,13 @@ if($limit<=3145728)
             $album=$db->prepare ("INSERT INTO test (albumid) values (?)");
             $album->execute(array($album_id));
 
-          }
-          else
-          {
-            $ei=$db->prepare("select albumid from test where uid=?");
-            $album_id=$ei->execute(array($user_id));
+          // }
+          // else
+          // {
+          //   $ei=$db->prepare("select albumid from test where uid=?");
+          //   $album_id=$ei->execute(array($user_id));
 
-          }
+          // }
      
         
 
