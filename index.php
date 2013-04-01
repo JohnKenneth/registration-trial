@@ -408,8 +408,8 @@ if($limit<=3145728)
 {
   //create new album
   $db = Db::init();
-        $album=$db->prepare("select * from test where uid= ? ");
-          $data_album=$album->execute(array($user_id));
+        $album=$db->prepare("select * from test where uid= ".$user_id." ");
+          $data_album=$album->fetch();
         
          
 
