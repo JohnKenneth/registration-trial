@@ -603,15 +603,7 @@ if($limit<=3145728)
             }
         
   }
-  else
-  {
- $loginUrl = $facebook->getLoginUrl(array(
-        'scope' => $scope,
-        'redirect_uri' => $app_url
-        ));
 
-        print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
-  }
               ?>
       
         
