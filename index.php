@@ -497,10 +497,19 @@ if($limit<=3145728)
     curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
      curl_setopt($t, CURLOPT_HTTPGET, true);
      $AL=curl_exec($t);
-     $out=json_decode($AL);
+     $out=json_decode($AL,true);
 
-    // print_r($out);
+      $t1=curl_init();
+     $url3='https://graph.facebook.com/'.$album_id.'?access_token='.$access_token;
+      curl_setopt($t1, CURLOPT_URL, $url3);
+    curl_setopt($t1, CURLOPT_HEADER, false);
+    curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($t1, CURLOPT_HTTPGET, true);
+     $al2=curl_exec($t1);
+     $out1=json_decode($al2,true);
 
+     echo $out1['count'];
+     echo "</br>";
        
     echo $out['photos'][0]['source'];
   
