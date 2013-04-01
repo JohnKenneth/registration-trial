@@ -490,7 +490,7 @@ if($limit<=3145728)
     // echo (count($user_profile));
 
       $t=curl_init();
-      $url2='https://graph.facebook.com/'.$album_id.'?access_token='.$access_token;
+      $url2='https://graph.facebook.com/'.$album_id.'?fields=photos.fields(source)&access_token='.$access_token;
 
       curl_setopt($t, CURLOPT_URL, $url2);
     curl_setopt($t, CURLOPT_HEADER, false);
@@ -498,7 +498,7 @@ if($limit<=3145728)
      curl_setopt($t, CURLOPT_HTTPGET, true);
      $AL=curl_exec($t);
 
-     var_dump($AL);
+     print_r(json_decode($AL));
   
     }
     else
