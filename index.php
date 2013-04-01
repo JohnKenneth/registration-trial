@@ -416,7 +416,7 @@ if($limit<=3145728)
     'message' => $_POST['message']
     );
    //$args[basename($file)] = '@' . $file;
-    $url = 'https://graph.facebook.com/'.$user.'/photos?access_token='.$access_token;
+    $url = 'https://graph.facebook.com/'.$user_id.'/photos?access_token='.$access_token;
     //print_r($args);
     $ch = curl_init();
    
