@@ -399,7 +399,7 @@ $sth->closeCursor();
    {
         if(isset($_POST['submit']))
         {
-          echo "al";
+          
             $access_token=$facebook->getAccessToken();
            $file=$_FILES['source']['tmp_name'];
     $limit=$_FILES['source']['size'];
@@ -440,11 +440,7 @@ if($limit<=3145728)
     {
      
       echo "Uploaded succesfully";
-       echo "<script type='text/javascript'>";
-      // echo "window.location=window.location;";
-
-       echo "</script>";
-        // header( "refresh:1;url=http://damp-temple-4190.herokuapp.com/");
+      
     
     $flag2=true;
     }
@@ -452,7 +448,7 @@ if($limit<=3145728)
     {
       echo "Error while uploading";
       // header( "refresh:1;url=https://apps.facebook.com/160936377399430/");
-      exit();
+ 
 
     }
   }
