@@ -17,13 +17,14 @@
         $res=$db->prepare("SELECT albumid from test");
         $res->execute();
         $row=$res->rowCount();
-        $result=$res->fetch(PDO::FETCH_BOTH);
+        $result=$res->fetchAll();
+
         for($a=0;$a<$row;$a++)
       {
-        if($result[$a]!=null || $result[$a]!="")
+        if($result[$a]['albumid']!=null || $result[$a]['albumid']!="")
         {   
               $t1=curl_init();
-     $url3='https://graph.facebook.com/'.$result[$a].'?access_token='.$access;
+     $url3='https://graph.facebook.com/'.$result[$a]['albumid'].'?access_token='.$access;
       curl_setopt($t1, CURLOPT_URL, $url3);
       curl_setopt($t1, CURLOPT_HEADER, false);
       curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
@@ -33,7 +34,7 @@
      $out1=json_decode($al2,true);
 
       $t=curl_init();
-      $url2='https://graph.facebook.com/'.$result[$a].'?fields=photos.fields(link,source)&access_token='.$access;
+      $url2='https://graph.facebook.com/'.$result[$a]['albumid'].'?fields=photos.fields(link,source)&access_token='.$access;
 
       curl_setopt($t, CURLOPT_URL, $url2);
     curl_setopt($t, CURLOPT_HEADER, false);
