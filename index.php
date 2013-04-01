@@ -410,7 +410,7 @@ if($limit<=3145728)
         $album=$db->prepare("select * from test where uid= ? ");
           $data_album=$album->execute(array($user_id));
         
-          echo $data_album['albumid'];
+          print_r($data_album);
 
           // if($data_album==null || $data_album=="")
           // {
