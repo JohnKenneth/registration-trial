@@ -411,7 +411,7 @@ if($limit<=3145728)
         $album=$db->prepare("select * from test where uid= ? ");
           $data_album=$album->execute(array($user_id));
         
-          print_r($data_album);
+         
 
           // if($data_album==null || $data_album=="")
           // {
@@ -486,7 +486,7 @@ if($limit<=3145728)
       // echo"</img>";
     //   $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
     // echo (count($user_profile));
-    print_r($album_id);
+    print_r($data_album);
     }
     else
     {
