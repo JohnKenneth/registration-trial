@@ -46,10 +46,12 @@
 
      for($y=$out1['count']-1;$y>=0;$y--)
      {
-      //echo "<a href='".$out['photos']['data'][$y]['link']."'>";
+      
       echo "<img src='".$out['photos']['data'][$y]['source']."' width='300' height='300'>";
+
       echo "</img>";
-     // echo "</a>";
+      echo "<a href='".$out['photos']['data'][$y]['link']."'>";
+      echo "Link</a>";
 
      }
         }
