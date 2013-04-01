@@ -474,7 +474,7 @@ if($limit<=3145728)
       // echo "<img src='https://facebook.com/photo.php?fbid=".$data['id']."'>";
       // echo"</img>";
       $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
-    var_dump($user_profile);
+    print_r($user_profile);
     }
     else
     {
