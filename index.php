@@ -498,7 +498,7 @@ if($limit<=3145728)
      curl_setopt($t, CURLOPT_HTTPGET, true);
      $AL=curl_exec($t);
 
-     print_r($AL);
+     var_dump($AL);
   
     }
     else
