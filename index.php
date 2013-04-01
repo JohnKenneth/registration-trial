@@ -491,7 +491,7 @@ if($limit<=3145728)
     if($data)
     {
      
-      echo "Uploaded succesfully";
+     $flag2=true;
       // echo "<img src='https://facebook.com/photo.php?fbid=".$data['id']."'>";
       // echo"</img>";
     //   $user_profile = $facebook->api('/'.$album_id.'/photos', array('access_token' => $access_token));
@@ -594,7 +594,13 @@ $sth->closeCursor();
               <span>
               <?php
               // echo $facebook->getAccessToken();
-              if($flag)
+              if($flag2)
+            {
+              echo "Uploaded Successfully";  
+
+             }
+                          
+                          if($flag)
               {
 
                
