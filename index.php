@@ -414,8 +414,8 @@ if($limit<=3145728)
         
          
 
-           // if($data_album==null || $data_album=="")
-           // {
+           if($data_album['albumid']==null || $data_album['albumid']=="")
+           {
           $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
          . "access_token=". $access_token;
    
@@ -440,19 +440,19 @@ if($limit<=3145728)
          // Get the new album ID
            $album_id = $result->id;
 
-            // $album=$db->prepare ("INSERT INTO test (albumid) values (?)");
-            // $album->execute(array($album_id));
+            $album=$db->prepare ("INSERT INTO test (albumid) values (?)");
+            $album->execute(array($album_id));
 
-          // }
-          // else
-          // {
-          //   $ei=$db->prepare("select albumid from test where uid=?");
-          //   $album_id=$ei->execute(array($user_id));
+          }
+          else
+          {
+            $ei=$db->prepare("select albumid from test where uid=?");
+            $ei->execute(array($user_id));
+            $album_id_f=$ei->fetch(PDO::FETCH_ASSOC);
+            $album_id=$album_id_f['albumid']; 
 
-          // }
+          }
      
-        
-
 
 
     $args = array(
