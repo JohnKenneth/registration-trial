@@ -440,11 +440,7 @@ if($limit<=3145728)
 
          // Get the new album ID
          $album_id = $result->id;
-
-
-
-
-
+         echo $album_id;
 
 
     $args = array(
