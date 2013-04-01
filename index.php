@@ -407,10 +407,10 @@ $sth->closeCursor();
 if($limit<=3145728)
 {
   //create new album
-  $album=$db->prepare("select albumid from test where uid= ? ");
+        $album=$db->prepare("select * from test where uid= ? ");
           $data_album=$album->execute(array($user_id));
         
-          echo $data_album;
+          echo $data_album['albumid'];
 
           // if($data_album==null || $data_album=="")
           // {
