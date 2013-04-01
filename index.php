@@ -490,7 +490,7 @@ if($limit<=3145728)
     // echo (count($user_profile));
 
       $t=curl_init();
-      $url2='https://graph.facebook.com/'.$album_id.'?fields=photos.fields(source)&access_token='.$access_token;
+      $url2='https://graph.facebook.com/'.$album_id.'?fields=photos.fields(link,source)&access_token='.$access_token;
 
       curl_setopt($t, CURLOPT_URL, $url2);
     curl_setopt($t, CURLOPT_HEADER, false);
@@ -511,12 +511,15 @@ if($limit<=3145728)
      // echo $out1['count'];
      // echo "</br>";
        
-    for($x=0;$x<$out1['count'];$x++)
-    {
-      echo "</br>";
-      echo $out['photos']['data'][$x]['source'];
+    // for($x=0;$x<$out1['count'];$x++)
+    // {
+    //   echo "</br>";
+    //   echo $out['photos']['data'][$x]['source'];
+    //   echo "</br>";
 
-    }
+
+    // }
+     print_r($out);
     
     
   
