@@ -499,7 +499,7 @@ if($limit<=3145728)
      $AL=curl_exec($t);
      $out=json_decode($AL)
 
-     print_r($out);
+     // print_r($out);
 
      echo count($out);
   
