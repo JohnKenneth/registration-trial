@@ -102,14 +102,14 @@ echo "</div>";
         continue;
      }
 
-     for($y=$out1['count']-1;$y>=0;$y--)
+     for($z=$out1['count']-1;$z>=0;$z--)
      {
       echo "<div>";
-      echo "<img src='".$out['photos']['data'][$y]['source']."' width='300' height='300'>";
+      echo "<img src='".$out['photos']['data'][$z]['source']."' width='300' height='300'>";
 
       echo "</img></br>";
 
-      echo "<a href='".$out['photos']['data'][$y]['link']."' target='_blank'>";
+      echo "<a href='".$out['photos']['data'][$z]['link']."' target='_blank'>";
       echo "Link".$result[$a]['albumid']."</a>";
 echo "</div>";
      }

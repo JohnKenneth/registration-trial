@@ -631,7 +631,7 @@ $sth->closeCursor();
                   echo "You and ";
                 echo ($result2-1);
                 echo " people are registered.";
-                echo $result;
+                
                }
               }
               else
