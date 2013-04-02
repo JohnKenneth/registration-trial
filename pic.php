@@ -23,7 +23,7 @@
         $res->execute();
         $row=$res->rowCount();
         $result=$res->fetchAll();
-        // echo "<div id='s2' style='position:relative;'>";
+         echo "<div id='s2' style='position:relative;'>";
 
       
         if($resu['albumid']!=null && $resu['albumid']!="")
@@ -116,7 +116,7 @@ echo "</div>";
         }
       }
 
-      // echo "</div>";
+       echo "</div>";
       echo "<div>";
       echo "<a href='#' id='pv'>Prev</a> &nbsp";
       echo "<a href='#' id='nex'>Next</a>";
