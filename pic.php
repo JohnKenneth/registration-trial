@@ -83,7 +83,7 @@ echo "</div>";
       curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
      curl_setopt($t1, CURLOPT_HTTPGET, true);
      $al2=curl_exec($t1);
-   //  curl_close($t1);
+     curl_close($t1);
      $out1=json_decode($al2,true);
 
       $t=curl_init();
@@ -94,7 +94,7 @@ echo "</div>";
     curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
      curl_setopt($t, CURLOPT_HTTPGET, true);
      $AL2=curl_exec($t);
-    // curl_close($t);
+    curl_close($t);
      $out=json_decode($AL2,true);
 
      if($out1['error'])
@@ -110,7 +110,7 @@ echo "</div>";
       echo "</img></br>";
 
       echo "<a href='".$out['photos']['data'][$z]['link']."' target='_blank'>";
-      echo "Link".$result[$a]['albumid']."</a>";
+      echo "Link</a>";
 echo "</div>";
      }
         }
