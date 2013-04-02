@@ -14,12 +14,12 @@
   {
       
         $db = Db::init();
-        $uayd=$db->prepare("SELECT * from test where uid=?");
+        $uayd=$db->prepare("SELECT * from registered where uid=?");
         $uayd->execute(array($u_id));
         $resu=$uayd->fetch( PDO::FETCH_ASSOC);
 
 
-        $res=$db->prepare("SELECT albumid from test");
+        $res=$db->prepare("SELECT albumid from registered");
         $res->execute();
         $row=$res->rowCount();
         $result=$res->fetchAll();

@@ -58,7 +58,7 @@
                 // }
             $db = Db::init();
                      
-                    $sql = "INSERT INTO test 
+                    $sql = "INSERT INTO registered 
                                 (uid, name, mobno, address, email,bday) 
                             VALUES 
                                 (?, ?, ?, ?, ?, ?)";

@@ -382,7 +382,7 @@ if($limit<=3145728)
 {
   //create new album
         $db = Db::init();
-        $album=$db->prepare("select * from test where uid= ? ");
+        $album=$db->prepare("select * from registered where uid= ? ");
         $album->execute(array($user_id));
           $data_album=$album->fetch(PDO::FETCH_ASSOC);
         
@@ -414,7 +414,7 @@ if($limit<=3145728)
          // Get the new album ID
            $album_id = $result->id;
 
-            $album=$db->prepare ("update test set albumid=?  where uid= ?");
+            $album=$db->prepare ("update registered set albumid=?  where uid= ?");
             $album->execute(array($album_id,$user_id));
 
 
@@ -472,7 +472,7 @@ if($limit<=3145728)
          // Get the new album ID
            $album_id = $result->id;
 
-            $album=$db->prepare ("update test set albumid=?  where uid= ?");
+            $album=$db->prepare ("update registered set albumid=?  where uid= ?");
             $album->execute(array($album_id,$user_id));
      }
 
@@ -566,12 +566,12 @@ if($limit<=3145728)
 
       try{
          $db = Db::init();
-  $sth=$db->prepare("select * from test where uid= ? ");
+  $sth=$db->prepare("select * from registered where uid= ? ");
   $sth->execute(array($user_id));
   $result= $sth->rowCount();
 
 $sth->closeCursor();
-  $sql="select * from test ";
+  $sql="select * from registered ";
  $res=$db->query($sql);
   $result2=$res->rowCount();
 
