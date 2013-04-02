@@ -24,7 +24,7 @@
         $row=$res->rowCount();
         $result=$res->fetchAll();
         echo "<div id='s2' style='position:relative;'>";
-          print_r($result);
+          echo  $row;
       
 //         if($resu['albumid']!=null && $resu['albumid']!="")
 //         {
