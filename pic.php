@@ -24,7 +24,7 @@
         $row=$res->rowCount();
         $result=$res->fetchAll();
         echo "<div id='s2' style='position:relative;'>";
-        
+
       
         if($resu['albumid']!=null && $resu['albumid']!="")
         {
@@ -93,6 +93,11 @@ echo "</div>";
      $AL=curl_exec($t);
      curl_close($t);
      $out=json_decode($AL,true);
+
+     if($out1['error'])
+     {
+continue;
+     }
 
      for($y=$out1['count']-1;$y>=0;$y--)
      {
