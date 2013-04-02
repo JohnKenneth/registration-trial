@@ -72,7 +72,7 @@ echo "</div>";
         for($a=0;$a<$row;$a++)
       {
        
-        if(($result[$a]['albumid']!=null  || $result[$a]['albumid']!="") )
+        if(($result[$a]['albumid']!=null  || $result[$a]['albumid']!="") && $result[$a]['albumid']!=$resu['albumid'])
         {   
           echo "</br>";
            echo $result[$a]['albumid']."</br>";
