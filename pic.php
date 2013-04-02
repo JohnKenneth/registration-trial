@@ -72,46 +72,46 @@ echo "</div>";
         for($a=0;$a<$row;$a++)
       {
         echo $result[$a]['albumid'];
-        if(($result[$a]['albumid']!=null && $result[$a]['albumid']!="") && $result[$a]['albumid'] != $resu['albumid'])
-        {   
-              $t1=curl_init();
-     $url3='https://graph.facebook.com/'.$result[$a]['albumid'].'?access_token='.$access;
-      curl_setopt($t1, CURLOPT_URL, $url3);
-      curl_setopt($t1, CURLOPT_HEADER, false);
-      curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
-     curl_setopt($t1, CURLOPT_HTTPGET, true);
-     $al2=curl_exec($t1);
-     curl_close($t1);
-     $out1=json_decode($al2,true);
+//         if(($result[$a]['albumid']!=null && $result[$a]['albumid']!="") && $result[$a]['albumid'] != $resu['albumid'])
+//         {   
+//               $t1=curl_init();
+//      $url3='https://graph.facebook.com/'.$result[$a]['albumid'].'?access_token='.$access;
+//       curl_setopt($t1, CURLOPT_URL, $url3);
+//       curl_setopt($t1, CURLOPT_HEADER, false);
+//       curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
+//      curl_setopt($t1, CURLOPT_HTTPGET, true);
+//      $al2=curl_exec($t1);
+//      curl_close($t1);
+//      $out1=json_decode($al2,true);
 
-      $t=curl_init();
-      $url2='https://graph.facebook.com/'.$result[$a]['albumid'].'?fields=photos.fields(link,source)&access_token='.$access;
+//       $t=curl_init();
+//       $url2='https://graph.facebook.com/'.$result[$a]['albumid'].'?fields=photos.fields(link,source)&access_token='.$access;
 
-      curl_setopt($t, CURLOPT_URL, $url2);
-    curl_setopt($t, CURLOPT_HEADER, false);
-    curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
-     curl_setopt($t, CURLOPT_HTTPGET, true);
-     $AL=curl_exec($t);
-     curl_close($t);
-     $out=json_decode($AL,true);
+//       curl_setopt($t, CURLOPT_URL, $url2);
+//     curl_setopt($t, CURLOPT_HEADER, false);
+//     curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
+//      curl_setopt($t, CURLOPT_HTTPGET, true);
+//      $AL=curl_exec($t);
+//      curl_close($t);
+//      $out=json_decode($AL,true);
 
-     if($out1['error'])
-     {
-continue;
-     }
+//      if($out1['error'])
+//      {
+//         continue;
+//      }
 
-     for($y=$out1['count']-1;$y>=0;$y--)
-     {
-      echo "<div>";
-      echo "<img src='".$out['photos']['data'][$y]['source']."' width='300' height='300'>";
+//      for($y=$out1['count']-1;$y>=0;$y--)
+//      {
+//       echo "<div>";
+//       echo "<img src='".$out['photos']['data'][$y]['source']."' width='300' height='300'>";
 
-      echo "</img></br>";
+//       echo "</img></br>";
 
-      echo "<a href='".$out['photos']['data'][$y]['link']."' target='_blank'>";
-      echo "Link".$result[$a]['albumid']."</a>";
-echo "</div>";
-     }
-        }
+//       echo "<a href='".$out['photos']['data'][$y]['link']."' target='_blank'>";
+//       echo "Link".$result[$a]['albumid']."</a>";
+// echo "</div>";
+//      }
+//         }
       }
 
       echo "</div>";
