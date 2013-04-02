@@ -71,9 +71,10 @@ echo "</div>";
 
         for($a=0;$a<$row;$a++)
       {
-        echo $result[$a]['albumid'];
-//         if(($result[$a]['albumid']!=null && $result[$a]['albumid']!="") && $result[$a]['albumid'] != $resu['albumid'])
-//         {   
+       
+        if(($result[$a]['albumid']!=null && $result[$a]['albumid']!="") && $result[$a]['albumid'] != $resu['albumid'])
+        {   
+           echo $result[$a]['albumid']."</br>";
 //               $t1=curl_init();
 //      $url3='https://graph.facebook.com/'.$result[$a]['albumid'].'?access_token='.$access;
 //       curl_setopt($t1, CURLOPT_URL, $url3);
@@ -111,7 +112,7 @@ echo "</div>";
 //       echo "Link".$result[$a]['albumid']."</a>";
 // echo "</div>";
 //      }
-//         }
+        }
       }
 
       echo "</div>";
