@@ -304,7 +304,7 @@ $('#s2').cycle({
       <div>
         <h1>Welcome , <strong><?php echo he(idx($basic, 'name')); ?></strong></h1>
         <p class="tagline">
-          This is your app
+          Application
           <a href="<?php echo he(idx($app_info, 'link'));?>" target="_top"><?php echo he($app_name); ?></a>
         </p>
 
