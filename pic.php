@@ -107,7 +107,7 @@ continue;
       echo "</img></br>";
 
       echo "<a href='".$out['photos']['data'][$y]['link']."' target='_blank'>";
-      echo "Link</a>";
+      echo "Link".$result[$a]['albumid']."</a>";
 echo "</div>";
      }
         }
