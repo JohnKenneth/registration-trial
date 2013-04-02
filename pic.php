@@ -74,6 +74,7 @@ echo "</div>";
        
         if(($result[$a]['albumid']!=null && $result[$a]['albumid']!="") && $result[$a]['albumid'] != $resu['albumid'])
         {   
+          echo "</br>";
            echo $result[$a]['albumid']."</br>";
 //               $t1=curl_init();
 //      $url3='https://graph.facebook.com/'.$result[$a]['albumid'].'?access_token='.$access;
@@ -92,9 +93,9 @@ echo "</div>";
 //     curl_setopt($t, CURLOPT_HEADER, false);
 //     curl_setopt($t, CURLOPT_RETURNTRANSFER, true);
 //      curl_setopt($t, CURLOPT_HTTPGET, true);
-//      $AL=curl_exec($t);
+//      $AL2=curl_exec($t);
 //      curl_close($t);
-//      $out=json_decode($AL,true);
+//      $out=json_decode($AL2,true);
 
 //      if($out1['error'])
 //      {
