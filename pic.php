@@ -71,6 +71,7 @@ echo "</div>";
 
         for($a=0;$a<$row;$a++)
       {
+        echo $result[$a]['albumid'];
         if(($result[$a]['albumid']!=null && $result[$a]['albumid']!="") && $result[$a]['albumid'] != $resu['albumid'])
         {   
               $t1=curl_init();
