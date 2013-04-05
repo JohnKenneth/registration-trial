@@ -708,7 +708,7 @@ $sth->closeCursor();
             else
             {
               echo "<li>";
-              echo "1. <span> You liked<a href='https://www.facebook.com/TestRegistrationCommunity'> Test Registration </a> page.</span>";
+              echo "1. <span> You liked<a href='https://www.facebook.com/TestRegistrationCommunity' target='_blank'> Test Registration </a> page.</span>";
               echo "</li>";
 
               if($flag==true)
