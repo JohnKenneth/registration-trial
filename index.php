@@ -297,9 +297,15 @@ $('#s2').cycle({
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
-<?php 
-
-        if(!$user_id)
+    <header class="clearfix">
+      <?php
+        if(isset($basic))
+        {
+          echo "Share your stories";
+        }
+        else
+        {
+           if(!$user_id)
 
     {
         $loginUrl = $facebook->getLoginUrl(array(
@@ -310,12 +316,13 @@ $('#s2').cycle({
         print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
       }
 
+        }
 
-       ?>
-
-   <!--  <header class="clearfix">
-      <?php //if (isset($basic)) { ?> -->
-  <!--     <p id="picture" style="background-image: url(https://graph.facebook.com/<?php //echo he($user_id); ?>/picture?type=normal)"></p>
+      ?>
+      
+     <!--  <?php //if (isset($basic)) { 
+        ?>
+ -->  <!--     <p id="picture" style="background-image: url(https://graph.facebook.com/<?php //echo he($user_id); ?>/picture?type=normal)"></p>
 hear
       <div>
         <h1>Welcome , <strong><?php //echo he(idx($basic, 'name')); ?></strong></h1>
@@ -369,7 +376,7 @@ hear
         <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
       </div> -->
     
-   <!--  </header> -->
+    </header>
 
     <!-- dito -->
 
