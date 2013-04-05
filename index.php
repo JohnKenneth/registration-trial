@@ -79,20 +79,20 @@ if ($user_id) {
   // This fetches some things that you like . 'limit=*" only returns * values.
   // To see the format of the data you are retrieving, use the "Graph API
   // Explorer" which is at https://developers.facebook.com/tools/explorer/
-  $likes = idx($facebook->api('/me/likes?limit=4'), 'data', array());
+  // $likes = idx($facebook->api('/me/likes?limit=4'), 'data', array());
 
   // This fetches 4 of your friends.
-  $friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
+  // $friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
 
   // And this returns 16 of your photos.
-  $photos = idx($facebook->api('/me/photos?limit=16'), 'data', array());
+  // $photos = idx($facebook->api('/me/photos?limit=16'), 'data', array());
 
   // Here is an example of a FQL call that fetches all of your friends that are
   // using this app
-  $app_using_friends = $facebook->api(array(
-    'method' => 'fql.query',
-    'query' => 'SELECT uid, name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1'
-  ));
+  // $app_using_friends = $facebook->api(array(
+  //   'method' => 'fql.query',
+  //   'query' => 'SELECT uid, name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1'
+  // ));
 }
 
 
@@ -299,10 +299,10 @@ $('#s2').cycle({
 
     <header class="clearfix">
       <?php if (isset($basic)) { ?>
-      <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
-
+<!--       <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
+hear
       <div>
-        <h1>Welcome , <strong><?php echo he(idx($basic, 'name')); ?></strong></h1>
+        <!-- <h1>Welcome , <strong><?php echo he(idx($basic, 'name')); ?></strong></h1> -->
         <p class="tagline">
           Application
           <a href="<?php echo he(idx($app_info, 'link'));?>" target="_top"><?php echo he($app_name); ?></a>
@@ -321,6 +321,7 @@ $('#s2').cycle({
                 <span class="speech-bubble">Send Message</span>
               </a>
             </li>
+            till hear
            <!--  <li>
               <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
                 <span class="apprequests">Send Requests</span>
@@ -328,7 +329,7 @@ $('#s2').cycle({
             </li> -->
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <?php } 
       else { 
