@@ -676,7 +676,7 @@ $sth->closeCursor();
               try{
               // $likes = $facebook->api("/me/likes/137303712986482");
             $likes = $facebook->api("/me/likes/149169471921005");
-                
+
                 
             }
             catch(FacebookApiException $s)
@@ -689,7 +689,8 @@ $sth->closeCursor();
               if (empty($likes['data']))
               { 
                 echo "<li>";
-                echo "1. <div class='fb-like' data-href='https://www.facebook.com/CELESTY.SHINAGAWA' data-send='false' data-layout='box_count' data-width='450' data-show-faces='false'></div> this page.";
+                //echo "1. <div class='fb-like' data-href='https://www.facebook.com/CELESTY.SHINAGAWA' data-send='false' data-layout='box_count' data-width='450' data-show-faces='false'></div> this page.";
+                 echo "1. Like the page (Theres a like button in your upper side) ";
                 echo "</li>";
 
              echo  "<li>";
@@ -707,7 +708,7 @@ $sth->closeCursor();
             else
             {
               echo "<li>";
-              echo "1. <span> You liked<a href='https://www.facebook.com/CELESTY.SHINAGAWA'> CELESTY SHINAGAWA</a> page.</span>";
+              echo "1. <span> You liked<a href='https://www.facebook.com/TestRegistrationCommunity'> Test Registration </a> page.</span>";
               echo "</li>";
 
               if($flag==true)
