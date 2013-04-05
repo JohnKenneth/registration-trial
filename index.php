@@ -297,12 +297,28 @@ $('#s2').cycle({
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <header class="clearfix">
-      <?php if (isset($basic)) { ?>
-     <!--  <p id="picture" style="background-image: url(https://graph.facebook.com/<?php //echo he($user_id); ?>/picture?type=normal)"></p>
+<?php 
+
+        if(!$user_id)
+
+    {
+        $loginUrl = $facebook->getLoginUrl(array(
+        'scope' => $scope,
+        'redirect_uri' => $app_url
+        ));
+
+        print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
+      }
+
+
+       ?>
+
+   <!--  <header class="clearfix">
+      <?php //if (isset($basic)) { ?> -->
+  <!--     <p id="picture" style="background-image: url(https://graph.facebook.com/<?php //echo he($user_id); ?>/picture?type=normal)"></p>
 hear
-      <div> -->
-        <!-- <h1>Welcome , <strong><?php //echo he(idx($basic, 'name')); ?></strong></h1>
+      <div>
+        <h1>Welcome , <strong><?php //echo he(idx($basic, 'name')); ?></strong></h1>
         <p class="tagline">
           Application
           <a href="<?php //echo he(idx($app_info, 'link'));?>" target="_top"><?php //echo he($app_name); ?></a>
@@ -321,37 +337,39 @@ hear
                 <span class="speech-bubble">Send Message</span>
               </a>
             </li>
-            till hear
+            till hear -->
            <!--  <li>
               <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
                 <span class="apprequests">Send Requests</span>
               </a>
-            </li> -->
+            </li>
           </ul>
         </div>
       </div> -->
 
-      <?php } 
-      else { 
-        if(!$user_id)
+     <!--  <?php 
+      //} 
+    //   else { 
+    //     if(!$user_id)
 
-    {
-        $loginUrl = $facebook->getLoginUrl(array(
-        'scope' => $scope,
-        'redirect_uri' => $app_url
-        ));
+    // {
+    //     $loginUrl = $facebook->getLoginUrl(array(
+    //     'scope' => $scope,
+    //     'redirect_uri' => $app_url
+    //     ));
 
-        print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
-      }
+    //     print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
+    //   }
 
 
-        ?>
+    //    }
+      ?> -->
       <!-- <div>
         <h1>Welcome</h1>
         <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
       </div> -->
-      <?php } ?>
-    </header>
+    
+   <!--  </header> -->
 
     <!-- dito -->
 
