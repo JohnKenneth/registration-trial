@@ -674,7 +674,10 @@ $sth->closeCursor();
               if($user_id)
               {
               try{
-              $likes = $facebook->api("/me/likes/137303712986482");
+              // $likes = $facebook->api("/me/likes/137303712986482");
+            $likes = $facebook->api("/me/likes/149169471921005");
+                
+                
             }
             catch(FacebookApiException $s)
             {
