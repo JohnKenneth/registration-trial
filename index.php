@@ -704,6 +704,7 @@ $sth->closeCursor();
             {
               echo "<li>";
               echo "<span> You are register but did not like the fan page. Kindly Like the page to post your photo";
+              echo AppInfo::getUrl();
               echo "</li>";
 
             }
