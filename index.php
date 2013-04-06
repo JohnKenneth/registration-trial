@@ -157,13 +157,13 @@ $app_name = idx($app_info, 'name', '');
           console.log('The response was', response);
         }
       }
-  // $(document).ready(function()
+  $(document).ready(function()
 
-  //   {
-  //     $("#cont").hide();
-  //      $("#fai").hide();
-  //      $("#phoots").hide();         
-  //   });
+    {
+      $("#cont").hide();
+       $("#fai").hide();
+       $("#phoots").hide();         
+    });
 
 $(document).ready(init);
   
