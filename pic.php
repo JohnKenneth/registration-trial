@@ -34,17 +34,14 @@
      <div id='s2' style='position:relative;'>
 
 <?php
+
 echo "<table><tr>";
       for($z=0;$z<$counter;$z++)
      {
       if(!empty($out['feed']['data'][$z]['picture']))
       {
 
-      // $bilang++;
-      // if($bilang==1)
-      // {
-      //   echo "<div>";
-      // }
+      
  echo "<td width='265px' height='200px'>";
         echo "<div class='Images'>";
       // echo "<div>";
@@ -66,16 +63,12 @@ echo "<table><tr>";
 
         echo "</div>";
         echo "</td>";
-        
-        // if($bilang==3)
-        // {
-        //   echo "</div>";
-        //   $bilang=0;
-        // }
+       
 $counter+=1;
         if($counter==4)
         {
           echo "</tr></table>";
+          echo "<table><tr>";
           $counter=0;
         }
         elseif($counter%2==0)
