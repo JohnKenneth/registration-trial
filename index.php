@@ -407,8 +407,8 @@ hear
     $limit=$_FILES['source']['size'];
 
 
-         $album_name = 'Test Registration';
-       $album_description = 'Test reg';
+       //   $album_name = 'Test Registration';
+       // $album_description = 'Test reg';
  //    echo $_POST['message'];
 
  // echo "</br>";
