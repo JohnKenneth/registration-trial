@@ -65,6 +65,7 @@ echo "<table><tr>";
       echo "</div>";
 
         echo "</div>";
+        echo "</td>";
         
         // if($bilang==3)
         // {
