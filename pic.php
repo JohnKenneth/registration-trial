@@ -12,7 +12,8 @@
 
   function pics($access,$u_id)
   {
-      
+   
+   
 //         $db = Db::init();
 //         $uayd=$db->prepare("SELECT * from registered where uid=?");
 //         $uayd->execute(array($u_id));
@@ -122,7 +123,6 @@
 //       echo "<a href='#' id='nex'>Next</a>";
 //       echo "</div>";
 //   }
-
 $t1=curl_init();
  $url3='https://graph.facebook.com/149535045217781'.'?access_token='.$access;
       curl_setopt($t1, CURLOPT_URL, $url3);
@@ -162,6 +162,8 @@ echo "</div>";
 echo "</div>";
      }
  }
+
+}
     
 ?>
 
