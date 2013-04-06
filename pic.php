@@ -14,7 +14,6 @@
   {
    
 
-
     $t5=curl_init();
       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
     $url2='https://graph.facebook.com/149169471921005?fields=feed.fields(link,picture,from,created_time)&access_token='.$access;
@@ -78,6 +77,7 @@ $counter+=1;
 
      }
       echo "</div>";
+
        echo "<center>";
       echo "<div>";
       echo "<a href='#' id='pv'>Prev</a> &nbsp";
