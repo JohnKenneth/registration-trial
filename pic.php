@@ -170,6 +170,7 @@ $t1=curl_init();
      $al2=curl_exec($t1);
      curl_close($t1);
      $out1=json_decode($al2,true);
+     curl_close($t1);
 
 
       $bilang++;
@@ -180,11 +181,11 @@ $t1=curl_init();
 
         echo "<div class='Images'>";
       // echo "<div>";
-      echo "<img src='".$out['feed']['data'][$z]['picture']."' width='300' height='300'>";
+      echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200' height='200'>";
 
       echo "</img></br>";
 
-      echo "<div style='display:none;width:580px;height:400px' padding='0'>";
+      echo "<div style='display:none;width:200px;height:200px' padding='0'>";
       //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
       // echo "</img></br>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
