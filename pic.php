@@ -80,6 +80,7 @@ echo "<table><tr>";
       echo "</div>";
 
        echo "<center>";
+       echo "</br>";
       echo "<div>";
       echo "<a href='#' id='pv'>Prev</a> &nbsp";
       echo "<a href='#' id='nex'>Next</a>";
