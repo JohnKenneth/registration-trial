@@ -107,7 +107,7 @@
       echo "</div>";
       $z+=1;
     }
-   // echo "</div>";
+    echo "</div>";
     //echo "</div>";
         
         if($bilang==2)
