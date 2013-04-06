@@ -40,11 +40,12 @@
       $bilang++;
       if($bilang==1)
       {
-        echo "<div>";
+        echo "<div id='container'>";
       }
 
         echo "<div class='Images'>";
-      echo "<div id='leeft'>";
+
+      echo "<div id='col1'>";
       echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200px' height='200px'>";
 
       echo "</img></br>";
@@ -62,7 +63,31 @@
       echo "</div>";
         echo "</div>";
 
-         echo "<div id='riight'>";
+
+         echo "<div id='col2outer'>";
+         if(!empty($out['feed']['data'][$z+1]['picture']))
+         {
+         echo "<div id='leeft'>";
+      echo "<img src='".$out['feed']['data'][$z+1]['picture']."' width='200px' height='200px'>";
+
+      echo "</img></br>";
+
+      echo "<div style='display:none;width:200px;height:200px' padding='0'>";
+     // echo '<p id='picture' style='background-image: url(https://graph.facebook.com/". $out['feed']['data'][$z]['id']; ."/picture?type=normal)'></p>";
+      //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
+      // echo "</img></br>";
+         echo "<a href='".$out['feed']['data'][$z+1]['link']."' target='_blank'>";
+          echo "<span>Source</span></a>";
+         echo "</br>";
+          echo  $out['feed']['data'][$z+1]['from']['name'];
+          echo "</br>";
+           echo  $out['feed']['data'][$z+1]['created_time'];
+      echo "</div>";
+      echo "</div>";
+    }
+      if(!empty($out['feed']['data'][$z+2]['picture']))
+      {
+      echo "<div id='riight'>";
       echo "<img src='".$out['feed']['data'][$z+2]['picture']."' width='200px' height='200px'>";
 
       echo "</img></br>";
@@ -78,6 +103,10 @@
           echo "</br>";
            echo  $out['feed']['data'][$z+2]['created_time'];
       echo "</div>";
+      echo "</div>";
+    }
+
+
         echo "</div>";
 
 
