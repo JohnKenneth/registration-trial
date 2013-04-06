@@ -42,7 +42,7 @@
       {
         echo "<div>";
       }
-  //echo "<div id='container'>";
+  echo "<div id='container'>";
 
       echo "<div id='col1'>";
        echo "<div class='Images'>";
