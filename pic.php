@@ -14,6 +14,7 @@
   {
    
 
+
     $t5=curl_init();
       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
     $url2='https://graph.facebook.com/149169471921005?fields=feed.fields(link,picture,from,created_time)&access_token='.$access;
@@ -49,7 +50,9 @@
       echo "</img></br>";
 
       echo "<div style='display:none;width:200px;height:200px' padding='0'>";
-     echo '<p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($u_id); ?>/picture?type=normal)"></p>';
+     echo '<p id="picture" style="background-image: url(https://graph.facebook.com/'. $out['feed']['data'][$z]['id']; .'/picture?type=normal)"></p>';
+      //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
+      // echo "</img></br>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
           echo "<span>Source</span></a>";
          echo "</br>";
