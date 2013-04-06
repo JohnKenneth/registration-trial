@@ -423,97 +423,98 @@ if($limit<=3145728)
         $album->execute(array($user_id));
           $data_album=$album->fetch(PDO::FETCH_ASSOC);
         
-         
+         //begiining
 
-           if($data_album['albumid']==null || $data_album['albumid']=="")
-           {
-          $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
-         . "access_token=". $access_token;
+    //        if($data_album['albumid']==null || $data_album['albumid']=="")
+    //        {
+    //       $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
+    //      . "access_token=". $access_token;
    
-         $postdata = http_build_query(
-         array(
-          'name' => $album_name,
-          'message' => $album_description
-            )
-          );
-         $opts = array('http' =>
-         array(
-          'method'=> 'POST',
-          'header'=>
-            'Content-type: application/x-www-form-urlencoded',
-          'content' => $postdata
-          )
-         );
-         $context  = stream_context_create($opts);
-         $result = json_decode(file_get_contents($graph_url, false, 
-           $context));
+    //      $postdata = http_build_query(
+    //      array(
+    //       'name' => $album_name,
+    //       'message' => $album_description
+    //         )
+    //       );
+    //      $opts = array('http' =>
+    //      array(
+    //       'method'=> 'POST',
+    //       'header'=>
+    //         'Content-type: application/x-www-form-urlencoded',
+    //       'content' => $postdata
+    //       )
+    //      );
+    //      $context  = stream_context_create($opts);
+    //      $result = json_decode(file_get_contents($graph_url, false, 
+    //        $context));
 
-         // Get the new album ID
-           $album_id = $result->id;
+    //      // Get the new album ID
+    //        $album_id = $result->id;
 
-            $album=$db->prepare ("update registered set albumid=?  where uid= ?");
-            $album->execute(array($album_id,$user_id));
+    //         $album=$db->prepare ("update registered set albumid=?  where uid= ?");
+    //         $album->execute(array($album_id,$user_id));
 
 
-             $t1=curl_init();
-     $url3='https://graph.facebook.com/'.$album_id.'?access_token='.$access_token;
-      curl_setopt($t1, CURLOPT_URL, $url3);
-    curl_setopt($t1, CURLOPT_HEADER, false);
-    curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
-     curl_setopt($t1, CURLOPT_HTTPGET, true);
-     $al2=curl_exec($t1);
-     curl_close($t1);
-     $out1=json_decode($al2,true);
+    //          $t1=curl_init();
+    //  $url3='https://graph.facebook.com/'.$album_id.'?access_token='.$access_token;
+    //   curl_setopt($t1, CURLOPT_URL, $url3);
+    // curl_setopt($t1, CURLOPT_HEADER, false);
+    // curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
+    //  curl_setopt($t1, CURLOPT_HTTPGET, true);
+    //  $al2=curl_exec($t1);
+    //  curl_close($t1);
+    //  $out1=json_decode($al2,true);
 
-          }
-          else
-          {
-            // $ei=$db->prepare("select albumid from test where uid=?");
-            // $ei->execute(array($user_id));
-            // $album_id_f=$ei->fetch(PDO::FETCH_ASSOC);
-            $album_id=$data_album['albumid']; 
+    //       }
+    //       else
+    //       {
+    //         // $ei=$db->prepare("select albumid from test where uid=?");
+    //         // $ei->execute(array($user_id));
+    //         // $album_id_f=$ei->fetch(PDO::FETCH_ASSOC);
+    //         $album_id=$data_album['albumid']; 
 
-              $t1=curl_init();
-     $url3='https://graph.facebook.com/'.$album_id.'?access_token='.$access_token;
-      curl_setopt($t1, CURLOPT_URL, $url3);
-    curl_setopt($t1, CURLOPT_HEADER, false);
-    curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
-     curl_setopt($t1, CURLOPT_HTTPGET, true);
-     $al2=curl_exec($t1);
-     curl_close($t1);
-     $out1=json_decode($al2,true);
+    //           $t1=curl_init();
+    //  $url3='https://graph.facebook.com/'.$album_id.'?access_token='.$access_token;
+    //   curl_setopt($t1, CURLOPT_URL, $url3);
+    // curl_setopt($t1, CURLOPT_HEADER, false);
+    // curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
+    //  curl_setopt($t1, CURLOPT_HTTPGET, true);
+    //  $al2=curl_exec($t1);
+    //  curl_close($t1);
+    //  $out1=json_decode($al2,true);
 
-     if($out1['count']==0)
-     {
-         $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
-         . "access_token=". $access_token;
+    //  if($out1['count']==0)
+    //  {
+    //      $graph_url = "https://graph.facebook.com/".$user_id."/albums?"
+    //      . "access_token=". $access_token;
    
-         $postdata = http_build_query(
-         array(
-          'name' => $album_name,
-          'message' => $album_description
-            )
-          );
-         $opts = array('http' =>
-         array(
-          'method'=> 'POST',
-          'header'=>
-            'Content-type: application/x-www-form-urlencoded',
-          'content' => $postdata
-          )
-         );
-         $context  = stream_context_create($opts);
-         $result = json_decode(file_get_contents($graph_url, false, 
-           $context));
+    //      $postdata = http_build_query(
+    //      array(
+    //       'name' => $album_name,
+    //       'message' => $album_description
+    //         )
+    //       );
+    //      $opts = array('http' =>
+    //      array(
+    //       'method'=> 'POST',
+    //       'header'=>
+    //         'Content-type: application/x-www-form-urlencoded',
+    //       'content' => $postdata
+    //       )
+    //      );
+    //      $context  = stream_context_create($opts);
+    //      $result = json_decode(file_get_contents($graph_url, false, 
+    //        $context));
 
-         // Get the new album ID
-           $album_id = $result->id;
+    //      // Get the new album ID
+    //        $album_id = $result->id;
 
-            $album=$db->prepare ("update registered set albumid=?  where uid= ?");
-            $album->execute(array($album_id,$user_id));
-     }
+    //         $album=$db->prepare ("update registered set albumid=?  where uid= ?");
+    //         $album->execute(array($album_id,$user_id));
+    //  }
 
-          }
+    //       }
+          //ending
      
 
 
@@ -522,7 +523,7 @@ if($limit<=3145728)
     'message' => $_POST['message']
     );
    //$args[basename($file)] = '@' . $file;
-    $url = 'https://graph.facebook.com/'.$album_id.'/photos?access_token='.$access_token;
+    $url = 'https://graph.facebook.com/149535045217781'.'/photos?access_token='.$access_token;
     //print_r($args);
     $ch = curl_init();
    
