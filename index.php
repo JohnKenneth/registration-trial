@@ -29,11 +29,11 @@ $app_namespace = '160936377399430';
      $app_urlnot = 'http://apps.facebook.com/' . $app_namespace . '/';
     $scope = 'email,friends_photos,manage_pages,photo_upload,read_stream,offline_access,publish_actions,user_likes,user_photos, publish_stream';
 
-    if($_SERVER['HTTP_REFERER']==$app_url || $_SERVER['HTTP_REFERER']==$app_urlnot)
+    if(strpos($_SERVER['HTTP_REFERER'], 'apps.facebook.com') )
 {
   // header('location:https://www.facebook.com/TestRegistrationCommunity/app_160936377399430');
   // exit();
-  print("<script> top.location.href='https://www.facebook.com/TestRegistrationCommunity/app_160936377399430/'</script>");
+  print("<script> top.location.href='https://www.facebook.com/TestRegistrationCommunity/app_160936377399430'</script>");
 }
 
 // Enforce https on production
