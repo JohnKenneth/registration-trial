@@ -108,7 +108,7 @@
       $z+=1;
     }
     echo "</div>";
-    //echo "</div>";
+   
         
         if($bilang==2)
         {
@@ -118,6 +118,7 @@
 
       }
      }
+      echo "</div>";
       echo "</div>";
        echo "<center>";
       echo "<div>";
