@@ -157,11 +157,11 @@
       if(!empty($out['feed']['data']['picture'][$z]))
       {
       echo "<div>";
-      echo "<img src='".$out['feed']['data']['picture'][$z]."' width='300' height='300'>";
+      echo "<img src='".$out['feed']['data'][$z]['picture']."' width='300' height='300'>";
 
       echo "</img></br>";
 
-      echo "<a href='".$out['feed']['data']['link'][$z]."' target='_blank'>";
+      echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
       echo "Link</a>";
 echo "</div>";
 }
