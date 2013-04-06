@@ -49,8 +49,7 @@
       echo "</img></br>";
 
       echo "<div style='display:none;width:200px;height:200px' padding='0'>";
-      //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
-      // echo "</img></br>";
+     echo '<p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($u_id); ?>/picture?type=normal)"></p>';
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
           echo "<span>Source</span></a>";
          echo "</br>";

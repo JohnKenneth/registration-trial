@@ -342,7 +342,8 @@ $('#s2').cycle({
       <?php
         if(isset($basic))
         {
-          echo "Share your stories";
+          // echo "Share your stories";
+         echo " <section id='get-started'>";
         }
         else
         {
