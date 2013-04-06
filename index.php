@@ -799,7 +799,7 @@ $sth->closeCursor();
 
                 echo "</li>";
             echo "</br>";
-            echo $facebook->getAccessToken();
+           
              echo "<li>";
 
              echo " <li>
