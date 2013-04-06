@@ -31,9 +31,7 @@
      $bilang=0;
      $counter=0;
 
-     echo "<div id='s2' style='position:relative;'>:";
-
-
+     echo "<div id='s2' style='position:relative;'>";
 
 echo "<table><tr>";
       for($z=0;$z<$counter2;$z++)
@@ -79,7 +77,6 @@ $counter+=1;
       }
 
      }
-
       echo "</div>";
        echo "<center>";
       echo "<div>";
