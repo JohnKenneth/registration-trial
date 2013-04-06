@@ -52,7 +52,7 @@
       //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
       // echo "</img></br>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
-          echo "Link</a>";
+          echo "<span>Source</span>/a>";
          echo "</br>";
           echo  $out['feed']['data'][$z]['from']['name'];
           echo "</br>";
