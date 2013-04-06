@@ -796,7 +796,7 @@ $sth->closeCursor();
                  
                 echo "<li>";
                 echo "You are registered. You can now upload your photos.";
-echo $_SERVER['REQUEST_URI']
+echo $_SERVER['REQUEST_URI'];
                 echo "</li>";
             
              echo "<li>";
