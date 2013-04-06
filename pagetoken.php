@@ -12,7 +12,7 @@ class pagetoken
      curl_setopt($t1, CURLOPT_HTTPGET, true);
      $al2=curl_exec($t1);
      curl_close($t1);
-     $out1=json_decode($al2,true);
+     $out1=json_decode(file_get_contents($al2));
 
      return $out1;
 	}
