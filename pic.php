@@ -161,7 +161,7 @@
       $bilang++;
       if($bilang==1)
       {
-        echo "div";
+        echo "<div>";
       }
 
         echo "<div class='Images'>";
