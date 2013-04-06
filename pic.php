@@ -160,6 +160,10 @@ $t1=curl_init();
 echo "</div>";
 
 echo "</div>";
+ echo "<div>";
+      echo "<a href='#' id='pv'>Prev</a> &nbsp";
+      echo "<a href='#' id='nex'>Next</a>";
+      echo "</div>";
      }
  }
 
