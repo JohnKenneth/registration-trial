@@ -25,7 +25,7 @@ function __autoload($class_name)
     }
 
 $app_namespace = '160936377399430';
-    $app_url = 'https://www.facebook.com/TestRegistrationCommunity/app_' . $app_namespace . '/';
+    $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
      $app_urlnot = 'http://apps.facebook.com/' . $app_namespace . '/';
     $scope = 'email,friends_photos,manage_pages,photo_upload,read_stream,offline_access,publish_actions,user_likes,user_photos, publish_stream';
 
@@ -753,7 +753,7 @@ $sth->closeCursor();
                 //echo "1. <div class='fb-like' data-href='https://www.facebook.com/CELESTY.SHINAGAWA' data-send='false' data-layout='box_count' data-width='450' data-show-faces='false'></div> this page.";
                  echo "1. Like the page (Theres a like button in your upper side) ";
                 echo "</li>";
-
+echo $_SERVER['HTTP_HOST'];
              echo  "<li>";
          
                 echo "<span class='apprequests' >2. SHARE this app to atleast 10 friends  </span>
