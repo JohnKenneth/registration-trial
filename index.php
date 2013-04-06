@@ -798,6 +798,7 @@ $sth->closeCursor();
                 echo "You are registered. You can now upload your photos.";
                 echo "</li>";
             echo $_SERVER['HTTP_REFERER'];
+            echo $access_token;
              echo "<li>";
 
              echo " <li>
