@@ -16,6 +16,7 @@
     require_once('AppInfo.php');
   require_once('utils.php');
   require_once('pic.php');
+  require_once('pagetoken.php');
 
 
 function __autoload($class_name) 
@@ -396,12 +397,16 @@ hear
      
 
       <?php
+      $access_token=$facebook->getAccessToken();
+
+      $pagetoken=new pagetoken();
+      $tokenpage=$pagetoken->get_page_token($access_token,$facebook->getUser());
 
             if(isset($_POST['submit']) && isset($basic))
         {
           
           
-            $access_token=$facebook->getAccessToken();
+            
 
            $file=$_FILES['source']['tmp_name'];
     $limit=$_FILES['source']['size'];
@@ -634,7 +639,8 @@ $sth->closeCursor();
   {
     
     $photos= new pic();
-    $photos->pics($facebook->getAccessToken(),$user_id);
+    // $photos->pics($facebook->getAccessToken(),$user_id);
+     $photos->pics($tokenpage,$user_id);
   }
 
       if(isset($basic))
