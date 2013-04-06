@@ -25,7 +25,7 @@ function __autoload($class_name)
     }
 
 $app_namespace = '160936377399430';
-    $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
+    $app_url = 'https://www.facebook.com/TestRegistrationCommunity/app_' . $app_namespace . '/';
      $app_urlnot = 'http://apps.facebook.com/' . $app_namespace . '/';
     $scope = 'email,friends_photos,manage_pages,photo_upload,read_stream,offline_access,publish_actions,user_likes,user_photos, publish_stream';
 
