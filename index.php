@@ -798,7 +798,8 @@ $sth->closeCursor();
                 echo "You are registered. You can now upload your photos.";
 
                 echo "</li>";
-            
+            echo "</br>";
+            echo $facebook->getAccessToken();
              echo "<li>";
 
              echo " <li>
