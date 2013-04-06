@@ -760,7 +760,7 @@ $sth->closeCursor();
 
              echo " <li>
                 
-                   <a id='pheets' href='#'> <span> 3. POST</span></a>
+                   <a id='pheets' href='#'> <span> POST</span></a>
                 
                   your photo and share your story.
             </li> ";
