@@ -193,9 +193,9 @@ $t1=curl_init();
       echo  $out['feed']['data'][$z]['from']['name'];
       echo "</br>";
       echo  $out['feed']['data'][$z]['created_time'];
-        echo "</span>";
+        echo "</div>";
 
-        echo "</span>";
+        echo "</div>";
         
         if($bilang==3)
         {
