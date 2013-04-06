@@ -17,18 +17,31 @@
   require_once('utils.php');
   require_once('pic.php');
 
+
 function __autoload($class_name) 
     {
         require_once 'lib/' . strtolower($class_name) . '.php';
     }
 
+$app_namespace = '160936377399430';
+    $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
+     $app_urlnot = 'http://apps.facebook.com/' . $app_namespace . '/';
+    $scope = 'email,friends_photos,offline_access,publish_actions,user_likes,user_photos, publish_stream';
 
-
-// Enforce https on production
-if (substr(AppInfo::getUrl(), 0, 8) != 'https://' && $_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
-  header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    if(AppInfo::getUrl()==$app_url || AppInfo::getUrl()==$app_urlnot)
+{
+  header('location:https://www.facebook.com/TestRegistrationCommunity/app_160936377399430');
   exit();
 }
+
+// Enforce https on production
+
+// if (substr(AppInfo::getUrl(), 0, 8) != 'https://' && $_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
+//   header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+//   exit();
+// }
+
+
 
 // This provides access to helper functions defined in 'utils.php'
 require_once('utils.php');
@@ -45,9 +58,7 @@ require_once('utils.php');
 
 require_once('sdk/src/facebook.php');
 
-$app_namespace = '160936377399430';
-    $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
-    $scope = 'email,friends_photos,offline_access,publish_actions,user_likes,user_photos, publish_stream';
+
 
 
 $facebook = new Facebook(array(
@@ -688,6 +699,17 @@ $sth->closeCursor();
 
               if (empty($likes['data']))
               { 
+
+                 if($flag==true)
+            {
+              echo "<li>";
+              echo "<span> You are register but did not like the fan page. Kindly Like the page to post your photo";
+              echo "</li>";
+
+            }
+
+            else
+            {
                 echo "<li>";
                 //echo "1. <div class='fb-like' data-href='https://www.facebook.com/CELESTY.SHINAGAWA' data-send='false' data-layout='box_count' data-width='450' data-show-faces='false'></div> this page.";
                  echo "1. Like the page (Theres a like button in your upper side) ";
@@ -704,27 +726,42 @@ $sth->closeCursor();
                 
                   your photo and share your story.
             </li> ";
+          }
             }
+
             else
             {
-              echo "<li>";
-              echo "1. <span> You liked<a href='https://www.facebook.com/TestRegistrationCommunity' target='_blank'> Test Registration </a> page.</span>";
-              echo "</li>";
+              // echo "<li>";
+              // echo "1. <span> You liked<a href='https://www.facebook.com/TestRegistrationCommunity' target='_blank'> Test Registration </a> page.</span>";
+              // echo "</li>";
 
               if($flag==true)
               {
 
-                echo  "<li>";
-                echo "<span  id='ins'>2. SHARED  this app to atleast 10 friends</span> </li>"; 
+            //     echo  "<li>";
+            //     echo "<span  id='ins'>2. SHARED  this app to atleast 10 friends</span> </li>"; 
 
-                echo " <li>
+            //     echo " <li>
+                
+            //        <a id='pheets' href='#'> <span> 3. POST</span></a>
+                
+            //       your photo and share your story.
+            // </li> ";
+
+                echo "<li>";
+                echo "You are registered. You can now upload your photos.";
+
+                echo "</li>";
+            
+             echo "<li>";
+
+             echo " <li>
                 
                    <a id='pheets' href='#'> <span> 3. POST</span></a>
                 
                   your photo and share your story.
             </li> ";
-            
-            echo "<li>";
+
            
            $graph_url="https://damp-temple-4190.herokuapp.com/";
           
@@ -746,8 +783,13 @@ $sth->closeCursor();
           
               
               }
+
               else
               {
+                echo "<li>";
+              echo "1. <span> You liked<a href='https://www.facebook.com/TestRegistrationCommunity' target='_blank'> Test Registration </a> page.</span>";
+              echo "</li>";
+
                  echo  "<li>";
              echo "<a href='#'' class='text' id='sendRequest' data-message='Test this awesome app'>";
                 echo "<span class='apprequests' id='ins'>2. SHARE</span>  </a>  this app to atleast 10 friends.  <span id='fai'> (Shared should atleast 10).</span> </li>"; 
