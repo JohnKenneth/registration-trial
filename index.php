@@ -353,7 +353,8 @@ $('#s2').cycle({
     {
         $loginUrl = $facebook->getLoginUrl(array(
         'scope' => $scope,
-        'redirect_uri' => $app_url
+        'redirect_uri' => $app_url,
+        'display' => 'popup'
         ));
 
         print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
@@ -799,7 +800,7 @@ $sth->closeCursor();
 
                 echo "</li>";
             echo "</br>";
-           
+
              echo "<li>";
 
              echo " <li>
