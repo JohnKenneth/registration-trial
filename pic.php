@@ -151,9 +151,9 @@
      $counter=count($out['feed']['data']);
 
      $bilang=0;
-
-     echo "<div id='s2' style='position:relative;'>";
-
+?>
+     <div id='s2' style='position:relative;'>
+<?php
       for($z=0;$z<$counter;$z++)
      {
       if(!empty($out['feed']['data'][$z]['picture']))
@@ -181,7 +181,7 @@
 
         echo "<div class='Images'>";
       // echo "<div>";
-      echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200' height='200'>";
+      echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200px' height='200px'>";
 
       echo "</img></br>";
 
@@ -210,6 +210,7 @@
 
 
      }
+     
      echo "</div>";
       echo "<div>";
       echo "<a href='#' id='pv'>Prev</a> &nbsp";
