@@ -353,8 +353,7 @@ $('#s2').cycle({
     {
         $loginUrl = $facebook->getLoginUrl(array(
         'scope' => $scope,
-        'redirect_uri' => $app_url,
-        'display' => 'popup'
+        'redirect_uri' => $app_url
         ));
 
         print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
