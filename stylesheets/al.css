@@ -1,0 +1,8 @@
+.Images #leeft {
+ width: 300px;
+ float: left;
+ }
+ .Images #riight {
+ width: 300px;
+ float: right;
+ }

@@ -44,7 +44,7 @@
       }
 
         echo "<div class='Images'>";
-      // echo "<div>";
+      echo "<div id='leeft'>";
       echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200px' height='200px'>";
 
       echo "</img></br>";
@@ -60,6 +60,28 @@
           echo "</br>";
            echo  $out['feed']['data'][$z]['created_time'];
       echo "</div>";
+        echo "</div>";
+
+         echo "<div id='riight'>";
+      echo "<img src='".$out['feed']['data'][$z+2]['picture']."' width='200px' height='200px'>";
+
+      echo "</img></br>";
+
+      echo "<div style='display:none;width:200px;height:200px' padding='0'>";
+     // echo '<p id='picture' style='background-image: url(https://graph.facebook.com/". $out['feed']['data'][$z]['id']; ."/picture?type=normal)'></p>";
+      //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
+      // echo "</img></br>";
+         echo "<a href='".$out['feed']['data'][$z+2]['link']."' target='_blank'>";
+          echo "<span>Source</span></a>";
+         echo "</br>";
+          echo  $out['feed']['data'][$z+2]['from']['name'];
+          echo "</br>";
+           echo  $out['feed']['data'][$z+2]['created_time'];
+      echo "</div>";
+        echo "</div>";
+
+
+
 
         echo "</div>";
         
