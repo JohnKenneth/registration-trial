@@ -84,6 +84,7 @@
            echo  $out['feed']['data'][$z+1]['created_time'];
       echo "</div>";
       echo "</div>";
+      $z+=1;
     }
       if(!empty($out['feed']['data'][$z+2]['picture']))
       {
@@ -104,6 +105,7 @@
            echo  $out['feed']['data'][$z+2]['created_time'];
       echo "</div>";
       echo "</div>";
+      $z+=1;
     }
 
 
