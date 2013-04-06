@@ -150,29 +150,35 @@
      $out=json_decode($AL,true);
      $counter=count($out['feed']['data']);
 
-     echo "<div id='s2' style='position:relative;'>";
+     // echo "<div id='s2' style='position:relative;'>";
 
       for($z=0;$z<$counter;$z++)
      {
       if(!empty($out['feed']['data'][$z]['picture']))
       {
-      echo "<div>";
+        echo "<div class='Images'>";
+      // echo "<div>";
       echo "<img src='".$out['feed']['data'][$z]['picture']."' width='300' height='300'>";
 
       echo "</img></br>";
 
-      echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
+      echo "<div style='display:none;width:580px;height:400px' padding='0'>";
+         echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
       echo "Link</a>";
-echo "</div>";
+        echo "</div>";
+        echo "<div>";
+
+      
+// echo "</div>";
 }
 
 
      }
-     echo "</div>";
- echo "<div>";
-      echo "<a href='#' id='pv'>Prev</a> &nbsp";
-      echo "<a href='#' id='nex'>Next</a>";
-      echo "</div>";
+ //     echo "</div>";
+ // echo "<div>";
+ //      echo "<a href='#' id='pv'>Prev</a> &nbsp";
+ //      echo "<a href='#' id='nex'>Next</a>";
+ //      echo "</div>";
 
  }
 

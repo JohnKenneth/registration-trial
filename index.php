@@ -157,13 +157,40 @@ $app_name = idx($app_info, 'name', '');
           console.log('The response was', response);
         }
       }
-  $(document).ready(function()
+  // $(document).ready(function()
 
-    {
-      $("#cont").hide();
-       $("#fai").hide();
-       $("#phoots").hide();         
+  //   {
+  //     $("#cont").hide();
+  //      $("#fai").hide();
+  //      $("#phoots").hide();         
+  //   });
+
+$(document).ready(init);
+  
+  function init() {
+    
+    $('.Images').hover(
+      function(){ 
+        on(this);
+      },
+      function(){
+        off(this);
+      }
+    );
+  }
+    
+    function on(hovered){
+    $('img',hovered ).fadeOut(50,function(){
+      $('div',hovered ).fadeTo(500, 1);
     });
+    }
+    
+    function off(hovered){
+    $('div', hovered ).fadeOut(50,function(){
+      $('img',hovered ).fadeTo(500, 1);
+    });
+    }
+
       $(function(){
       
         // Set up so we handle click on the buttons
@@ -679,8 +706,7 @@ $sth->closeCursor();
                 echo ($result2-1);
                 echo " people are registered.";
                 echo  "</br>";
-                echo $access_token;
-
+                
                 
                }
               }
