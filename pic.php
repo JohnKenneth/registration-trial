@@ -185,11 +185,16 @@ $t1=curl_init();
       echo "</img></br>";
 
       echo "<span style='display:none;width:580px;height:400px' padding='0'>";
+        echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
+      echo "</img></br>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
       echo "Link</a>";
+      echo "</br>";
       echo  $out['feed']['data'][$z]['from']['name'];
+      echo "</br>";
       echo  $out['feed']['data'][$z]['created_time'];
         echo "</span>";
+
         echo "</span>";
         
         if($bilang==3)
