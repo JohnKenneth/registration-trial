@@ -343,7 +343,7 @@ $('#s2').cycle({
         if(isset($basic))
         {
           // echo "Share your stories";
-         echo " <section id='get-started'>";
+        
         }
         else
         {
@@ -419,7 +419,7 @@ hear
       </div> -->
     
     </header>
-
+  <section id='get-started'>
     <!-- dito -->
 
     <!-- <section id="get-started"> -->
@@ -822,7 +822,7 @@ $sth->closeCursor();
          echo '</div>';
 
           echo "</li>";
-          
+
            $photos= new pic();
             $photos->pics($facebook->getAccessToken(),$user_id);
               
