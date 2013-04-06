@@ -75,10 +75,12 @@
      }
 
       echo "</div>";
+       echo "<center>";
       echo "<div>";
       echo "<a href='#' id='pv'>Prev</a> &nbsp";
       echo "<a href='#' id='nex'>Next</a>";
       echo "</div>";
+      echo "</center>";
 
  }
 

@@ -825,10 +825,10 @@ $sth->closeCursor();
          echo '</div>';
 
           echo "</li>";
- echo "<center>";
+
            $photos= new pic();
             $photos->pics($facebook->getAccessToken(),$user_id);
-            echo "</center>";
+            
               
               }
 
