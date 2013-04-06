@@ -1,9 +1,9 @@
 #container #col1 {
- width: 300px;
+ width: 250px;
  float: left;
  }
  #container #col2outer {
- width: 600px;
+ width: 500px;
  float: right;
  margin: 0;
  padding: 0;
@@ -11,10 +11,10 @@
 
 
 #col2outer #leeft {
- width: 300px;
+ width: 250px;
  float: left;
  }
  #col2outer #riight {
- width: 300px;
+ width: 250px;
  float: right;
  }
