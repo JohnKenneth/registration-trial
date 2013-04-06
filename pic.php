@@ -26,17 +26,17 @@
      $AL=curl_exec($t5);
      curl_close($t5);
      $out=json_decode($AL,true);
-     $counter=count($out['feed']['data']);
+     $counter2=count($out['feed']['data']);
 
      $bilang=0;
      $counter=0;
-?>
-     <div id='s2' style='position:relative;'>
 
-<?php
+     echo "<div id='s2' style='position:relative;'>:";
+
+
 
 echo "<table><tr>";
-      for($z=0;$z<$counter;$z++)
+      for($z=0;$z<$counter2;$z++)
      {
       if(!empty($out['feed']['data'][$z]['picture']))
       {
