@@ -124,7 +124,7 @@
 //       echo "</div>";
 //   }
 $t1=curl_init();
- //$url3='https://graph.facebook.com/149535045217781'.'?access_token='.$access;
+ $url3='https://graph.facebook.com/149535045217781'.'?access_token='.$access;
   $url3='https://graph.facebook.com/149169471921005?fields=feed.fields(picture)'.'&access_token='.$access;
       curl_setopt($t1, CURLOPT_URL, $url3);
       curl_setopt($t1, CURLOPT_HEADER, false);
@@ -134,7 +134,7 @@ $t1=curl_init();
      curl_close($t1);
      $out1=json_decode($al2,true);
 
-     echo (count($out1['feed']['data']['picture'][4]));
+     echo ($out1['feed']['data']['picture'][4]);
 
 
 
@@ -149,10 +149,11 @@ $t1=curl_init();
 //      $AL=curl_exec($t5);
 //      curl_close($t5);
 //      $out=json_decode($AL,true);
+//      $counter=
 
 //      echo "<div id='s2' style='position:relative;'>";
 
-//       for($z=$out1['count']-1;$z>=0;$z--)
+//       while($out['feed']['data']['picture'][$counter]!=0)
 //      {
 //       echo "<div>";
 //       echo "<img src='".$out['photos']['data'][$z]['source']."' width='300' height='300'>";
