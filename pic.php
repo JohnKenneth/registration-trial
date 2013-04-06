@@ -166,7 +166,7 @@
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
       echo "Link</a>";
         echo "</div>";
-        echo "<div>";
+        echo "</div>";
 
       
 // echo "</div>";
