@@ -178,13 +178,13 @@ $t1=curl_init();
         echo "<div>";
       }
 
-        echo "<span class='Images'>";
+        echo "<div class='Images'>";
       // echo "<div>";
       echo "<img src='".$out['feed']['data'][$z]['picture']."' width='300' height='300'>";
 
       echo "</img></br>";
 
-      echo "<span style='display:none;width:580px;height:400px' padding='0'>";
+      echo "<div style='display:none;width:580px;height:400px' padding='0'>";
         echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
       echo "</img></br>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
