@@ -185,8 +185,8 @@ $t1=curl_init();
       echo "</img></br>";
 
       echo "<div style='display:none;width:580px;height:400px' padding='0'>";
-        echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
-      echo "</img></br>";
+      //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
+      // echo "</img></br>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
       echo "Link</a>";
       echo "</br>";
