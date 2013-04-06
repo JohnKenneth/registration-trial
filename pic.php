@@ -42,7 +42,7 @@
       {
         echo "<div>";
       }
-  echo "<div id='container'>";
+  //echo "<div id='container'>";
 
       echo "<div id='col1'>";
        echo "<div class='Images'>";
@@ -63,6 +63,7 @@
       echo "</div>";
         echo "</div>";
         echo "</div>";
+
          echo "<div id='col2outer'>";
          if(!empty($out['feed']['data'][$z+1]['picture']))
          {
@@ -106,8 +107,8 @@
       echo "</div>";
       $z+=1;
     }
-    echo "</div>";
-    echo "</div>";
+   // echo "</div>";
+    //echo "</div>";
         
         if($bilang==2)
         {
