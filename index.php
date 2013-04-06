@@ -665,14 +665,6 @@ $sth->closeCursor();
   }
 
 
-  if($flag==true)
-  {
-    
-    $photos= new pic();
-     $photos->pics($facebook->getAccessToken(),$user_id);
-    // $photos->pics($tokenpage,$user_id);
-
-  }
 
       if(isset($basic))
 
@@ -791,6 +783,13 @@ $sth->closeCursor();
             //       your photo and share your story.
             // </li> ";
 
+ 
+    
+           
+    // $photos->pics($tokenpage,$user_id);
+
+  
+
                 echo "<li>";
                 echo "You are registered. You can now upload your photos.";
 
@@ -824,6 +823,8 @@ $sth->closeCursor();
 
           echo "</li>";
           
+           $photos= new pic();
+            $photos->pics($facebook->getAccessToken(),$user_id);
               
               }
 
