@@ -419,7 +419,9 @@ hear
       </div> -->
     
     </header>
+    <div>
   <section id='get-started'>
+  </div>
     <!-- dito -->
 
     <!-- <section id="get-started"> -->
