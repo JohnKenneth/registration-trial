@@ -13,8 +13,7 @@
   function pics($access,$u_id)
   {
    
-   
-//         $db = Db::init();
+   //         $db = Db::init();
 //         $uayd=$db->prepare("SELECT * from registered where uid=?");
 //         $uayd->execute(array($u_id));
 //         $resu=$uayd->fetch( PDO::FETCH_ASSOC);
@@ -123,53 +122,58 @@
 //       echo "<a href='#' id='nex'>Next</a>";
 //       echo "</div>";
 //   }
-$t1=curl_init();
- $url3='https://graph.facebook.com/149535045217781'.'?access_token='.$access;
-  $url3='https://graph.facebook.com/149169471921005?fields=feed.fields(picture)'.'&access_token='.$access;
-      curl_setopt($t1, CURLOPT_URL, $url3);
-      curl_setopt($t1, CURLOPT_HEADER, false);
-      curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
-     curl_setopt($t1, CURLOPT_HTTPGET, true);
-     $al2=curl_exec($t1);
-     curl_close($t1);
-     $out1=json_decode($al2,true);
+// $t1=curl_init();
+//  //$url3='https://graph.facebook.com/149535045217781'.'?access_token='.$access;
+//   $url3='https://graph.facebook.com/149169471921005?fields=feed.fields(picture)'.'&access_token='.$access;
+//       curl_setopt($t1, CURLOPT_URL, $url3);
+//       curl_setopt($t1, CURLOPT_HEADER, false);
+//       curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
+//      curl_setopt($t1, CURLOPT_HTTPGET, true);
+//      $al2=curl_exec($t1);
+//      curl_close($t1);
+//      $out1=json_decode($al2,true);
 
-     echo ($out1['feed']['data']['picture'][4]);
+//      echo (count($out1['feed']['data']['picture'][4]));
 
 
 
-//     $t5=curl_init();
-//       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
-//     $url2='https://graph.facebook.com/149169471921005?fields=feed.fields(picture)&access_token='.$access;
+    $t5=curl_init();
+      //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
+    $url2='https://graph.facebook.com/149169471921005?fields=feed.fields(picture,link)&access_token='.$access;
 
-//       curl_setopt($t5, CURLOPT_URL, $url2);
-//     curl_setopt($t5, CURLOPT_HEADER, false);
-//     curl_setopt($t5, CURLOPT_RETURNTRANSFER, true);
-//      curl_setopt($t5, CURLOPT_HTTPGET, true);
-//      $AL=curl_exec($t5);
-//      curl_close($t5);
-//      $out=json_decode($AL,true);
-//      $counter=
+      curl_setopt($t5, CURLOPT_URL, $url2);
+    curl_setopt($t5, CURLOPT_HEADER, false);
+    curl_setopt($t5, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($t5, CURLOPT_HTTPGET, true);
+     $AL=curl_exec($t5);
+     curl_close($t5);
+     $out=json_decode($AL,true);
+     $counter=count($out['feed']['data']);
 
-//      echo "<div id='s2' style='position:relative;'>";
+     echo "<div id='s2' style='position:relative;'>";
 
-//       while($out['feed']['data']['picture'][$counter]!=0)
-//      {
-//       echo "<div>";
-//       echo "<img src='".$out['photos']['data'][$z]['source']."' width='300' height='300'>";
+      for($z=0;$z<$counter;$z++)
+     {
+      if(!empty($out['feed']['data']['picture']))
+      {
+      echo "<div>";
+      echo "<img src='".$out['feed']['data']['picture'][$z]."' width='300' height='300'>";
 
-//       echo "</img></br>";
+      echo "</img></br>";
 
-//       echo "<a href='".$out['photos']['data'][$z]['link']."' target='_blank'>";
-//       echo "Link</a>";
-// echo "</div>";
+      echo "<a href='".$out['feed']['data']['link'][$z]."' target='_blank'>";
+      echo "Link</a>";
+echo "</div>";
+}
 
-// echo "</div>";
-//  echo "<div>";
-//       echo "<a href='#' id='pv'>Prev</a> &nbsp";
-//       echo "<a href='#' id='nex'>Next</a>";
-//       echo "</div>";
-//      }
+
+     }
+     echo "</div>";
+ echo "<div>";
+      echo "<a href='#' id='pv'>Prev</a> &nbsp";
+      echo "<a href='#' id='nex'>Next</a>";
+      echo "</div>";
+
  }
 
 }
