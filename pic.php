@@ -65,7 +65,7 @@ $counter+=1;
         if($counter==4)
         {
           echo "</tr></table>";
-          
+           echo "<table><tr>";
           $counter=0;
         }
         elseif($counter%2==0)
@@ -76,7 +76,7 @@ $counter+=1;
       }
 
      }
-     echo "<table><tr>";
+    echo "</tr></table>";
       echo "</div>";
 
        echo "<center>";
