@@ -680,6 +680,7 @@ $sth->closeCursor();
               <span>
               <?php
               // echo $facebook->getAccessToken();
+              echo "</br>";
               if($flag2)
             {
               echo "Uploaded Successfully </br>";  
