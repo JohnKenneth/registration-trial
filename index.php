@@ -28,7 +28,7 @@ $app_namespace = '160936377399430';
      $app_urlnot = 'http://apps.facebook.com/' . $app_namespace . '/';
     $scope = 'email,friends_photos,offline_access,publish_actions,user_likes,user_photos, publish_stream';
 
-    if(AppInfo::getUrl()==$app_url || AppInfo::getUrl()==$app_urlnot)
+    if('https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']==$app_url || 'https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']==$app_urlnot)
 {
   header('location:https://www.facebook.com/TestRegistrationCommunity/app_160936377399430');
   exit();
