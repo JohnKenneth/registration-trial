@@ -40,10 +40,9 @@
       $bilang++;
       if($bilang==1)
       {
-        echo "<div id='container'>";
+        echo "<div>";
       }
-
-       
+  echo "<div id='container'>";
 
       echo "<div id='col1'>";
        echo "<div class='Images'>";
@@ -108,6 +107,7 @@
       $z+=1;
     }
     echo "</div>";
+    
         
         if($bilang==2)
         {
