@@ -43,9 +43,10 @@
         echo "<div id='container'>";
       }
 
-        echo "<div class='Images'>";
+       
 
       echo "<div id='col1'>";
+       echo "<div class='Images'>";
       echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200px' height='200px'>";
 
       echo "</img></br>";
@@ -62,12 +63,15 @@
            echo  $out['feed']['data'][$z]['created_time'];
       echo "</div>";
         echo "</div>";
+        echo "</div>";
 
 
          echo "<div id='col2outer'>";
          if(!empty($out['feed']['data'][$z+1]['picture']))
          {
+       
          echo "<div id='leeft'>";
+            echo "<div class='Images'>";
       echo "<img src='".$out['feed']['data'][$z+1]['picture']."' width='200px' height='200px'>";
 
       echo "</img></br>";
@@ -84,11 +88,13 @@
            echo  $out['feed']['data'][$z+1]['created_time'];
       echo "</div>";
       echo "</div>";
+      echo "</div>";
       $z+=1;
     }
       if(!empty($out['feed']['data'][$z+2]['picture']))
       {
       echo "<div id='riight'>";
+      echo "<div class='Images'>";
       echo "<img src='".$out['feed']['data'][$z+2]['picture']."' width='200px' height='200px'>";
 
       echo "</img></br>";
@@ -105,6 +111,7 @@
            echo  $out['feed']['data'][$z+2]['created_time'];
       echo "</div>";
       echo "</div>";
+      echo "</div>";
       $z+=1;
     }
 
@@ -114,7 +121,7 @@
 
 
 
-        echo "</div>";
+        
         
         if($bilang==2)
         {
