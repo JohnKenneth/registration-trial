@@ -827,7 +827,7 @@ $sth->closeCursor();
 
            $photos= new pic();
             $photos->pics($facebook->getAccessToken(),$user_id);
-            echo "<center>";
+            echo "</center>";
               
               }
 
