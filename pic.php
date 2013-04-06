@@ -50,7 +50,7 @@
       echo "</img></br>";
 
       echo "<div style='display:none;width:200px;height:200px' padding='0'>";
-     echo '<p id="picture" style="background-image: url(https://graph.facebook.com/'. $out['feed']['data'][$z]['id']; .'/picture?type=normal)"></p>';
+     // echo '<p id="picture" style="background-image: url(https://graph.facebook.com/'. $out['feed']['data'][$z]['id']; .'/picture?type=normal)"></p>';
       //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
       // echo "</img></br>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
