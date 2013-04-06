@@ -799,7 +799,7 @@ $sth->closeCursor();
                 echo "You are registered. You can now upload your photos.";
                 echo "</li>";
            
-            echo $access_token;
+            
              echo "<li>";
 
              echo " <li>
