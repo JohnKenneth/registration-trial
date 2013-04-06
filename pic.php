@@ -124,7 +124,8 @@
 //       echo "</div>";
 //   }
 $t1=curl_init();
- $url3='https://graph.facebook.com/149535045217781'.'?access_token='.$access;
+ //$url3='https://graph.facebook.com/149535045217781'.'?access_token='.$access;
+  $url3='https://graph.facebook.com/149169471921005?fields=feed.fields(picture)'.'&access_token='.$access;
       curl_setopt($t1, CURLOPT_URL, $url3);
       curl_setopt($t1, CURLOPT_HEADER, false);
       curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
@@ -133,38 +134,41 @@ $t1=curl_init();
      curl_close($t1);
      $out1=json_decode($al2,true);
 
+     echo (count($out1['feed']['data']['picture']));
 
 
-    $t5=curl_init();
-      $url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
 
-      curl_setopt($t5, CURLOPT_URL, $url2);
-    curl_setopt($t5, CURLOPT_HEADER, false);
-    curl_setopt($t5, CURLOPT_RETURNTRANSFER, true);
-     curl_setopt($t5, CURLOPT_HTTPGET, true);
-     $AL=curl_exec($t5);
-     curl_close($t5);
-     $out=json_decode($AL,true);
+//     $t5=curl_init();
+//       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
+//     $url2='https://graph.facebook.com/149169471921005?fields=feed.fields(picture)&access_token='.$access;
 
-     echo "<div id='s2' style='position:relative;'>";
+//       curl_setopt($t5, CURLOPT_URL, $url2);
+//     curl_setopt($t5, CURLOPT_HEADER, false);
+//     curl_setopt($t5, CURLOPT_RETURNTRANSFER, true);
+//      curl_setopt($t5, CURLOPT_HTTPGET, true);
+//      $AL=curl_exec($t5);
+//      curl_close($t5);
+//      $out=json_decode($AL,true);
 
-      for($z=$out1['count']-1;$z>=0;$z--)
-     {
-      echo "<div>";
-      echo "<img src='".$out['photos']['data'][$z]['source']."' width='300' height='300'>";
+//      echo "<div id='s2' style='position:relative;'>";
 
-      echo "</img></br>";
+//       for($z=$out1['count']-1;$z>=0;$z--)
+//      {
+//       echo "<div>";
+//       echo "<img src='".$out['photos']['data'][$z]['source']."' width='300' height='300'>";
 
-      echo "<a href='".$out['photos']['data'][$z]['link']."' target='_blank'>";
-      echo "Link</a>";
-echo "</div>";
+//       echo "</img></br>";
 
-echo "</div>";
- echo "<div>";
-      echo "<a href='#' id='pv'>Prev</a> &nbsp";
-      echo "<a href='#' id='nex'>Next</a>";
-      echo "</div>";
-     }
+//       echo "<a href='".$out['photos']['data'][$z]['link']."' target='_blank'>";
+//       echo "Link</a>";
+// echo "</div>";
+
+// echo "</div>";
+//  echo "<div>";
+//       echo "<a href='#' id='pv'>Prev</a> &nbsp";
+//       echo "<a href='#' id='nex'>Next</a>";
+//       echo "</div>";
+//      }
  }
 
 }
