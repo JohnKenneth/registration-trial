@@ -753,7 +753,7 @@ $sth->closeCursor();
                 //echo "1. <div class='fb-like' data-href='https://www.facebook.com/CELESTY.SHINAGAWA' data-send='false' data-layout='box_count' data-width='450' data-show-faces='false'></div> this page.";
                  echo "1. Like the page (Theres a like button in your upper side) ";
                 echo "</li>";
-echo $_SERVER['HTTP_HOST'];
+
              echo  "<li>";
          
                 echo "<span class='apprequests' >2. SHARE this app to atleast 10 friends  </span>
@@ -796,7 +796,7 @@ echo $_SERVER['HTTP_HOST'];
                  
                 echo "<li>";
                 echo "You are registered. You can now upload your photos.";
-
+echo $_SERVER['HTTP_HOST'];
                 echo "</li>";
             
              echo "<li>";
