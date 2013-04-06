@@ -679,7 +679,7 @@ $sth->closeCursor();
                 echo ($result2-1);
                 echo " people are registered.";
                 echo  "</br>";
-                echo $data;
+                
                 
                }
               }
