@@ -159,20 +159,6 @@
       if(!empty($out['feed']['data'][$z]['picture']))
       {
 
-
-// $t1=curl_init();
-//  // $url3='https://graph.facebook.com/149535045217781'.'?access_token='.$access;
-//   $url3='https://graph.facebook.com/'.$out['feed']['data'][$z]['from']['id'].'?fields=picture&access_token='.$access;
-//       curl_setopt($t1, CURLOPT_URL, $url3);
-//       curl_setopt($t1, CURLOPT_HEADER, false);
-//       curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
-//      curl_setopt($t1, CURLOPT_HTTPGET, true);
-//      $al2=curl_exec($t1);
-//      curl_close($t1);
-//      $out1=json_decode($al2,true);
-//      curl_close($t1);
-
-
       $bilang++;
       if($bilang==1)
       {
@@ -189,12 +175,12 @@
       //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
       // echo "</img></br>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
-      echo "Link</a>";
-      echo "</br>";
-      echo  $out['feed']['data'][$z]['from']['name'];
-      echo "</br>";
-      echo  $out['feed']['data'][$z]['created_time'];
-        echo "</div>";
+          echo "Link</a>";
+         echo "</br>";
+          echo  $out['feed']['data'][$z]['from']['name'];
+          echo "</br>";
+           echo  $out['feed']['data'][$z]['created_time'];
+      echo "</div>";
 
         echo "</div>";
         
@@ -205,13 +191,13 @@
         }
 
       
-// echo "</div>";
+ echo "</div>";
 }
 
 
      }
-     
-     echo "</div>";
+
+      //echo "</div>";
       echo "<div>";
       echo "<a href='#' id='pv'>Prev</a> &nbsp";
       echo "<a href='#' id='nex'>Next</a>";
