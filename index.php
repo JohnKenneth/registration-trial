@@ -338,7 +338,7 @@ $('#s2').cycle({
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <header class="clearfix">
+    <!-- <header class="clearfix"> -->
       <?php
         if(isset($basic))
         {
@@ -418,7 +418,7 @@ hear
         <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
       </div> -->
     
-    </header>
+    <!-- </header> -->
     <div>
   <section id='get-started'>
   </div>
