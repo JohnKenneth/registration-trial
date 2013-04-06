@@ -10,11 +10,11 @@
  }
 
 
-.col2outer #leeft {
+#col2outer #leeft {
  width: 300px;
  float: left;
  }
- .col2outer #riight {
+ #col2outer #riight {
  width: 300px;
  float: right;
  }
