@@ -29,20 +29,23 @@
      $counter=count($out['feed']['data']);
 
      $bilang=0;
+     $counter=0;
 ?>
      <div id='s2' style='position:relative;'>
+
 <?php
+echo "<table><tr>";
       for($z=0;$z<$counter;$z++)
      {
       if(!empty($out['feed']['data'][$z]['picture']))
       {
 
-      $bilang++;
-      if($bilang==1)
-      {
-        echo "<div>";
-      }
-
+      // $bilang++;
+      // if($bilang==1)
+      // {
+      //   echo "<div>";
+      // }
+ echo "<td width='265px' height='200px'>";
         echo "<div class='Images'>";
       // echo "<div>";
       echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200px' height='200px'>";
@@ -63,12 +66,21 @@
 
         echo "</div>";
         
-        if($bilang==3)
+        // if($bilang==3)
+        // {
+        //   echo "</div>";
+        //   $bilang=0;
+        // }
+$counter+=1;
+        if($counter==4)
         {
-          echo "</div>";
-          $bilang=0;
+          echo "</tr></table>";
+          $counter=0;
         }
-
+        elseif($counter%2==0)
+        {
+          echo "</tr><tr>";
+        }
 
       }
 

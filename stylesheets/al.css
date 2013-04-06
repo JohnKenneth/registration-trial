@@ -1,20 +1,13 @@
-#container #col1 {
- width: 200px;
- float: left;
- }
- #container #col2outer {
- width: 400px;
- float: right;
- margin: 0;
- padding: 0;
- }
-
-
-#col2outer #leeft {
- width: 200px;
- float: left;
- }
- #col2outer #riight {
- width: 200px;
- float: right;
- }
+.Images div,img{
+			border: 2px solid #ccc;
+			padding: 15px;
+			background-color:#eee;
+		}
+		.Images div{
+			position: absolute;
+			background-color:#f00;
+		}
+		table td{
+			padding:20px;
+		}
+		
