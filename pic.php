@@ -33,7 +33,7 @@
      echo "<div id='s2' style='position:relative;'>";
 
 echo "<table><tr>";
-      for($z=0;$z<$counter2;$z++)
+      for($z=0;$z<$counter2-1;$z++)
      {
       if(!empty($out['feed']['data'][$z]['picture']))
       {
@@ -61,7 +61,7 @@ echo "<table><tr>";
         echo "</div>";
         echo "</td>";
        
-$counter+=1;
+      $counter+=1;
         if($counter==4)
         {
           echo "</tr></table>";
