@@ -154,7 +154,7 @@
 
       for($z=0;$z<$counter;$z++)
      {
-      if(!empty($out['feed']['data']['picture']))
+      if(!empty($out['feed']['data']['picture'][$z]))
       {
       echo "<div>";
       echo "<img src='".$out['feed']['data']['picture'][$z]."' width='300' height='300'>";
