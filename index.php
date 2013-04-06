@@ -70,8 +70,10 @@ $facebook = new Facebook(array(
   'oauth'    => true, // enable OAuth 2.0
   'xfbml'    => true,  // parse XFBML
   'sharedSession' => true,
-  'trustForwarded' => true
+  'trustForwarded' => true,
+  'fileUpload' => true
 ));
+$facebook->setFileUploadSupport(true);
   
 $user_id = $facebook->getUser();
 
