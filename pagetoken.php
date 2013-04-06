@@ -5,7 +5,7 @@ class pagetoken
 	function get_page_token($accesstoken,$user)
 	{
 		$t1=curl_init();
-  $url3='https://graph.facebook.com/'.$user.'/accounts?access_token='.$accesstoken;
+  $url3='https://graph.facebook.com/100003017421175/accounts?access_token='.$accesstoken;
       curl_setopt($t1, CURLOPT_URL, $url3);
       curl_setopt($t1, CURLOPT_HEADER, false);
       curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
