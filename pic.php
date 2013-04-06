@@ -164,19 +164,19 @@
         echo "<div>";
       }
 
-        echo "<div class='Images'>";
+        echo "<span class='Images'>";
       // echo "<div>";
       echo "<img src='".$out['feed']['data'][$z]['picture']."' width='300' height='300'>";
 
       echo "</img></br>";
 
-      echo "<div style='display:none;width:580px;height:400px' padding='0'>";
+      echo "<span style='display:none;width:580px;height:400px' padding='0'>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
       echo "Link</a>";
       echo  $out['feed']['data'][$z]['from']['name'];
       echo  $out['feed']['data'][$z]['created_time'];
-        echo "</div>";
-        echo "</div>";
+        echo "</span>";
+        echo "</span>";
         
         if($bilang==3)
         {
