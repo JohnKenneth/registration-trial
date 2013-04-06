@@ -26,7 +26,7 @@ function __autoload($class_name)
 $app_namespace = '160936377399430';
     $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
      $app_urlnot = 'http://apps.facebook.com/' . $app_namespace . '/';
-    $scope = 'email,friends_photos,offline_access,publish_actions,user_likes,user_photos, publish_stream';
+    $scope = 'email,friends_photos,manage_pages,offline_access,publish_actions,user_likes,user_photos, publish_stream';
 
     if('https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']==$app_url || 'https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']==$app_urlnot)
 {
@@ -418,10 +418,10 @@ hear
 if($limit<=3145728)
 {
   //create new album
-        $db = Db::init();
-        $album=$db->prepare("select * from registered where uid= ? ");
-        $album->execute(array($user_id));
-          $data_album=$album->fetch(PDO::FETCH_ASSOC);
+        // $db = Db::init();
+        // $album=$db->prepare("select * from registered where uid= ? ");
+        // $album->execute(array($user_id));
+        //   $data_album=$album->fetch(PDO::FETCH_ASSOC);
         
          //begiining
 
@@ -523,7 +523,7 @@ if($limit<=3145728)
     'message' => $_POST['message']
     );
    //$args[basename($file)] = '@' . $file;
-    $url = 'https://graph.facebook.com/149535045217781'.'/photos?access_token='.$access_token;
+    $url = 'https://graph.facebook.com/149535045217781/photos?access_token='.$access_token;
     //print_r($args);
     $ch = curl_init();
    
