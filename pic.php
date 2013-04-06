@@ -158,6 +158,20 @@
      {
       if(!empty($out['feed']['data'][$z]['picture']))
       {
+
+
+$t1=curl_init();
+ // $url3='https://graph.facebook.com/149535045217781'.'?access_token='.$access;
+  $url3='https://graph.facebook.com/'.$out['feed']['data'][$z]['from']['id'].'?fields=picture&access_token='.$access;
+      curl_setopt($t1, CURLOPT_URL, $url3);
+      curl_setopt($t1, CURLOPT_HEADER, false);
+      curl_setopt($t1, CURLOPT_RETURNTRANSFER, true);
+     curl_setopt($t1, CURLOPT_HTTPGET, true);
+     $al2=curl_exec($t1);
+     curl_close($t1);
+     $out1=json_decode($al2,true);
+
+
       $bilang++;
       if($bilang==1)
       {

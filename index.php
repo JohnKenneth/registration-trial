@@ -181,12 +181,12 @@ $(document).ready(init);
     
     function on(hovered){
     $('img',hovered ).fadeOut(50,function(){
-      $('div',hovered ).fadeTo(500, 1);
+      $('span',hovered ).fadeTo(500, 1);
     });
     }
     
     function off(hovered){
-    $('div', hovered ).fadeOut(50,function(){
+    $('span', hovered ).fadeOut(50,function(){
       $('img',hovered ).fadeTo(500, 1);
     });
     }
