@@ -791,7 +791,7 @@ $sth->closeCursor();
     // $photos->pics($tokenpage,$user_id);
 
   
-                  echo "<center>";
+                 
                 echo "<li>";
                 echo "You are registered. You can now upload your photos.";
 
@@ -824,7 +824,7 @@ $sth->closeCursor();
          echo '</div>';
 
           echo "</li>";
-
+ echo "<center>";
            $photos= new pic();
             $photos->pics($facebook->getAccessToken(),$user_id);
             echo "</center>";
