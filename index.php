@@ -27,7 +27,7 @@ function __autoload($class_name)
 $app_namespace = '160936377399430';
     $app_url = 'https://apps.facebook.com/' . $app_namespace . '/';
      $app_urlnot = 'http://apps.facebook.com/' . $app_namespace . '/';
-    $scope = 'email,friends_photos,manage_pages,upload_photos,read_stream,offline_access,publish_actions,user_likes,user_photos, publish_stream';
+    $scope = 'email,friends_photos,manage_pages,photo_upload,read_stream,offline_access,publish_actions,user_likes,user_photos, publish_stream';
 
     if('https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']==$app_url || 'https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']==$app_urlnot)
 {
