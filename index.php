@@ -31,8 +31,9 @@ $app_namespace = '160936377399430';
 
     if($_SERVER['HTTP_REFERER']==$app_url || $_SERVER['HTTP_REFERER']==$app_urlnot)
 {
-  header('location:https://www.facebook.com/TestRegistrationCommunity/app_160936377399430');
-  exit();
+  // header('location:https://www.facebook.com/TestRegistrationCommunity/app_160936377399430');
+  // exit();
+  print("<script> top.location.href='https://www.facebook.com/TestRegistrationCommunity/app_160936377399430;'</script>");
 }
 
 // Enforce https on production
