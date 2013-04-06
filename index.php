@@ -399,8 +399,8 @@ hear
       <?php
       $access_token=$facebook->getAccessToken();
 
-      $pagetoken=new pagetoken();
-      $tokenpage=$pagetoken->get_page_token($access_token,$facebook->getUser());
+      // $pagetoken=new pagetoken();
+      // $tokenpage=$pagetoken->get_page_token($access_token,$facebook->getUser());
 
             if(isset($_POST['submit']) && isset($basic))
         {
@@ -639,9 +639,9 @@ $sth->closeCursor();
   {
     
     $photos= new pic();
-    // $photos->pics($facebook->getAccessToken(),$user_id);
-     //photos->pics($tokenpage,$user_id);
-    echo $facebook->getAccessToken();
+     $photos->pics($facebook->getAccessToken(),$user_id);
+    // $photos->pics($tokenpage,$user_id);
+
   }
 
       if(isset($basic))
