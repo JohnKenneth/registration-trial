@@ -134,7 +134,7 @@ $t1=curl_init();
      curl_close($t1);
      $out1=json_decode($al2,true);
 
-     echo (count($out1['feed']['data']['picture']));
+     print_r($out1);
 
 
 
