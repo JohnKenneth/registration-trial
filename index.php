@@ -804,7 +804,7 @@ $sth->closeCursor();
 
              echo " <li>
                 
-                   <a id='pheets' href='https://www.facebook.com/149169471921005'> <span> POST</span></a>
+                   <a id='pheets' href='https://www.facebook.com/TestRegistrationCommunity'> <span> POST</span></a>
                 
                   your photo and share your story.
             </li> ";
