@@ -44,7 +44,7 @@ echo "<table><tr>";
       // echo "<div>";
       echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200px' height='200px'>";
 
-      echo "</img></br>";
+      echo "</img>";
 
       echo "<div style='display:none;width:200px;height:200px' padding='0'>";
      // echo '<p id="picture" style="background-image: url(https://graph.facebook.com/'. $out['feed']['data'][$z]['id']; .'/picture?type=normal)"></p>';
