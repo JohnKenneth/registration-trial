@@ -241,7 +241,7 @@ $('#s2').cycle({
     $('#pheets').click(function()
 
       {
-          top.href.location= 'https://www.facebook.com/TestRegistrationCommunity';
+          top.location.href= 'https://www.facebook.com/TestRegistrationCommunity';
 
       });
 
