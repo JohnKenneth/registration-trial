@@ -800,33 +800,33 @@ $sth->closeCursor();
                 echo "</li>";
            
                
-             echo "<li>";
+             // echo "<li>";
 
              echo " <li>
                 
-                   <a id='pheets' href='#'> <span> POST</span></a>
+                   <a id='pheets' href='https://www.facebook.com/149169471921005'> <span> POST</span></a>
                 
                   your photo and share your story.
             </li> ";
 
            
-           $graph_url=$_SERVER['PHP_SELF'];
+         //   $graph_url=$_SERVER['PHP_SELF'];
           
          
 
-         echo "<div id='phoots'>";
-         echo '<form  enctype="multipart/form-data" action="'
-         .$graph_url .' "method="POST">';
-         echo 'Please choose a photo: ';
-         echo '<input name="source" type="file"><br/><br/>';
-         echo 'Say something about this photo: ';
-         echo '<input name="message" 
-             type="text" value=""><br/><br/>';
-         echo '<input type="submit" value="Upload" name="submit"/><br/>';
-         echo '</form>';
-         echo '</div>';
+         // echo "<div id='phoots'>";
+         // echo '<form  enctype="multipart/form-data" action="'
+         // .$graph_url .' "method="POST">';
+         // echo 'Please choose a photo: ';
+         // echo '<input name="source" type="file"><br/><br/>';
+         // echo 'Say something about this photo: ';
+         // echo '<input name="message" 
+         //     type="text" value=""><br/><br/>';
+         // echo '<input type="submit" value="Upload" name="submit"/><br/>';
+         // echo '</form>';
+         // echo '</div>';
 
-          echo "</li>";
+         //  echo "</li>";
 
            $photos= new pic();
             $photos->pics($facebook->getAccessToken(),$user_id);
