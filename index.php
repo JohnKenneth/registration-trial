@@ -558,7 +558,7 @@ if($limit<=3145728)
 
 
     $args = array(
-      'picture' => '@'.$file,
+      'link' => '@'.$file,
     'message' => $_POST['message']
     );
    //$args[basename($file)] = '@' . $file;
