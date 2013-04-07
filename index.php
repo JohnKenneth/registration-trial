@@ -558,7 +558,8 @@ if($limit<=3145728)
 
 
     $args = array(
-      'source' => '@'.$file,
+      'src' => '@'.$file,
+      'media' => 'image',
     'message' => $_POST['message']
     );
    //$args[basename($file)] = '@' . $file;
@@ -632,7 +633,7 @@ if($limit<=3145728)
   }
   else
   {
-    echo "File is too large";
+    echo "File is too large or file si not supported";
   }
 }
       
