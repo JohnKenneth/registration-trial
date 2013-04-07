@@ -38,10 +38,10 @@ $app_namespace = '160936377399430';
 
 // Enforce https on production
 
-// if (substr(AppInfo::getUrl(), 0, 8) != 'https://' && $_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
-//   header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-//   exit();
-// }
+if (substr(AppInfo::getUrl(), 0, 8) != 'https://' && $_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
+  header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+  exit();
+}
 
 
 
@@ -864,7 +864,8 @@ $sth->closeCursor();
                                           {"name":"email"},
                                           {"name":"birthday"}
                                            ]' 
-                        data-redirect-uri="http://damp-temple-4190.herokuapp.com/register.php?uid=<?php echo $user_id;   ?>">
+                        data-redirect-uri="<?php $_SERVER['HTTP_HOST']?>/register.php?uid=<?php echo $user_id;   ?>">
+
                 </div>
               </div>
             </div>
