@@ -864,7 +864,7 @@ $sth->closeCursor();
                                           {"name":"email"},
                                           {"name":"birthday"}
                                            ]' 
-                        data-redirect-uri="<?php $_SERVER['HTTP_HOST']?>/register.php?uid=<?php echo $user_id;   ?>">
+                        data-redirect-uri="https://damp-temple-4190.herokuapp.com/register.php?uid=<?php echo $user_id;   ?>">
 
                 </div>
               </div>
