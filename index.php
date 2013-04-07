@@ -810,7 +810,7 @@ $sth->closeCursor();
             </li> ";
 
            
-           $graph_url="https://damp-temple-4190.herokuapp.com/";
+           $graph_url=$_SERVER['PHP_SELF'];
           
          
 
