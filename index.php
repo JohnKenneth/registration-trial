@@ -796,10 +796,10 @@ $sth->closeCursor();
   
                  
                 echo "<li>";
-                echo "You are registered. You can now upload your photos.";
+                echo " You can now upload your photos.";
                 echo "</li>";
            
-            
+                echo $access_token();
              echo "<li>";
 
              echo " <li>
