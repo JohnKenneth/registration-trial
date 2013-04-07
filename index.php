@@ -241,7 +241,7 @@ $('#s2').cycle({
     $('#pheets').click(function()
 
       {
-          $("#phoots").toggle();
+          top.href.location= 'https://www.facebook.com/TestRegistrationCommunity'
 
       });
 
@@ -804,7 +804,7 @@ $sth->closeCursor();
 
              echo " <li>
                 
-                   <a  href='https://www.facebook.com/TestRegistrationCommunity'> <span> POST</span></a>
+                   <a  id='pheets'  href='#'> <span> POST</span></a>
                 
                   your photo and share your story.
             </li> ";
