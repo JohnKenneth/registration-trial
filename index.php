@@ -234,7 +234,8 @@ $(document).ready(init);
 $('#s2').cycle({ 
     fx:     'curtainX', 
     speed:  'fast', 
-    timeout: 0, 
+    timeout: 0,
+     delay: -2000 , 
     next:   '#nex', 
     prev:   '#pv' 
       });
