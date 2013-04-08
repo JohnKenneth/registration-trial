@@ -54,9 +54,13 @@ echo "<table><tr>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
           echo "<span>Source</span></a>";
          echo "</br>";
+
           echo  "Submitted by: <span>".$out['feed']['data'][$z]['from']['name']."</span>";
           echo "</br>";
-           echo  "Date Submitted:</br>".$out['feed']['data'][$z]['created_time'];
+          $date=$out['feed']['data'][$z]['created_time'];
+          // echo  "Date Submitted:</br>".$out['feed']['data'][$z]['created_time'];
+
+          echo  "Date Submitted:</br>".substr($date, 0,10);
       echo "</div>";
 
         echo "</div>";
@@ -87,6 +91,9 @@ echo "<table><tr>";
       echo "<a href='#' id='nex'>Next</a>";
       echo "</div>";
       echo "</center>";
+
+
+      //if registered
 
  }
 
