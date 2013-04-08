@@ -232,7 +232,7 @@ $(document).ready(init);
 
 
 $('#s2').cycle({ 
-    fx:     'scrollDown', 
+    fx:     'curtainX', 
     speed:  'fast', 
     timeout: 0, 
     next:   '#nex', 
