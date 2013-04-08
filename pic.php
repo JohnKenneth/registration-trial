@@ -60,7 +60,7 @@ echo "<table><tr>";
           $date=$out['feed']['data'][$z]['created_time'];
           // echo  "Date Submitted:</br>".$out['feed']['data'][$z]['created_time'];
 
-          echo  "Date Submitted:</br>".dates(substr($date, 0,10));
+          echo  "Date Submitted:</br>".substr($date, 0,10);
       echo "</div>";
 
         echo "</div>";
