@@ -16,7 +16,8 @@
     require_once('AppInfo.php');
   require_once('utils.php');
   require_once('pic.php');
-  require_once('pagetoken.php');
+ // require_once('pagetoken.php');
+ ob_start();
 
 
 function __autoload($class_name) 

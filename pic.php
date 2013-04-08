@@ -1,6 +1,7 @@
 <?php
      
     require_once 'config.php';
+	ob_start();
   
  class pic
  {
@@ -53,9 +54,9 @@ echo "<table><tr>";
          echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
           echo "<span>Source</span></a>";
          echo "</br>";
-          echo  $out['feed']['data'][$z]['from']['name'];
+          echo  "Submitted by: <span>".$out['feed']['data'][$z]['from']['name']."</span>";
           echo "</br>";
-           echo  $out['feed']['data'][$z]['created_time'];
+           echo  "Date Submitted:</br>".$out['feed']['data'][$z]['created_time'];
       echo "</div>";
 
         echo "</div>";
