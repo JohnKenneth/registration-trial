@@ -445,12 +445,14 @@ hear
            $id_admin=$admin->rowCount();
 if($id_admin==1)
 {
-  echo "<div>
-  <span><a href='#' onclick='showTab('div1');return false;'> View the app</a></span>
-  </div>";
-            echo "<div>
-  <span><a href='#' onclick='showTab('div2');return false;'> Login as administrator</a></span>
-  </div>";
+  ?>
+ <div>
+  <span><a href='#' onclick='showTab("div1");return false;'> View the app</a></span>
+  </div>
+            <div>
+  <span><a href='#' onclick='showTab("div2");return false;'> Login as administrator</a></span>
+  </div>
+  <?php
 }
       ?>
     <!-- dito -->
