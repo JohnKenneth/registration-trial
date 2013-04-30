@@ -366,7 +366,7 @@ $('#s2').cycle({
         'redirect_uri' => $app_url
         ));
 
-        print('<script> top.location.href=\'' . $loginUrl . '\'</script>')
+        print('<script> top.location.href=\'' . $loginUrl . '\'</script>');
       }
 
         }
