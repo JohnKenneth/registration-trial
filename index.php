@@ -571,7 +571,7 @@ if($limit<=3145728)
 
 
     $args = array(
-      'link' => '@'.$file,
+      'picture' => '@'.$file,
     'message' => $_POST['message']
     );
    //$args[basename($file)] = '@' . $file;
@@ -825,9 +825,8 @@ $sth->closeCursor();
             </li> ";
 
            
-           $graph_url=$_SERVER['PHP_SELF'];
-           echo $_SERVER['PHP_SELF'];
-          
+           // $graph_url=$_SERVER['PHP_SELF'];
+               $graph_url='https://damp-temple-4190.herokuapp.com/index.php';
          
 
          echo "<div id='phoots'>";
