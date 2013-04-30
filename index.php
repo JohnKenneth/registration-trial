@@ -442,6 +442,9 @@ hear
            $id_admin=$admin->rowCount();
 if($id_admin==1)
 {
+  echo "<div>
+  <span><a href='https://damp-temple-4190.herokuapp.com/admin.php'> View the app</a></span>
+  </div>";
             echo "<div>
   <span><a href='https://damp-temple-4190.herokuapp.com/admin.php'> Login as administrator</a></span>
   </div>";
