@@ -826,6 +826,7 @@ $sth->closeCursor();
 
            
            $graph_url=$_SERVER['PHP_SELF'];
+           echo $_SERVER['PHP_SELF'];
           
          
 
