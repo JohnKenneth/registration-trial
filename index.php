@@ -16,6 +16,7 @@
     require_once('AppInfo.php');
   require_once('utils.php');
   require_once('pic.php');
+  require_once('admin.php');
  // require_once('pagetoken.php');
  ob_start();
 
@@ -151,6 +152,8 @@ $app_name = idx($app_info, 'name', '');
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript" src="/javascript/test.js"></script>
+
 
        <script type="text/javascript" src="/javascript/jquery.cycle.all.js"></script>
 
@@ -443,10 +446,10 @@ hear
 if($id_admin==1)
 {
   echo "<div>
-  <span><a href='https://damp-temple-4190.herokuapp.com/admin.php'> View the app</a></span>
+  <span><a href='#' onclick='showTab('div1');return false;'> View the app</a></span>
   </div>";
             echo "<div>
-  <span><a href='https://damp-temple-4190.herokuapp.com/admin.php'> Login as administrator</a></span>
+  <span><a href='#' onclick='showTab('div2');return false;'> Login as administrator</a></span>
   </div>";
 }
       ?>
@@ -704,6 +707,7 @@ $sth->closeCursor();
   
         
         ?>
+        <div style="display: block;" id='tab1'>
         <div>
           <ul> 
             <li>
@@ -914,6 +918,18 @@ $sth->closeCursor();
 
     
 </div>
+</div>
+<?php
+  if($id_admin==1)
+  {
+    echo "<div style='display: none;' id='tab2'>";
+    $display_admin=new admin();
+    $display_admin->get_registered();
+    echo "</div>";
+    
+  }
+?>
+
       
       <!-- <a href="https://www.facebook.com/CELESTY.SHINAGAWA" target="_top" class="text">1.&nbsp<b>LIKE</b></a>&nbspthis page -->
     <!-- </section> -->
