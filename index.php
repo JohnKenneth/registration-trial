@@ -240,10 +240,17 @@ $('#s2').cycle({
     prev:   '#pv' 
       });
 
-    $('#pheets').click(function()
+    // $('#pheets').click(function()
+
+    //   {
+    //       top.location.href= 'https://www.facebook.com/TestRegistrationCommunity';
+
+    //   });
+
+ $('#pheets').click(function()
 
       {
-          top.location.href= 'https://www.facebook.com/TestRegistrationCommunity';
+         $('#phoots').toggle();
 
       });
 
@@ -802,7 +809,7 @@ $sth->closeCursor();
                 echo "</li>";
            
                
-             // echo "<li>";
+              echo "<li>";
 
              echo " <li>
                 
@@ -812,23 +819,23 @@ $sth->closeCursor();
             </li> ";
 
            
-         //   $graph_url=$_SERVER['PHP_SELF'];
+           $graph_url=$_SERVER['PHP_SELF'];
           
          
 
-         // echo "<div id='phoots'>";
-         // echo '<form  enctype="multipart/form-data" action="'
-         // .$graph_url .' "method="POST">';
-         // echo 'Please choose a photo: ';
-         // echo '<input name="source" type="file"><br/><br/>';
-         // echo 'Say something about this photo: ';
-         // echo '<input name="message" 
-         //     type="text" value=""><br/><br/>';
-         // echo '<input type="submit" value="Upload" name="submit"/><br/>';
-         // echo '</form>';
-         // echo '</div>';
+         echo "<div id='phoots'>";
+         echo '<form  enctype="multipart/form-data" action="'
+         .$graph_url .' "method="POST">';
+         echo 'Please choose a photo: ';
+         echo '<input name="source" type="file"><br/><br/>';
+         echo 'Say something about this photo: ';
+         echo '<input name="message" 
+             type="text" value=""><br/><br/>';
+         echo '<input type="submit" value="Upload" name="submit"/><br/>';
+         echo '</form>';
+         echo '</div>';
 
-         //  echo "</li>";
+          echo "</li>";
 
            $photos= new pic();
             $photos->pics_registered($facebook->getAccessToken(),$user_id);
