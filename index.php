@@ -430,7 +430,13 @@ hear
       </div> -->
     
     <!-- </header> -->
-    <?php
+    
+      ?>
+   
+    <div>
+  <section id='get-started'>
+  </div>
+  <?php
      $db = Db::init();
          $admin=$db->prepare("select * from administrators where uid= ? ");
          $admin->execute(array($user_id));
@@ -441,11 +447,6 @@ if($id_admin==1)
   <span><a href='https://damp-temple-4190.herokuapp.com/admin.php'> Login as administrator</a></span>
   </div>";
 }
-      ?>
-   
-    <div>
-  <section id='get-started'>
-  </div>
     <!-- dito -->
 
     <!-- <section id="get-started"> -->
