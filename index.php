@@ -450,7 +450,7 @@ if($id_admin==1)
   <span><a href='#' onclick="showTab('tab1');return false;"> View the app</a></span>
   </div>
             <div>
-  <span><a href='#' onclick='showTab("tab2");return false;'> Login as administrator</a></span>
+  <span><a href='#' onclick='showTab("tab2");return false;'> Administrator</a></span>
   </div>
   <?php
 }

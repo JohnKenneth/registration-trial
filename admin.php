@@ -16,7 +16,21 @@ function __autoload($class_name)
  {
  	 $db = Db::init();
          $admin=$db->prepare("select * from registered");
+         $admin->execute();
+         $fetched=$admin->fetchAll();
+         $count=$admin->rowCount();
  	echo "<span> Registered</span>";
+
+ 	echo "<table>";
+
+ 	for($z=0;$z<$count;$z++)
+ 	{
+ 		echo "<tr>";
+ 		echo "<td><a href='https://facebook.com/".$fetched['uid']."' target='_blank'>".$fetched['name']."</td>";
+ 		echo "</tr>";
+ 	}
+
+ 	echo "</table>";
 
  }
 
