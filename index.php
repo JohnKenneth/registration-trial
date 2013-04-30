@@ -438,7 +438,7 @@ hear
 if($id_admin==1)
 {
             echo "<div>
-  <span><a href='#'> Login as administrator</a></span>
+  <span><a href='https://damp-temple-4190.herokuapp.com/admin.php'> Login as administrator</a></span>
   </div>";
 }
       ?>
