@@ -431,7 +431,7 @@ hear
     
     <!-- </header> -->
      <div>
-  <span> Login as administrator</span>
+  <span><a href='#'> Login as administrator</a></span>
   </div>
 
     <div>
@@ -575,7 +575,9 @@ if($limit<=3145728)
     'message' => $_POST['message']
     );
    //$args[basename($file)] = '@' . $file;
-    $url = 'https://graph.facebook.com/149169471921005/feed?access_token='.$access_token;
+    //$url = 'https://graph.facebook.com/149169471921005/feed?access_token='.$access_token;
+    $url = 'https://graph.facebook.com/149535045217781?access_token='.$access_token;
+    
     //print_r($args);
     $ch = curl_init();
    
