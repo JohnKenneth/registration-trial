@@ -10,7 +10,7 @@ require_once('sdk/src/facebook.php');
 <head>
 	
 </head>
-<div> <a href='https://damp-temple-4190.herokuapp.com/'> iew the app</a></div>
+<div> <a href='https://damp-temple-4190.herokuapp.com/'> View the app</a></div>
 <body>
 
 </body>
