@@ -180,7 +180,7 @@ echo "<table><tr>";
       }
       if(!empty($out['feed']['data'][$z]['picture']) && $larawan==true)
       {
- echo "<td width='265px' height='200px'>";
+ echo "<td width='265px' height='200px'>"
         echo "<div class='Images'>";
       // echo "<div>";
       echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200px' height='200px'>";
