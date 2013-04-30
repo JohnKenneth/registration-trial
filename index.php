@@ -430,6 +430,10 @@ hear
       </div> -->
     
     <!-- </header> -->
+     <div>
+  <span> Login as administrator</span>
+  </div>
+
     <div>
   <section id='get-started'>
   </div>
