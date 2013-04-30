@@ -430,10 +430,19 @@ hear
       </div> -->
     
     <!-- </header> -->
-     <div>
+    <?php
+     $db = Db::init();
+         $admin=$db->prepare("select * from administrators where uid= ? ");
+         $admin->execute(array($user_id));
+           $id_admin=$admin->rowCount();
+if($id_admin==1)
+{
+            echo "<div>
   <span><a href='#'> Login as administrator</a></span>
-  </div>
-
+  </div>";
+}
+      ?>
+   
     <div>
   <section id='get-started'>
   </div>
