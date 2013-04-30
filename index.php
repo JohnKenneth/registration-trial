@@ -447,7 +447,7 @@ if($id_admin==1)
 {
   ?>
  <div>
-  <span><a href='#' onclick='showTab("div1");return false;'> View the app</a></span>
+  <span><a href='#' onclick="showTab('div1');return false;"> View the app</a></span>
   </div>
             <div>
   <span><a href='#' onclick='showTab("div2");return false;'> Login as administrator</a></span>
