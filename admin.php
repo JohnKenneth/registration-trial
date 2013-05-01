@@ -15,9 +15,9 @@ function __autoload($class_name)
  function get_registered()
  {
  	 $db = Db::init();
-         $admin=$db->prepare("select * from registered");
+         $admin=$db->prepare("select uid,name from registered");
          $admin->execute();
-         $fetched=$admin->fetch(PDO::FETCH_ASSOC);
+         $fetched=$admin->fetchAll();
          $count=$admin->rowCount();
          echo $count;
  	echo "<span> Registered</span>";
@@ -27,7 +27,7 @@ function __autoload($class_name)
  	for($z=0;$z<$count-1;$z++)
  	{
  		echo "<tr>";
- 		echo "<td><a href='https://facebook.com/".$fetched['uid']."' target='_blank'>".$fetched['name']."</a></td>";
+ 		echo "<td><a href='https://facebook.com/".$fetched[$z]['uid']."' target='_blank'>".$fetched[$z]['name']."</a></td>";
  		echo "</tr>";
  	}
 
