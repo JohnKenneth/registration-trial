@@ -493,26 +493,7 @@ hear
     <div id="get-started" style="background:url(<?php echo $header['link'];?>)">
   
     </div>
-  <?php
-      
-      $url = 'https://graph.facebook.com/304176206390501?fields=photos.fields(link,source)&access_token='.$access_token;
-      $ch = curl_init();
   
-      curl_setopt($ch, CURLOPT_URL, $url);
-      curl_setopt($ch, CURLOPT_HEADER, false);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      curl_setopt($ch, CURLOPT_HTTPGET, true);
-      $response = curl_exec($ch);
-      $out1=json_decode($response,true);
-      curl_close($ch);
-      echo "<div id='cycleheader'>";
-      for($x=count($out1['photos']['data'])-1;$x>=0;$x--)
-      {
-        echo "<img src='".$out1['photos']['data'][$x]['source']."' width='300' height='300'/>";
-      }
-      echo "</div>";
-    ?>
-    <a href="javascript:postwith('headerChanger.php')"><button>SAVE</button></a>
 <!--end-->
    <!--  <div>
   <section id='get-started'>
@@ -1004,8 +985,34 @@ $sth->closeCursor();
   if($id_admin==1)
   {
     echo "<div style='display: none;' id='tab2'>";
+    echo "<div>";
+
+      
+      $url = 'https://graph.facebook.com/304176206390501?fields=photos.fields(link,source)&access_token='.$access_token;
+      $ch = curl_init();
+  
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_HEADER, false);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_HTTPGET, true);
+      $response = curl_exec($ch);
+      $out1=json_decode($response,true);
+      curl_close($ch);
+      echo "<div id='cycleheader'>";
+      for($x=count($out1['photos']['data'])-1;$x>=0;$x--)
+      {
+        echo "<img src='".$out1['photos']['data'][$x]['source']."' width='300' height='300'/>";
+      }
+      echo "</div>";
+    
+    echo '<a href="javascript:postwith("headerChanger.php")"><button>SAVE</button></a>';
+    echo "</div>";
+    echo "<div>";
     $display_admin=new admin();
     $display_admin->get_registered();
+    echo "</div>";
+
+
     echo "</div>";
     
   }
