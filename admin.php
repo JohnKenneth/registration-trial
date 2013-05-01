@@ -17,7 +17,7 @@ function __autoload($class_name)
  	 $db = Db::init();
          $admin=$db->prepare("select * from registered");
          $admin->execute();
-         $fetched=$admin->fetchAll();
+         $fetched=$admin->fetch(PDO::FETCH_ASSOC);
          $count=$admin->rowCount();
          echo $count;
  	echo "<span> Registered</span>";
