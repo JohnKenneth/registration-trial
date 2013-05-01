@@ -168,7 +168,7 @@ echo "<table><tr>";
      {
       for($alpogi=0;$alpogi<count($register);$alpogi++)
       {
-        if($register[$alpogi]['uid']==$out['feed']['data'][$z]['from']['id'])
+        if($register[$alpogi]['uid']==$out['data'][$z]['from']['id'])
         {
           $larawan=true;
           break;
@@ -183,16 +183,18 @@ echo "<table><tr>";
  echo "<td width='265px' height='200px' class='ken'>";
         echo "<div class='Images'>";
       // echo "<div>";
-      echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200px' height='200px'>";
+      // echo "<img src='".$out['feed']['data'][$z]['picture']."' width='200px' height='200px'>";
+        echo "<img src='".$out['data'][$z]['picture']."' width='200px' height='200px'>";
       echo "</img>";
       echo "<div style='display:none;width:200px;height:200px' padding='0'>";
      // echo '<p id="picture" style="background-image: url(https://graph.facebook.com/'. $out['feed']['data'][$z]['id']; .'/picture?type=normal)"></p>';
       //   echo "<img src='".$out1['[picture']['data']['url']."' width='50' height='50'>";
       // echo "</img></br>";
-         echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
+         // echo "<a href='".$out['feed']['data'][$z]['link']."' target='_blank'>";
+      echo "<a href='".$out['data'][$z]['link']."' target='_blank'>";
           echo "<span>Source</span></a>";
          echo "</br>";
-          echo  "Submitted by: <span>".$out['feed']['data'][$z]['from']['name']."</span>";
+          echo  "Submitted by: <span>".$out['data'][$z]['from']['name']."</span>";
           echo "</br>";
           $date=$out['feed']['data'][$z]['created_time'];
           // echo  "Date Submitted:</br>".$out['feed']['data'][$z]['created_time'];
