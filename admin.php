@@ -24,7 +24,7 @@ function __autoload($class_name)
  	echo "Registered";
  	echo "</br>";
 
- 	echo "<table border='1' width='300' height='300'>";
+ 	echo '<table border="1" width="300" height="300">';
 
  	for($z=0;$z<$count;$z++)
  	{

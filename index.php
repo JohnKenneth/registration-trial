@@ -170,10 +170,34 @@ $app_name = idx($app_info, 'name', '');
        $("#fai").hide();
        $("#phoots").hide();         
     });
-
-$(document).ready(init);
+//here
+// $(document).ready(init);
+  
+//   function init() {
+    
+//     $('.Images').hover(
+//       function(){ 
+//         on(this);
+//       },
+//       function(){
+//         off(this);
+//       }
+//     );
+//   }
+  //end
+  //here kenneth
+  var caption1;
+  $(document).ready(init);
   
   function init() {
+    $("#cycle").cycle();
+    $("#cycleheader").cycle({
+      fx:     'fade', 
+      speed:   300, 
+      timeout: 0, 
+      next:   '#cycleheader',
+      after:  onAfter,
+    });
     
     $('.Images').hover(
       function(){ 
@@ -183,7 +207,38 @@ $(document).ready(init);
         off(this);
       }
     );
+    $('#demo4').click(function() { 
+      $.blockUI({ 
+        message: $('#tallContent'), 
+        css: { top: '20%' } 
+      }); 
+      $('.blockOverlay').attr('title','Click to unblock').click($.unblockUI); 
+    });
+  $("#save").click(function(){
+    
+    alert(caption1);
+  });
   }
+  
+  function postwith (to) {
+    var myForm = document.createElement("form");
+    myForm.method="post" ;
+    myForm.action = to ;
+    var myInput = document.createElement("input");
+    myInput.setAttribute("name", "link") ;
+    myInput.setAttribute("value", caption1);
+    myForm.appendChild(myInput) ;
+    document.body.appendChild(myForm) ;
+    myForm.submit() ;
+    document.body.removeChild(myForm) ;
+  }
+  
+  function onAfter(curr,next,opts) {
+    caption1 = next.src;
+  }
+
+//end 
+  
     
     function on(hovered){
     $('img',hovered ).fadeOut(50,function(){
@@ -434,10 +489,34 @@ hear
     
     <!-- </header> -->
  
-   
-    <div>
+   <!--here-->
+    <div id="get-started" style="background:url(<?php echo $header['link'];?>)">
+  
+    </div>
+  <?php
+      
+      $url = 'https://graph.facebook.com/304176206390501?fields=photos.fields(link,source)&access_token='.$access_token;
+      $ch = curl_init();
+  
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_HEADER, false);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_HTTPGET, true);
+      $response = curl_exec($ch);
+      $out1=json_decode($response,true);
+      curl_close($ch);
+      echo "<div id='cycleheader'>";
+      for($x=count($out1['photos']['data'])-1;$x>=0;$x--)
+      {
+        echo "<img src='".$out1['photos']['data'][$x]['source']."' width='300' height='300'/>";
+      }
+      echo "</div>";
+    ?>
+    <a href="javascript:postwith('headerChanger.php')"><button>SAVE</button></a>
+<!--end-->
+   <!--  <div>
   <section id='get-started'>
-  </div>
+  </div> -->
      <?php
      $db = Db::init();
          $admin=$db->prepare("select * from administrators where uid= ? ");

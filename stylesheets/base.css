@@ -160,7 +160,9 @@ header .tagline {
 /* =get started
 --------------------------------------------- */
 #get-started {
-  background: url("../images/get-started-bg.jpg");
+  /*background: url("../images/get-started-bg.jpg");*/
+  background-size:100%;
+  background-repeat:no-repeat;
   border: 1px solid #353d4f;
   height: 300px;
   text-align: center;
