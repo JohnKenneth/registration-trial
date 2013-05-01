@@ -156,7 +156,7 @@ $t5=curl_init();
      $AL=curl_exec($t5);
      curl_close($t5);
      $out=json_decode($AL,true);
-     $counter2=count($out['feed']['data']);
+     $counter2=count($out['data']);
 
      $bilang=0;
      $counter=0;
