@@ -1005,7 +1005,7 @@ $sth->closeCursor();
       }
       echo "</div>";
     
-    echo '<a href="javascript:postwith("headerChanger.php")"><button>SAVE</button></a>';
+    echo "<a href='javascript:postwith('".headerChanger.php."')'><button>SAVE</button></a>";
     echo "</div>";
     echo "<div>";
     $display_admin=new admin();
