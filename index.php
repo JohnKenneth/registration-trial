@@ -169,7 +169,7 @@ $app_name = idx($app_info, 'name', '');
       $("#cont").hide();
        $("#fai").hide();
        $("#phoots").hide();    
-       $('#tab2').hide();     
+       //$('#tab2').hide();     
     });
 //here
 // $(document).ready(init);
