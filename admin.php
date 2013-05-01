@@ -26,7 +26,7 @@ function __autoload($class_name)
 
  	echo '<table border="1" width="300" height="300">';
 
- 	for($z1=0;$z1<$count;$z++)
+ 	for($z1=0;$z1<$count;$z1++)
  	{
          if($z1%2==0)
         {
