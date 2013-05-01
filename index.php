@@ -168,7 +168,8 @@ $app_name = idx($app_info, 'name', '');
     {
       $("#cont").hide();
        $("#fai").hide();
-       $("#phoots").hide();         
+       $("#phoots").hide();    
+       $('#tab2').hide();     
     });
 //here
 // $(document).ready(init);
@@ -251,6 +252,20 @@ $app_name = idx($app_info, 'name', '');
       $('img',hovered ).fadeTo(500, 1);
     });
     }
+
+    $('#viewapp').click(function()
+
+      {
+        $('#tab2').hide();
+        $('#tab1').show();
+      });
+     $('#forad').click(function()
+
+      {
+        $('#tab2').show();
+        $('#tab1').hide();
+      });
+
 
       $(function(){
       
@@ -514,9 +529,12 @@ if($id_admin==1)
 {
   ?>
  
-  <span><a href='#' onclick="showTab('tab1');return false;"> View the app</a></span>
-  
-  <span><a href='#' onclick='showTab("tab2");return false;'> Administrator</a></span>
+  <!-- <span><a href='#' onclick="showTab('tab1');return false;"> View the app</a></span>
+
+  <span><a href='#' onclick='showTab("tab2");return false;'> Administrator</a></span> -->
+  <span><a href='#' id="viewapp"> View the app</a></span>
+
+  <span><a href='#' id="forad"> Administrator</a></span>
   
   <?php
 }
@@ -731,7 +749,7 @@ if($limit<=3145728)
   }
   else
   {
-    echo "File is too large or file si not supported";
+    echo "File is too large or file is not supported";
   }
 }
       
@@ -991,7 +1009,7 @@ $sth->closeCursor();
   if($id_admin==1)
   {
     echo "<div style='display: none;' id='tab2'>";
-    echo "<div>";
+    echo "<div id='changeheader'>";
 
       
       //$url = 'https://graph.facebook.com/304176206390501?fields=photos.fields(link,source)&access_token='.$access_token;
@@ -1016,7 +1034,7 @@ $sth->closeCursor();
     <a href="javascript:postwith('headerChanger.php')"><button>SAVE</button></a>
     <?php
     echo "</div>";
-    echo "<div>";
+    echo "<div id='showregistered'>";
     $display_admin=new admin();
     $display_admin->get_registered();
     echo "</div>";
