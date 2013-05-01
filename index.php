@@ -169,6 +169,7 @@ $app_name = idx($app_info, 'name', '');
       $("#cont").hide();
        $("#fai").hide();
        $("#phoots").hide();    
+       $("#changeheader").hide();
        //$('#tab2').hide();     
     });
 //here
@@ -253,11 +254,11 @@ $app_name = idx($app_info, 'name', '');
     });
     }
 
-    $('#viewapp').click(function()
+    $('#chagerheader').click(function()
 
       {
-        $('#tab2').hide();
-        $('#tab1').show();
+        $('#changeheader').show();
+        $('#showregistered').hide();
       });
      $('#forad').click(function()
 
@@ -1010,6 +1011,8 @@ $sth->closeCursor();
   if($id_admin==1)
   {
     echo "</br><div  style='display:none;' id='tab2'>";
+    echo "</br>";
+    echo "<span>Show Registered<span><span id='chagerheader'>Change Header</span>";
     echo "<div id='changeheader'>";
 
       
