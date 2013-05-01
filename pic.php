@@ -178,7 +178,7 @@ echo "<table><tr>";
           $larawan=false;
         }
       }
-      if(!empty($out['feed']['data'][$z]['picture']) && $larawan==true)
+      if(!empty($out['data'][$z]['picture']) && $larawan==true)
       {
  echo "<td width='265px' height='200px' class='ken'>";
         echo "<div class='Images'>";
@@ -196,7 +196,7 @@ echo "<table><tr>";
          echo "</br>";
           echo  "Submitted by: <span>".$out['data'][$z]['from']['name']."</span>";
           echo "</br>";
-          $date=$out['feed']['data'][$z]['created_time'];
+          $date=$out['data'][$z]['created_time'];
           // echo  "Date Submitted:</br>".$out['feed']['data'][$z]['created_time'];
           echo  "Date Submitted: ".self::dates(substr($date, 0,10));
       echo "</div>";
