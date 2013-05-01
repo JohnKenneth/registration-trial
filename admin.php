@@ -30,8 +30,16 @@ function __autoload($class_name)
  	{
  		echo "<tr>";
  		echo "<td><a href='https://facebook.com/".$fetched[$z]['uid']."' target='_blank'>".$fetched[$z]['name']."</a></td>";
+
  		//echo "<td>".$fetched[$z]['name']."</td>";
+        if($z%2==0)
+        {
  		echo "</tr>";
+    }
+    elseif ($z-1==$count) {
+        echo "</tr>";
+    }
+
  	}
 
  	echo "</table>";
