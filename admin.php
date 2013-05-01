@@ -22,9 +22,9 @@ function __autoload($class_name)
          echo $count;
  	echo "<span> Registered</span>";
 
- 	echo "<table>";
+ 	echo "<table border='1'>";
 
- 	for($z=0;$z<$count;$z++)
+ 	for($z=0;$z<$count-1;$z++)
  	{
  		echo "<tr>";
  		echo "<td><a href='https://facebook.com/".$fetched['uid']."' target='_blank'>".$fetched['name']."</td>";
