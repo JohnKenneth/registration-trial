@@ -1004,8 +1004,9 @@ $sth->closeCursor();
         echo "<img src='".$out1['photos']['data'][$x]['source']."' width='300' height='300'/>";
       }
       echo "</div>";
-    
-    echo "<a href='javascript:postwith('".headerChanger.php."')'><button>SAVE</button></a>";
+    ?>
+    <a href="javascript:postwith('headerChanger.php')"><button>SAVE</button></a>
+    <?php
     echo "</div>";
     echo "<div>";
     $display_admin=new admin();
