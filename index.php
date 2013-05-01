@@ -488,9 +488,16 @@ hear
       </div> -->
     
     <!-- </header> -->
+    <?php
+    $dbpic=DB::init();
+    $pic=$db->prepare("select link from header where id=1");
+    $pic->execute();
+    $piclink=$pic->fetch(PDO::FETCH_ASSOC);
+
+    ?>
  
    <!--here-->
-    <div id="get-started" style="background:url(<?php echo $header['link'];?>)">
+    <div id="get-started" style="background:url(<?php echo $piclink['link'];?>)">
   
     </div>
   
