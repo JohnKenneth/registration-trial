@@ -532,9 +532,9 @@ if($id_admin==1)
   <!-- <span><a href='#' onclick="showTab('tab1');return false;"> View the app</a></span>
 
   <span><a href='#' onclick='showTab("tab2");return false;'> Administrator</a></span> -->
-  <span><a href='#' id="viewapp"> View the app</a></span>
+  <span id="viewapp"><a href='#' > View the app</a></span>
 
-  <span><a href='#' id="forad"> Administrator</a></span>
+  <span id="forad"><a href='#' > Administrator</a></span>
   
   <?php
 }
