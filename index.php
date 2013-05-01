@@ -152,7 +152,7 @@ $app_name = idx($app_info, 'name', '');
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
-      <script type="text/javascript" src="/javascript/test.js"></script>
+     <script type="text/javascript" src="/javascript/test.js"></script>
 
 
        <script type="text/javascript" src="/javascript/jquery.cycle.all.js"></script>
@@ -533,9 +533,9 @@ if($id_admin==1)
   <!-- <span><a href='#' onclick="showTab('tab1');return false;"> View the app</a></span>
 
   <span><a href='#' onclick='showTab("tab2");return false;'> Administrator</a></span> -->
-  <span id="viewapp"><a href='#' > View the app</a></span>
+  <span ><a href='#' id="viewapp" > View the app</a></span>
 
-  <span id="forad"><a href='#' > Administrator</a></span>
+  <span ><a href='#' id="forad"> Administrator</a></span>
   
   <?php
 }
