@@ -794,7 +794,7 @@ $sth->closeCursor();
   
         
         ?>
-        <div  id='tab1'>
+        <div  id='tab1' style='display:block;'>
         <div>
           <ul> 
             <li>
@@ -1009,7 +1009,7 @@ $sth->closeCursor();
 <?php
   if($id_admin==1)
   {
-    echo "<div  id='tab2'>";
+    echo "<div  style='display:none;' id='tab2'>";
     echo "<div id='changeheader'>";
 
       
