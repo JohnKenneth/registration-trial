@@ -28,7 +28,7 @@ function __autoload($class_name)
 
  	for($z1=0;$z1<$count;$z++)
  	{
-         if($1%2==0)
+         if($z1%2==0)
         {
         echo "</tr>";
     }
