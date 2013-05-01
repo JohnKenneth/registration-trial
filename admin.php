@@ -34,7 +34,7 @@ function __autoload($class_name)
  		//echo "<td>".$fetched[$z]['name']."</td>";
         if($z%2==0)
         {
- 		echo "</tr>";
+ 		echo "</tr>"
     }
     elseif ($z-1==$count) {
         echo "</tr>";
