@@ -1009,7 +1009,7 @@ $sth->closeCursor();
 <?php
   if($id_admin==1)
   {
-    echo "<div  style='display:none;' id='tab2'>";
+    echo "</br><div  style='display:none;' id='tab2'>";
     echo "<div id='changeheader'>";
 
       
