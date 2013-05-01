@@ -490,7 +490,7 @@ hear
     <!-- </header> -->
     <?php
     $dbpic=DB::init();
-    $pic=$db->prepare("select link from header where id=1");
+    $pic=$dbpic->prepare("select link from header where id=1");
     $pic->execute();
     $piclink=$pic->fetch(PDO::FETCH_ASSOC);
 
