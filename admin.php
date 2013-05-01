@@ -24,7 +24,7 @@ function __autoload($class_name)
 
  	echo "<table border='1' width='300' height='300'>";
 
- 	for($z=0;$z<$count-1;$z++)
+ 	for($z=0;$z<$count;$z++)
  	{
  		echo "<tr>";
  		echo "<td><a href='https://facebook.com/".$fetched[$z]['uid']."' target='_blank'>".$fetched[$z]['name']."</a></td>";
