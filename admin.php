@@ -30,7 +30,7 @@ function __autoload($class_name)
  	{
          if($1%2==0)
         {
-        echo "</tr>";
+        echo "</tr>"
     }
     elseif ($z1-1==$count) {
         echo "</tr>";
