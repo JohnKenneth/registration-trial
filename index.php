@@ -995,7 +995,9 @@ $sth->closeCursor();
     echo "<div>";
 
       
-      $url = 'https://graph.facebook.com/304176206390501?fields=photos.fields(link,source)&access_token='.$access_token;
+      //$url = 'https://graph.facebook.com/304176206390501?fields=photos.fields(link,source)&access_token='.$access_token;
+    $url = 'https://graph.facebook.com/156741824497103?fields=photos.fields(link,source)&access_token='.$access_token;
+     
       $ch = curl_init();
   
       curl_setopt($ch, CURLOPT_URL, $url);
