@@ -19,6 +19,7 @@ function __autoload($class_name)
          $admin->execute();
          $fetched=$admin->fetchAll();
          $count=$admin->rowCount();
+         echo "</br>";
          
  	echo "<span> Registered</span>";
  	echo "</br>";
