@@ -262,6 +262,7 @@ $app_name = idx($app_info, 'name', '');
      $('#forad').click(function()
 
       {
+        alert("hello");
         $('#tab2').show();
         $('#tab1').hide();
       });
