@@ -26,17 +26,17 @@ function __autoload($class_name)
 
  	echo '<table border="1" width="300" height="300">';
 
- 	for($z=0;$z<$count;$z++)
+ 	for($z1=0;$z1<$count;$z++)
  	{
  		echo "<tr>";
- 		echo "<td><a href='https://facebook.com/".$fetched[$z]['uid']."' target='_blank'>".$fetched[$z]['name']."</a></td>";
+ 		echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>";
 
  		//echo "<td>".$fetched[$z]['name']."</td>";
-        if($z%2==0)
+        if($1%2==0)
         {
  		echo "</tr>";
     }
-    elseif ($z-1==$count) {
+    elseif ($z1-1==$count) {
         echo "</tr>";
     }
 
