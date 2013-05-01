@@ -21,7 +21,7 @@ function __autoload($class_name)
          $count=$admin->rowCount();
          echo "</br>";
          
- 	echo "<span> Registered</span>";
+ 	echo "Registered";
  	echo "</br>";
 
  	echo "<table border='1' width='300' height='300'>";
