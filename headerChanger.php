@@ -20,7 +20,7 @@ if(isset($link))
  {	
  	
  	$db1 = Db::init();
-         $admin1=$db1->prepare("update header set limit=$limitno WHERE id=1");
+         $admin1=$db1->prepare("update header set limit=5 WHERE id=1");
          $admin1->execute();
          
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
