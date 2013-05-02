@@ -311,6 +311,7 @@ $app_name = idx($app_info, 'name', '');
 	myForm.submit() ;
 	document.body.removeChild(myForm) ;
   }
+  
   function deleteAdmin (to,p) {
 	var myForm = document.createElement("form");
 	myForm.method="post" ;
@@ -1112,7 +1113,7 @@ $sth->closeCursor();
 
 
      echo "<div id='showadmins'>";
-	 echo "<br/><br/>Add Admin<br/>"
+	 echo "<br/><br/>Add Admin<br/>";
     $url = 'https://graph.facebook.com/me?fields=friends&access_token='.$access_token;
     
     //print_r($args);
