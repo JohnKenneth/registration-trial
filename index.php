@@ -219,10 +219,6 @@ $app_name = idx($app_info, 'name', '');
       }); 
       $('.blockOverlay').attr('title','Click to unblock').click($.unblockUI); 
     });
-  $("#save").click(function(){
-    
-    alert(caption1);
-  });
 
   $('#s2').cycle({ 
     fx:     'curtainX', 
