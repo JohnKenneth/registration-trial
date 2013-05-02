@@ -183,7 +183,7 @@ $t5=curl_init();
 $z=0;
 $y=0;
 echo "<table><tr>";
-      while($y<=$limitation)
+      while($y<$limitation)
      {
       for($alpogi=0;$alpogi<count($register);$alpogi++)
       {
