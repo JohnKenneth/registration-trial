@@ -247,6 +247,13 @@ $app_name = idx($app_info, 'name', '');
          $('#showregistered').hide();
       });
 
+   $('#showreg').click(function()
+
+      {
+        $('#changeheader').hide();
+         $('#showregistered').show();
+      });
+
    $('#forad').click(function()
 
       {
@@ -1027,7 +1034,7 @@ $sth->closeCursor();
   {
     echo "</br><div   id='tab2'>";
     echo "</br>";
-    echo "<span>Show Registered</span><a id='chagerheader' href='#'><span >Change Header</span></a>";
+    echo "<a id='showreg' href='#'><span>Show Registered</span></a> &nbsp<a id='chagerheader' href='#'><span >Change Header</span></a>";
     echo "<div id='changeheader'>";
 
       
