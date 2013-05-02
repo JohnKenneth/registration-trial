@@ -152,7 +152,7 @@ $app_name = idx($app_info, 'name', '');
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
-     <script type="text/javascript" src="/javascript/test.js"></script>
+
 
 
        <script type="text/javascript" src="/javascript/jquery.cycle.all.js"></script>
@@ -169,8 +169,8 @@ $app_name = idx($app_info, 'name', '');
       $("#cont").hide();
        $("#fai").hide();
        $("#phoots").hide();    
-       $("#changeheader").show();
-       //$('#tab2').hide();     
+       $("#changeheader").hide();
+       $('#tab2').hide();     
     });
 
    
@@ -223,11 +223,43 @@ $app_name = idx($app_info, 'name', '');
     alert(caption1);
   });
 
+  $('#s2').cycle({ 
+    fx:     'curtainX', 
+    speed:  'fast', 
+    timeout: 0,
+     delay: -2000 , 
+    next:   '#nex', 
+    prev:   '#pv' 
+      });
+
+    $('#pheets').click(function()
+
+      {
+          top.location.href= 'https://www.facebook.com/TestRegistrationCommunity';
+
+      });
+
+
    $('#chagerheader').click(function()
 
       {
-        $('#changeheader').hide();
-        
+        $('#changeheader').show();
+         $('#showregistered').hide();
+      });
+
+   $('#forad').click(function()
+
+      {
+       
+        $('#tab2').show();
+       $('#tab1').hide();
+      });
+   $('#viewapp').click(function()
+
+      {
+       
+        $('#tab2').hide();
+       $('#tab1').show();
       });
   }
   
@@ -263,13 +295,7 @@ $app_name = idx($app_info, 'name', '');
     });
     }
 
-     $('#forad').click(function()
-
-      {
-       
-        $('#tab2').show();
-       // $('#tab1').hide();
-      });
+     
 
 
       $(function(){
@@ -309,21 +335,6 @@ $app_name = idx($app_info, 'name', '');
         });
 
 
-$('#s2').cycle({ 
-    fx:     'curtainX', 
-    speed:  'fast', 
-    timeout: 0,
-     delay: -2000 , 
-    next:   '#nex', 
-    prev:   '#pv' 
-      });
-
-    $('#pheets').click(function()
-
-      {
-          top.location.href= 'https://www.facebook.com/TestRegistrationCommunity';
-
-      });
 
  // $('#pheets').click(function()
 
@@ -537,9 +548,10 @@ if($id_admin==1)
   <!-- <span><a href='#' onclick="showTab('tab1');return false;"> View the app</a></span>
 
   <span><a href='#' onclick='showTab("tab2");return false;'> Administrator</a></span> -->
-  <span ><a href='#'  onclick="showTab('tab1');return false;"> View the app</a></span>
+  <!-- <span ><a href='#'  onclick="showTab('tab1');return false;"> View the app</a></span> -->
+  <span ><a href='#'  id='viewapp'> View the app</a></span>
 
-  <span ><a href='#' onclick="showTab('tab2');return false;"> Administrator</a></span>
+  <span ><a href='#' id='forad'> Administrator</a></span>
   
   <?php
 }
@@ -798,7 +810,7 @@ $sth->closeCursor();
   
         
         ?>
-        <div  id='tab1' style='display:block;'>
+        <div  id='tab1' >
         <div>
           <ul> 
             <li>
@@ -1013,7 +1025,7 @@ $sth->closeCursor();
 <?php
   if($id_admin==1)
   {
-    echo "</br><div  style='display:none;' id='tab2'>";
+    echo "</br><div   id='tab2'>";
     echo "</br>";
     echo "<span>Show Registered</span><a id='chagerheader' href='#'><span >Change Header</span></a>";
     echo "<div id='changeheader'>";
