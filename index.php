@@ -172,7 +172,7 @@ $app_name = idx($app_info, 'name', '');
        $("#changeheader").hide();
        //$('#tab2').hide();     
     });
-  
+
     $('#chagerheader').click(function()
 
       {
@@ -1013,7 +1013,7 @@ $sth->closeCursor();
   {
     echo "</br><div  style='display:none;' id='tab2'>";
     echo "</br>";
-    echo "<span>Show Registered<span><span id='chagerheader'>Change Header</span>";
+    echo "<span>Show Registered</span><span id='chagerheader'>Change Header</span>";
     echo "<div id='changeheader'>";
 
       
