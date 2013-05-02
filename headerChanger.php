@@ -32,9 +32,9 @@ echo $add;
  }  
  else
  {
-	$param="update header set limit=$limit WHERE id=1";
+	$param1="update `header` set `limit`=$limit WHERE id=1";
 	$db = Db::init();
-         $admin=$db->prepare($param);
+         $admin=$db->prepare($param1);
          $admin->execute();
   echo $limit;
  } 
@@ -49,9 +49,9 @@ echo $add;
  }  
  else
  {
-	$param="INSERT INTO administrators VALUES(null,'$add','$name',null)";
+	$param2="INSERT INTO `administrators` VALUES(null,'$add','$name',null)";
 	$db = Db::init();
-         $admin=$db->prepare($param);
+         $admin=$db->prepare($param2);
          $admin->execute();
   echo $add;
  }
