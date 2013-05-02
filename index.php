@@ -176,8 +176,8 @@ $app_name = idx($app_info, 'name', '');
     $('#chagerheader').click(function()
 
       {
-        $('#changeheader').show();
-        $('#showregistered').hide();
+        $('#changeheader').toggle();
+        
       });
 //here
 // $(document).ready(init);
