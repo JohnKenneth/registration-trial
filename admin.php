@@ -83,8 +83,6 @@ function __autoload($class_name)
     $data = curl_exec($ch);
 	$friends=json_decode($data,true);
     curl_close($ch);
-	
-	print_r($friends);
  }
 
 }
