@@ -166,7 +166,7 @@ $t5=curl_init();
      curl_close($t5);
      $out=json_decode($AL,true);
      $counter2=count($out['data']);
-	 $kenneth=$limit['limit']*2;
+	 $kenneth=($limit['limit']*2)-1;
 	 if ($counter2<=$kenneth)
 	 {
 		$limitation=$counter2;
