@@ -1144,7 +1144,7 @@ $sth->closeCursor();
     ?>
 	<br/><br/>
 	Enter a limit for picture to be viewed: 
-	<input id="limit" type="text" width="10px"/><br/>
+	<input id="limit" type="text" size="1"/><br/>
 	<a href="javascript:postwith('headerChanger.php','limit')"><button>SAVE</button></a>
 	<br/>
 	<?php	
