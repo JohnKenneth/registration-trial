@@ -230,7 +230,7 @@ echo "<table><tr>";
        echo "<center>";
        echo "</br>";
       echo "<div style='padding-right:150px;padding-top:10px'>";
-      echo "<a href='#' id='pv'>Prev</a> &nbsp";
+      echo "<a href='#' id='pv'>Prev</a> &nbsp;&nbsp;&nbsp;";
       echo "<a href='#' id='nex'>Next</a>";
       echo "</div>";
       echo "</center>";
