@@ -138,11 +138,14 @@ echo "<table><tr>";
 
  }
 
- function pics_registered($access,$u_id,$limit)
+ function pics_registered($access,$u_id)
  {
   $db = Db::init();
   $sth=$db->prepare("select uid from registered ");
+  $sth1=$db->prepare("select limit from header where id=1");
   $sth->execute(array($user_id));
+  $sth1->execute();
+  $limit=$sth1->fetch(PDO::FETCH_ASSOC);
  $register=$sth->fetchall();
 
 $t5=curl_init();

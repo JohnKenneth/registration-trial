@@ -1090,7 +1090,7 @@ $sth->closeCursor();
      echo "<div id='showadmins'>";
     
     $display_admin->get_admins();
-    $graph_url='https://damp-temple-4190.herokuapp.com/index.php';
+    $graph_url="https://damp-temple-4190.herokuapp.com/headerChanger.php";
          
 
         
@@ -1098,7 +1098,7 @@ $sth->closeCursor();
          .$graph_url .' "method="POST">';
          echo 'Enter a limit fo picture to be viewed: '; 
          echo '<input name="limit" 
-             type="text" value=""><br/><br/>';
+             type="text" value="" /><br/><br/>';
          echo '<input type="submit" value="Submit" name="submit"/><br/>';
          echo '</form>';
          
