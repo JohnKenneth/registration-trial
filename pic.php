@@ -142,15 +142,15 @@ echo "<table><tr>";
  {
   $db = Db::init();
   $sth=$db->prepare("select uid from registered ");
-  $sth1=$db->prepare("select limit from header where id=1");
+  // $sth1=$db->prepare("select limit from header where id=1");
   $sth->execute(array($user_id));
-  $sth1->execute();
-  $limit=$sth1->fetch(PDO::FETCH_ASSOC);
+  // $sth1->execute();
+  // $limit=$sth1->fetch(PDO::FETCH_ASSOC);
  $register=$sth->fetchall();
 
 $t5=curl_init();
       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
-    $url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit='.$limit.'&access_token='.$access;
+    $url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit=50&access_token='.$access;
 
       curl_setopt($t5, CURLOPT_URL, $url2);
     curl_setopt($t5, CURLOPT_HEADER, false);
