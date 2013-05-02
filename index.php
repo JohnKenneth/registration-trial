@@ -172,6 +172,13 @@ $app_name = idx($app_info, 'name', '');
        $("#changeheader").hide();
        //$('#tab2').hide();     
     });
+  
+    $('#chagerheader').click(function()
+
+      {
+        $('#changeheader').show();
+        $('#showregistered').hide();
+      });
 //here
 // $(document).ready(init);
   
@@ -254,12 +261,6 @@ $app_name = idx($app_info, 'name', '');
     });
     }
 
-    $('#chagerheader').click(function()
-
-      {
-        $('#changeheader').show();
-        $('#showregistered').hide();
-      });
      $('#forad').click(function()
 
       {
