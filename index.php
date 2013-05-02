@@ -1067,6 +1067,11 @@ $sth->closeCursor();
     echo "</div>";
 
 
+     echo "<div id='showadmins'>";
+    
+    $display_admin->get_admins();
+    echo "</div>";
+
     echo "</div>";
     
   }

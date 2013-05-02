@@ -42,6 +42,36 @@ function __autoload($class_name)
 
  }
 
+
+ function get_admins()
+ {
+    $db = Db::init();
+         $admin=$db->prepare("select uid,name from administrators");
+         $admin->execute();
+         $fetched=$admin->fetchAll();
+         $count=$admin->rowCount();
+
+
+         echo "Administrators";
+    echo "</br>";
+
+    echo '<table border="1" width="300" height="300">';
+
+    for($z1=0;$z1<$count;$z1++)
+    {
+        
+        echo "<tr>";
+        echo "<td>"; echo $z1+1; echo "</td>";
+        echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td> </tr>";
+
+        //echo "<td>".$fetched[$z]['name']."</td>";
+       
+
+    }
+
+    echo "</table>";
+ }
+
 }
 
 
