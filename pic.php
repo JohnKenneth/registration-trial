@@ -147,9 +147,9 @@ echo "<table><tr>";
   // $sth1->execute();
   // $limit=$sth1->fetch(PDO::FETCH_ASSOC);
  $register=$sth->fetchall();
-
+$db=null;
  $db2=Db::init();
- $sth1=$db2->prepare("select limit from header where id=1");
+ $sth1=$db2->prepare("select limit from header ");
  $sth1->execute();
   $limit=$sth1->fetch(PDO::FETCH_ASSOC);
 
