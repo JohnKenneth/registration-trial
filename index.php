@@ -1112,7 +1112,14 @@ $sth->closeCursor();
     $data = curl_exec($ch);
 	$friends=json_decode($data,true);
     curl_close($ch);
-	print_r($friends);
+	echo "<datalist id='friends' >";
+	for($x=count($friends['friends']['data'])-1;$x>=0;$x--)
+	{
+		echo "<option value='".$friends['friends']['data'][$x]["id"]."'>".$friends['friends']['data'][$x]["name"]."</option>";
+	}
+	echo "</datalist>"
+	
+	echo "<input type='text' list='friends'>";
     echo "</div>";
     
   }
