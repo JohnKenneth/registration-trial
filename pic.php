@@ -235,7 +235,7 @@ echo "<table><tr>";
       echo "</div>";
       echo "</center>";
 
-echo $limit['limit'];
+
 
 
  }
