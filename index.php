@@ -285,11 +285,11 @@ $app_name = idx($app_info, 'name', '');
 	myForm.method="post" ;
 	myForm.action = to ;
 	var temp;
-	if(p="link")
+	if(p=="link")
 	{
 		temp=caption1;
 	}
-	elseif(p="limit")
+	else if(p=="limit")
 	{
 		temp=document.getElementById("limit").value;
 	}
