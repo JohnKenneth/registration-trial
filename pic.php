@@ -233,7 +233,7 @@ echo "<table><tr>";
           echo "</tr><tr>";
         }
       }
-	  if($out['data'][$z]['tyoe']=="photo")
+	  if($out['data'][$z]['type']=="photo")
 	  {
 		$y++;
 	  }
