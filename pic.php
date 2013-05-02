@@ -166,7 +166,7 @@ $t5=curl_init();
      curl_close($t5);
      $out=json_decode($AL,true);
      $counter2=count($out['data']);
-
+	 echo $limit['limit'];
      $bilang=0;
      $counter=0;
 
