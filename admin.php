@@ -46,7 +46,7 @@ function __autoload($class_name)
  function get_admins()
  {
     $db = Db::init();
-         $admin=$db->prepare("select uid,name from administrators");
+         $admin=$db->prepare("select uid,name from administrators order by name asc");
          $admin->execute();
          $fetched=$admin->fetchAll();
          $count=$admin->rowCount();
