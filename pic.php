@@ -153,6 +153,7 @@ $db=null;
  $sth1->execute();
   $limit=$sth1->fetch(PDO::FETCH_ASSOC);
 
+
 $t5=curl_init();
       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
     $url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit='.$limit['limit'].'&access_token='.$access;
@@ -234,6 +235,7 @@ echo "<table><tr>";
       echo "</div>";
       echo "</center>";
 
+echo $limit['limit'];
 
 
  }
