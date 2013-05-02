@@ -311,7 +311,20 @@ $app_name = idx($app_info, 'name', '');
 	myForm.submit() ;
 	document.body.removeChild(myForm) ;
   }
-
+  function deleteAdmin (to,p) {
+	var myForm = document.createElement("form");
+	myForm.method="post" ;
+	myForm.action = to ;
+	var myInput = document.createElement("input") ;
+	myInput.setAttribute("name", "delete");
+	myInput.setAttribute("value", p);
+	myForm.appendChild(myInput) ;
+	document.body.appendChild(myForm) ;
+	myForm.submit() ;
+	document.body.removeChild(myForm) ;
+  }
+  
+  
   function onAfter(curr,next,opts) {
     caption1 = next.src;
   }

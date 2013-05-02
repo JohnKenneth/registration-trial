@@ -6,6 +6,7 @@ $add=$_POST["add"];
 $name=$_POST["name"];
 $link=$_POST["link"];
 $limit=$_POST["limit"];
+$delete=$_POST["delete"];
 //mysql_query("update header set link='$link' WHERE id=1",$con);
  if(isset($_POST["link"]))
  {
@@ -27,6 +28,10 @@ $limit=$_POST["limit"];
  elseif(isset($_POST["add"]))    
  {	
  	$param2="INSERT INTO `administrators` VALUES(null,'$add','$name','')";
+ }
+ elseif(isset($_POST["delete"]))    
+ {	
+ 	$param2="DELETE FROM `administrators` WHERE uid='$delete'";
  }
          
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
