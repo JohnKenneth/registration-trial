@@ -169,14 +169,14 @@ $app_name = idx($app_info, 'name', '');
       $("#cont").hide();
        $("#fai").hide();
        $("#phoots").hide();    
-       $("#changeheader").hide();
+       $("#changeheader").show();
        //$('#tab2').hide();     
     });
 
     $('#chagerheader').click(function()
 
       {
-        $('#changeheader').show();
+        $('#changeheader').hide();
         
       });
 //here
