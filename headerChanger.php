@@ -30,6 +30,7 @@ if(isset($link))
  $db = Db::init();
          $admin=$db->prepare($param);
          $admin->execute();
-  echo "<script type='text/javascript'> top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
+
+echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
 
 ?>
