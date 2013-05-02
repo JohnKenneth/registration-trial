@@ -257,7 +257,7 @@ $app_name = idx($app_info, 'name', '');
          $('#showregistered').show();
       });
 
-   $('#showadmins').click(function()
+   $('#admins').click(function()
 
       {
         $('#changeheader').hide();
