@@ -1069,7 +1069,7 @@ $sth->closeCursor();
         &nbsp<a id='admins' href='#'><span >Administrators</span></a>";
     echo "<div id='changeheader'>";
 	echo "</br>";
-    echo "<span>Go to <a href='http://www.facebook.com/media/set/?set=a.156741824497103.1073741830.149169471921005&type=3'>Header Album</a> As Administrator to upload Photo</span><br/><br/>";
+    echo "<span>Go to <a href='http://www.facebook.com/media/set/?set=a.156741824497103.1073741830.149169471921005&type=3' target='_blank'>Header Album</a> As Administrator to upload Photo</span><br/><br/>";
       //$url = 'https://graph.facebook.com/304176206390501?fields=photos.fields(link,source)&access_token='.$access_token;
     $url = 'https://graph.facebook.com/156741824497103?fields=photos.fields(link,source)&access_token='.$access_token;
      
