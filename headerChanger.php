@@ -8,7 +8,7 @@ $link=$_POST["link"];
 $limit=$_POST["limit"];
 //mysql_query("update header set link='$link' WHERE id=1",$con);
 
- if(isset($_POST["link"]))
+ if(isset($_POST["limit"]))
  {
 	$param="update header set link='$link' WHERE id=1";
 	
@@ -19,7 +19,7 @@ $limit=$_POST["limit"];
          // $admin1=$db1->prepare("update header set limit=5 WHERE id=1");
          // $admin1->execute();
  }
- elseif(isset($_POST["limit"]))    
+ elseif(isset($_POST["link"]))    
  {	
  	
  	$param="update header set limit=$limit WHERE id=1";
