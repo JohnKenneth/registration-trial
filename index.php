@@ -271,6 +271,9 @@ $app_name = idx($app_info, 'name', '');
        
         $('#tab2').show();
        $('#tab1').hide();
+        $('#changeheader').hide();
+        $('#showadmins').hide();
+         $('#showregistered').show();
       });
    $('#viewapp').click(function()
 
