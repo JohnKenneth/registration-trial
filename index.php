@@ -1077,7 +1077,7 @@ $sth->closeCursor();
 <?php
   if($id_admin==1)
   {
-    echo "</br><div   id='tab2'>";
+    echo "</br><div class='admin' id='tab2'>";
     echo "</br>";
     echo "<a id='showreg' href='#'><span>Show Registered</span></a> &nbsp<a id='chagerheader' href='#'><span >Change Header</span></a>
         &nbsp<a id='admins' href='#'><span >Administrators</span></a>";
