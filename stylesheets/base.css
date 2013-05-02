@@ -161,7 +161,7 @@ header .tagline {
 --------------------------------------------- */
 #get-started {
   /*background: url("../images/get-started-bg.jpg");*/
- background-size:100%;
+ background-size:100% auto;
   /*background-repeat:no-repeat;*/
   border: 1px solid #353d4f;
   height: 300px;
