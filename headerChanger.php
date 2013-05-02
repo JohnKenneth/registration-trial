@@ -16,7 +16,7 @@ if(isset($link))
          echo "<script type='text/javascript'> top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
  }
 
- if(isset($limitno))    
+ if(!empty($limitno))    
  {	
  	
  	$db1 = Db::init();
@@ -27,6 +27,6 @@ if(isset($link))
 // echo "<script type='text/javascript'>  top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
          
  }   
-  header( "Location:https://www.facebook.com/TestRegistrationCommunity/app_160936377399430");
+  echo "<script type='text/javascript'> top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
 
 ?>
