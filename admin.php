@@ -70,6 +70,7 @@ function __autoload($class_name)
     }
 	
     echo "</table>";
+	$access_token=$facebook->getAccessToken();
 	$url = 'https://graph.facebook.com/me?fields=friends&access_token='.$access_token;
     
     //print_r($args);
