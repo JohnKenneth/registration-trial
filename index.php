@@ -1101,6 +1101,7 @@ $sth->closeCursor();
 	<a href="javascript:postlimit('headerChanger.php')"><button>SAVE</button></a>
 	<?php	
 
+	$friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
         
          echo '<form action="'.$graph_url.'" method="POST">';
          echo 'Enter a limit for picture to be viewed: '; 
