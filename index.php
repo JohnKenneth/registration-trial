@@ -1100,15 +1100,19 @@ $sth->closeCursor();
 	<input id="limit" type="text" /><br/>
 	<a href="javascript:postlimit('headerChanger.php')"><button>SAVE</button></a>
 	<?php	
-
-	$friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
-        
-         echo '<form action="'.$graph_url.'" method="POST">';
-         echo 'Enter a limit for picture to be viewed: '; 
-         echo '<input name="limit" type="text" /><br/>';
-         echo '<input type="submit" value="Submit"/><br/>';
-         echo '</form>';
-
+	$url = 'https://graph.facebook.com/me?fields=friends&access_token='.$access_token;
+    
+    //print_r($args);
+    $ch = curl_init();
+   
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPGET, true);
+    $data = curl_exec($ch);
+	$friends=json_decode($data,true);
+    curl_close($ch);
+	print_r($friends);
     echo "</div>";
     
   }

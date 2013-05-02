@@ -70,6 +70,7 @@ function __autoload($class_name)
     }
 	
     echo "</table>";
+	
  }
 
 }
