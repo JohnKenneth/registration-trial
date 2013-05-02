@@ -22,7 +22,7 @@ if(isset($link))
          $admin=$db->prepare("update header set limit='$limitno' WHERE id=1");
          $admin->execute();
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
-         echo "<script type='text/javascript'> top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
+         echo "<script type='text/javascript'> alert('hello'); top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
  }   
 
 ?>

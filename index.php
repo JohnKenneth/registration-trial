@@ -1074,7 +1074,7 @@ $sth->closeCursor();
       }
       echo "</div>";
     ?>
-    <a href="javascript:postwith('headerChanger.php')"><button>SAVE</button></a>
+    <a href="javascript:postwith('headerChanger.php')" id="save"><button>SAVE</button></a>
     <?php
     echo "</div>";
     echo "<div id='showregistered'>";
