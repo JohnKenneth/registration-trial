@@ -299,7 +299,7 @@ $app_name = idx($app_info, 'name', '');
 		temp=document.getElementById("add").value;
 		myInput = document.createElement("input") ;
 		myInput.setAttribute("name", "name");
-		var name=$("#add").text();
+		var name=$("#add").text($(this).find(":selected").text());
 		alert(name);
 		myInput.setAttribute("value", name);
 		myForm.appendChild(myInput) ;
