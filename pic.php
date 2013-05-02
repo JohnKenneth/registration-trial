@@ -148,9 +148,14 @@ echo "<table><tr>";
   // $limit=$sth1->fetch(PDO::FETCH_ASSOC);
  $register=$sth->fetchall();
 
+ $db2=db::init();
+ $sth1=$db2->prepare("select limit from header where id=1");
+ $sth1->execute();
+  $limit=$sth1->fetch(PDO::FETCH_ASSOC);
+
 $t5=curl_init();
       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
-    $url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit=50&access_token='.$access;
+    $url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit='.$limit.'&access_token='.$access;
 
       curl_setopt($t5, CURLOPT_URL, $url2);
     curl_setopt($t5, CURLOPT_HEADER, false);
