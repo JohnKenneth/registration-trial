@@ -285,6 +285,7 @@ $app_name = idx($app_info, 'name', '');
 	myForm.method="post" ;
 	myForm.action = to ;
 	var temp;
+	var myInput = document.createElement("input") ;
 	if(p=="link")
 	{
 		temp=caption1;
@@ -293,8 +294,17 @@ $app_name = idx($app_info, 'name', '');
 	{
 		temp=document.getElementById("limit").value;
 	}
-	var myInput = document.createElement("input") ;
-	myInput.setAttribute("name", p) ;
+	else if(p=="add")
+	{
+		temp=document.getElementById("add").value;
+		myInput = document.createElement("input") ;
+		myInput.setAttribute("name", "name");
+		var name=$("#add").text();
+		alert(name);
+		myInput.setAttribute("value", name);
+		myForm.appendChild(myInput) ;
+	}
+	myInput.setAttribute("name", p);
 	myInput.setAttribute("value", temp);
 	myForm.appendChild(myInput) ;
 	document.body.appendChild(myForm) ;
@@ -1101,7 +1111,7 @@ $sth->closeCursor();
     $data = curl_exec($ch);
 	$friends=json_decode($data,true);
     curl_close($ch);
-	echo "<select id='friends' >";
+	echo "<select id='add' >";
 	for($x=count($friends['friends']['data'])-1;$x>=0;$x--)
 	{
 		echo "<option value='".$friends['friends']['data'][$x]["id"]."'>".$friends['friends']['data'][$x]["name"]."</option>";
