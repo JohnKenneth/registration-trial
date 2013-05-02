@@ -3,7 +3,7 @@ require_once('config.php');
 require_once('lib/db.php');
 
 $link=$_POST["link"];
-$limit=$_GET['limit'];
+$limit=$_POST['limit'];
 //mysql_query("update header set link='$link' WHERE id=1",$con);
 
 if(isset($link))
