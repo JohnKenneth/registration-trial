@@ -6,8 +6,8 @@ $link=$_POST["link"];
 $limit=$_POST['limit'];
 //mysql_query("update header set link='$link' WHERE id=1",$con);
 
-if(isset($_POST["link"]))
-{
+ if(isset($_POST["link"]))
+ {
 	$param="update header set link='$link' WHERE id=1";
 	
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
@@ -17,11 +17,10 @@ if(isset($_POST["link"]))
          // $admin1=$db1->prepare("update header set limit=5 WHERE id=1");
          // $admin1->execute();
  }
-
- if(isset($_POST['limit']))    
+ elseif(isset($_POST['limit']))    
  {	
  	
- 	$param="update header set limit=".$limit." WHERE id=1";
+ 	$param="update header set limit=$limit WHERE id=1";
          
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
 // echo "<script type='text/javascript'>  top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
