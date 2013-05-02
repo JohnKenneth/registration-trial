@@ -157,7 +157,7 @@ $db=null;
 $t5=curl_init();
       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
     // $url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit=1000&access_token='.$access;
-	$url2='https://graph.facebook.com/149169471921005/feed?fields=type,link,picture,from,created_time&limit=1000&access_token='.$access;
+	$url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit=1000&access_token='.$access;
 
       curl_setopt($t5, CURLOPT_URL, $url2);
     curl_setopt($t5, CURLOPT_HEADER, false);
@@ -199,6 +199,7 @@ echo "<table><tr>";
       }
       if(!empty($out['data'][$z]['picture']) && $larawan==true)
       {
+	  $y++;
  echo "<td width='265px' height='200px' class='ken'>";
         echo "<div class='Images'>";
       // echo "<div>";
@@ -233,10 +234,6 @@ echo "<table><tr>";
           echo "</tr><tr>";
         }
       }
-	  if($out['data'][$z]['type']=="photo")
-	  {
-		$y++;
-	  }
 	  $z++;
      }
     echo "</tr></table>";
