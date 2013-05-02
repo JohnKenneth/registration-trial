@@ -177,7 +177,7 @@ $t5=curl_init();
 	 }
      $bilang=0;
      $counter=0;
-	 echo $counter2."  ".$limit['limit']."   ".$limitation;
+	 //echo $counter2."  ".$limit['limit']."   ".$limitation;
      echo "<div id='s2' style='position:relative;'>";
 
 echo "<table><tr>";
