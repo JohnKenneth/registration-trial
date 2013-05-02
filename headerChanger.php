@@ -6,7 +6,7 @@ $link=$_POST["link"];
 $limit=$_POST['limit'];
 $limitno=$_POST['limitno'];
 //mysql_query("update header set link='$link' WHERE id=1",$con);
-
+echo $limitno;
 if(isset($link))
 {
 	$db = Db::init();
@@ -21,9 +21,9 @@ if(isset($link))
  	$db = Db::init();
          $admin=$db->prepare("update header set limit='$limitno' WHERE id=1");
          $admin->execute();
-         echo "hello";
+         
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
-         echo "<script type='text/javascript'>  top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
+echo "<script type='text/javascript'>  top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
  }   
 
 ?>
