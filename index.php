@@ -1013,7 +1013,7 @@ $sth->closeCursor();
   {
     echo "</br><div  style='display:none;' id='tab2'>";
     echo "</br>";
-    echo "<span>Show Registered</span><span id='chagerheader'>Change Header</span>";
+    echo "<span>Show Registered</span><a id='chagerheader' href='#'><span >Change Header</span></a>";
     echo "<div id='changeheader'>";
 
       
