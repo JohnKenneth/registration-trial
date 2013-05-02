@@ -20,25 +20,25 @@ $delete=$_POST["delete"];
  }
  elseif(isset($_POST["limit"]))    
  {	
-	$param1="update `header` set `limit`=$limit WHERE id=1";
+	$param="update `header` set `limit`=$limit WHERE id=1";
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
 // echo "<script type='text/javascript'>  top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
          
  }  
  elseif(isset($_POST["add"]))    
  {	
- 	$param2="INSERT INTO `administrators` VALUES(null,'$add','$name','')";
+ 	$param="INSERT INTO `administrators` VALUES(null,'$add','$name','')";
  }
  elseif(isset($_POST["delete"]))    
  {	
- 	$param2="DELETE FROM `administrators` WHERE uid='$delete'";
+ 	$param="DELETE FROM `administrators` WHERE uid='$delete'";
  }
          
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
 // echo "<script type='text/javascript'>  top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
  
 	$db = Db::init();
-         $admin=$db->prepare($param2);
+         $admin=$db->prepare($param);
          $admin->execute();
 
 echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
