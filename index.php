@@ -1090,13 +1090,11 @@ $sth->closeCursor();
          
 
         
-         echo '<form action="headerChanger.php" "method="POST">';
+         echo '<form action="headerChanger.php" method="POST">';
          echo 'Enter a limit for picture to be viewed: '; 
-         echo '<input name="limit" 
-             type="text" ><br/>';
+         echo '<input name="limit" type="text" ><br/>';
          echo '<input type="submit" value="Submit"/><br/>';
          echo '</form>';
-         echo '</div>';
 
     echo "</div>";
     
