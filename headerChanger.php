@@ -6,7 +6,7 @@ $link=$_POST["link"];
 $limit=$_POST['limit'];
 $limitno=$_POST['limitno'];
 //mysql_query("update header set link='$link' WHERE id=1",$con);
-echo $limitno;
+
 if(isset($link))
 {
 	$db = Db::init();
@@ -16,8 +16,9 @@ if(isset($link))
          echo "<script type='text/javascript'> top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
  }
 
- if(isset($limit))    
- {
+ if(isset($limitno))    
+ {	
+ 	echo $limitno;
  	$db = Db::init();
          $admin=$db->prepare("update header set limit='$limitno' WHERE id=1");
          $admin->execute();
