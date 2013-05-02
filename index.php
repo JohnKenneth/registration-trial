@@ -1099,7 +1099,7 @@ $sth->closeCursor();
       echo "<div id='cycleheader'>";
       for($x=count($out1['photos']['data'])-1;$x>=0;$x--)
       {
-        echo "<img src='".$out1['photos']['data'][$x]['source']."' width='300' height='300'/>";
+        echo "<img src='".$out1['photos']['data'][$x]['source']."' width='700' height='250'/>";
       }
       echo "</div>";
     ?>
