@@ -1092,7 +1092,7 @@ $sth->closeCursor();
         
          echo '<form action="'.$graph_url.'" method="POST">';
          echo 'Enter a limit for picture to be viewed: '; 
-         echo '<input name="limit" type="text" ><br/>';
+         echo '<input name="limit" type="text" /><br/>';
          echo '<input type="submit" value="Submit"/><br/>';
          echo '</form>';
 
