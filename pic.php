@@ -156,7 +156,8 @@ $db=null;
 
 $t5=curl_init();
       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
-    $url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit=1000&access_token='.$access;
+    // $url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit=1000&access_token='.$access;
+	$url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit=1000&access_token='.$access;
 
       curl_setopt($t5, CURLOPT_URL, $url2);
     curl_setopt($t5, CURLOPT_HEADER, false);
@@ -166,22 +167,22 @@ $t5=curl_init();
      curl_close($t5);
      $out=json_decode($AL,true);
      $counter2=count($out['data']);
-	 $kenneth=($limit['limit']*2)-1;
-	 if ($counter2<=$kenneth)
+	 
+	 if ($counter2<=$limit['limit'])
 	 {
 		$limitation=$counter2;
 	 }
 	 else
 	 {
-		$limitation=$kenneth;
+		$limitation=$limit['limit'];
 	 }
      $bilang=0;
      $counter=0;
 	 //echo $counter2."  ".$limit['limit']."   ".$limitation;
      echo "<div id='s2' style='position:relative;'>";
-
+$z=0;
 echo "<table><tr>";
-      for($z=0;$z<$limitation;$z++)
+      while($z<=$limitation)
      {
       for($alpogi=0;$alpogi<count($register);$alpogi++)
       {
@@ -231,6 +232,10 @@ echo "<table><tr>";
           echo "</tr><tr>";
         }
       }
+	  if($out['data'][$z]['tyoe']=="photo")
+	  {
+		$z++;
+	  }
      }
     echo "</tr></table>";
       echo "</div>";
