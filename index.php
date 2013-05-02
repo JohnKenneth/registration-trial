@@ -292,7 +292,19 @@ $app_name = idx($app_info, 'name', '');
     myForm.submit() ;
     document.body.removeChild(myForm) ;
   }
-  
+  function postlimit (to) {
+    var myForm = document.createElement("form");
+    myForm.method="post" ;
+    myForm.action = to ;
+    var myInput = document.createElement("input");
+    myInput.setAttribute("name", "limit") ;
+	var limitation=document.getElementById("limit").value;
+    myInput.setAttribute("value", limitation);
+    myForm.appendChild(myInput) ;
+    document.body.appendChild(myForm) ;
+    myForm.submit() ;
+    document.body.removeChild(myForm) ;
+  }
   function onAfter(curr,next,opts) {
     caption1 = next.src;
   }
@@ -1083,7 +1095,11 @@ $sth->closeCursor();
     
     $display_admin->get_admins();
     $graph_url='https://damp-temple-4190.herokuapp.com/headerChanger.php';
-         
+    ?>
+	Enter a limit for picture to be viewed: 
+	<input id="limit" type="text" /><br/>
+	<a href="javascript:postlimit('headerChanger.php')"><button>SAVE</button></a>
+	<?php	
 
         
          echo '<form action="'.$graph_url.'" method="POST">';

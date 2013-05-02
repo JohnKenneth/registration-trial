@@ -70,7 +70,6 @@ function __autoload($class_name)
     }
 	
     echo "</table>";
-	$friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
  }
 
 }
