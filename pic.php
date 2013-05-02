@@ -168,7 +168,7 @@ $t5=curl_init();
      $out=json_decode($AL,true);
      $counter2=count($out['data']);
 	 
-	 if ($counter2>=$limit['limit'])
+	 if ($counter2<$limit['limit'])
 	 {
 		$limitation=$counter2;
 	 }
@@ -234,6 +234,10 @@ echo "<table><tr>";
           echo "</tr><tr>";
         }
       }
+	  elseif($limitation==$counter2)
+	  {
+		$y++;
+	  }
 	  $z++;
      }
     echo "</tr></table>";
