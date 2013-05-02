@@ -157,7 +157,7 @@ $db=null;
 $t5=curl_init();
       //$url2='https://graph.facebook.com/149535045217781'.'?fields=photos.fields(link,source)&access_token='.$access;
     // $url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit=1000&access_token='.$access;
-	$url2='https://graph.facebook.com/149169471921005/feed?fields=link,picture,from,created_time&limit=1000&access_token='.$access;
+	$url2='https://graph.facebook.com/149169471921005/feed?fields=type,link,picture,from,created_time&limit=1000&access_token='.$access;
 
       curl_setopt($t5, CURLOPT_URL, $url2);
     curl_setopt($t5, CURLOPT_HEADER, false);
