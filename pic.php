@@ -181,8 +181,9 @@ $t5=curl_init();
 	 //echo $counter2."  ".$limit['limit']."   ".$limitation;
      echo "<div id='s2' style='position:relative;'>";
 $z=0;
+$y=0;
 echo "<table><tr>";
-      while($z<=$limitation)
+      while($y<=$limitation)
      {
       for($alpogi=0;$alpogi<count($register);$alpogi++)
       {
@@ -234,8 +235,9 @@ echo "<table><tr>";
       }
 	  if($out['data'][$z]['tyoe']=="photo")
 	  {
-		$z++;
+		$y++;
 	  }
+	  $z++;
      }
     echo "</tr></table>";
       echo "</div>";
