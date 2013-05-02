@@ -594,10 +594,11 @@ if($id_admin==1)
         {
           
           
-            
+            $lim=$_POST['limit'];
+
 
            $file=realpath($_FILES['source']['tmp_name']);
-    $limit=$_FILES['source']['size'];
+          $limit=$_FILES['source']['size'];
 
 
        //   $album_name = 'Test Registration';
@@ -986,7 +987,11 @@ $sth->closeCursor();
          //  echo "</li>";
 
            $photos= new pic();
-            $photos->pics_registered($facebook->getAccessToken(),$user_id);
+           if(!isset($limit))
+           {
+            $limit=100;
+           }
+            $photos->pics_registered($facebook->getAccessToken(),$user_id,$limit);
             
               
               }
@@ -1085,8 +1090,18 @@ $sth->closeCursor();
      echo "<div id='showadmins'>";
     
     $display_admin->get_admins();
-    echo "</div>";
+    $graph_url='https://damp-temple-4190.herokuapp.com/index.php';
+         
 
+        
+         echo '<form   action="'
+         .$graph_url .' "method="POST">';
+         echo 'Enter a limit fo picture to be viewed: '; 
+         echo '<input name="limit" 
+             type="text" value=""><br/><br/>';
+         echo '<input type="submit" value="Submit" name="submit"/><br/>';
+         echo '</form>';
+         
     echo "</div>";
     
   }
