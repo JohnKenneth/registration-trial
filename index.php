@@ -170,7 +170,8 @@ $app_name = idx($app_info, 'name', '');
        $("#fai").hide();
        $("#phoots").hide();    
        $("#changeheader").hide();
-       $('#tab2').hide();     
+       $('#tab2').hide(); 
+       $('#showadmins').hide();    
     });
 
    
@@ -245,13 +246,23 @@ $app_name = idx($app_info, 'name', '');
       {
         $('#changeheader').show();
          $('#showregistered').hide();
+         $('#showadmins').hide();
       });
 
    $('#showreg').click(function()
 
       {
         $('#changeheader').hide();
+        $('#showadmins').hide();
          $('#showregistered').show();
+      });
+
+   $('#showadmins').click(function()
+
+      {
+        $('#changeheader').hide();
+        $('#showadmins').show();
+         $('#showregistered').hide();
       });
 
    $('#forad').click(function()
@@ -1035,7 +1046,8 @@ $sth->closeCursor();
   {
     echo "</br><div   id='tab2'>";
     echo "</br>";
-    echo "<a id='showreg' href='#'><span>Show Registered</span></a> &nbsp<a id='chagerheader' href='#'><span >Change Header</span></a>";
+    echo "<a id='showreg' href='#'><span>Show Registered</span></a> &nbsp<a id='chagerheader' href='#'><span >Change Header</span></a>
+        &nbsp<a id='admins' href='#'><span >Administrators</span></a>";
     echo "<div id='changeheader'>";
 
       
