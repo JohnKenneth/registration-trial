@@ -166,7 +166,7 @@ $t5=curl_init();
      curl_close($t5);
      $out=json_decode($AL,true);
      $counter2=count($out['data']);
-	
+	 
 	 if ($counter2<=$limit['limit'])
 	 {
 		$limitation=$counter2;
@@ -177,11 +177,11 @@ $t5=curl_init();
 	 }
      $bilang=0;
      $counter=0;
-	 echo $limitation;
+	 echo $counter2."  ".$limit['limit']."   ".$limitation;
      echo "<div id='s2' style='position:relative;'>";
 
 echo "<table><tr>";
-      for($z=0;$z<$counter2;$z++)
+      for($z=0;$z<$limitation;$z++)
      {
       for($alpogi=0;$alpogi<count($register);$alpogi++)
       {
