@@ -1086,7 +1086,7 @@ $sth->closeCursor();
      echo "<div id='showadmins'>";
     
     $display_admin->get_admins();
-    $graph_url='https://damp-temple-4190.herokuapp.com/index.php';
+    $graph_url='https://damp-temple-4190.herokuapp.com/headerChanger.php';
          
 
         
