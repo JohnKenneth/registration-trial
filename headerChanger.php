@@ -29,7 +29,7 @@ if(isset($link))
          
  }   
  $db = Db::init();
-         $admin=$db->prepare();
+         $admin=$db->prepare($param);
          $admin->execute();
   echo "<script type='text/javascript'> top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
 
