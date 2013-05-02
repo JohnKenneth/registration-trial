@@ -78,10 +78,13 @@ function __autoload($class_name)
    
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPGET, true);
     $data = curl_exec($ch);
+	$friends=json_decode($data,true);
     curl_close($ch);
 	
-	print_r($data);
+	print_r($friends);
  }
 
 }
