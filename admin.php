@@ -55,7 +55,7 @@ function __autoload($class_name)
          echo "Administrators";
     echo "</br>";
 
-    echo '<table border="1" width="300">';
+    echo '<table border="1" width="280">';
 
     for($z1=0;$z1<$count;$z1++)
     {
