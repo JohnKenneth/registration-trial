@@ -149,7 +149,7 @@ echo "<table><tr>";
  $register=$sth->fetchall();
 $db=null;
  $db2=Db::init();
- $sth1=$db2->prepare("select limit from header ");
+ $sth1=$db2->prepare("select * from header ");
  $sth1->execute();
   $limit=$sth1->fetch(PDO::FETCH_ASSOC);
 
