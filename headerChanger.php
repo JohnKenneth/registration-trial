@@ -10,7 +10,7 @@ $limit=$_POST["limit"];
 
  if(!isset($_POST["link"]))
  {
-	
+	echo "hi";
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
          // echo "<script type='text/javascript'> top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
          // $db=null;
@@ -22,6 +22,7 @@ $limit=$_POST["limit"];
  {
 	$param="update header set link='$link' WHERE id=1";
  }
+ echo "hello";
  if(!isset($_POST["limit"]))    
  {	
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
