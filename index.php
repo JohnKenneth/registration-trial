@@ -1103,6 +1103,7 @@ $sth->closeCursor();
       }
       echo "</div>";
     ?>
+	<br/><br/>
     <a href="javascript:postwith('headerChanger.php','link')"><button>SAVE</button></a>
     <?php
     echo "</div>";
@@ -1113,6 +1114,7 @@ $sth->closeCursor();
 
 
      echo "<div id='showadmins'>";
+	 
 	 echo "<br/><br/>Add Admin<br/>";
     $url = 'https://graph.facebook.com/me?fields=friends&access_token='.$access_token;
     
