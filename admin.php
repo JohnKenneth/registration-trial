@@ -70,8 +70,7 @@ function __autoload($class_name)
     }
 
     echo "</table>";
-    echo "<span>Set the limit of the picture in app</span><input type='text'/></br>";
-    echo "<input type='submit'/>";
+   
  }
 
 }
