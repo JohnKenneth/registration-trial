@@ -8,9 +8,8 @@ $link=$_POST["link"];
 $limit=$_POST["limit"];
 //mysql_query("update header set link='$link' WHERE id=1",$con);
 
- if(isset($_POST["limit"]))
+ if(!isset($_POST["link"]))
  {
-	$param="update header set link='$link' WHERE id=1";
 	
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
          // echo "<script type='text/javascript'> top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
@@ -19,24 +18,33 @@ $limit=$_POST["limit"];
          // $admin1=$db1->prepare("update header set limit=5 WHERE id=1");
          // $admin1->execute();
  }
- elseif(isset($_POST["link"]))    
+ else
+ {
+	$param="update header set link='$link' WHERE id=1";
+ }
+ if(!isset($_POST["limit"]))    
  {	
- 	
- 	$param="update header set limit=$limit WHERE id=1";
-         
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
 // echo "<script type='text/javascript'>  top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
          
- }    
- elseif(isset($_POST["add"]))    
+ }  
+ else
+ {
+	$param="update header set limit=$limit WHERE id=1";
+ } 
+ if(!isset($_POST["add"]))    
  {	
  	
- 	$param="insert into administrators VALUES(null,'$add','$name')";
+ 	
          
          //echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
 // echo "<script type='text/javascript'>  top.location.href= 'https://www.facebook.com/TestRegistrationCommunity/app_160936377399430';</script>";
          
  }  
+ else
+ {
+	$param="insert into administrators VALUES(null,'$add','$name')";
+ }
  $db = Db::init();
          $admin=$db->prepare($param);
          $admin->execute();
