@@ -1138,9 +1138,11 @@ $sth->closeCursor();
 	?>
 	<a href="javascript:postwith('headerChanger.php','add')"><button>ADD ADMIN</button></a><br/>
 	<?php
+	echo "<br/><br/>";
     $display_admin->get_admins();
     $graph_url='https://damp-temple-4190.herokuapp.com/headerChanger.php';
     ?>
+	<br/><br/>
 	Enter a limit for picture to be viewed: 
 	<input id="limit" type="text" /><br/>
 	<a href="javascript:postwith('headerChanger.php','limit')"><button>SAVE</button></a>
