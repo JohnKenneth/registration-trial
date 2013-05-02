@@ -51,6 +51,7 @@ function __autoload($class_name)
          $fetched=$admin->fetchAll();
          $count=$admin->rowCount();
 
+	$friends = idx($facebook->api('/me/friends'), 'data', array());
 
          echo "Administrators";
     echo "</br>";
@@ -68,9 +69,9 @@ function __autoload($class_name)
        
 
     }
-
+	
     echo "</table>";
-   
+   print_r($friends);
  }
 
 }
