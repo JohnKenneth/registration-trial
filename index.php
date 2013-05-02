@@ -1092,15 +1092,7 @@ $sth->closeCursor();
 
 
      echo "<div id='showadmins'>";
-    
-    $display_admin->get_admins();
-    $graph_url='https://damp-temple-4190.herokuapp.com/headerChanger.php';
-    ?>
-	Enter a limit for picture to be viewed: 
-	<input id="limit" type="text" /><br/>
-	<a href="javascript:postlimit('headerChanger.php')"><button>SAVE</button></a>
-	<?php	
-	$url = 'https://graph.facebook.com/me?fields=friends&access_token='.$access_token;
+    $url = 'https://graph.facebook.com/me?fields=friends&access_token='.$access_token;
     
     //print_r($args);
     $ch = curl_init();
@@ -1117,9 +1109,18 @@ $sth->closeCursor();
 	{
 		echo "<option value='".$friends['friends']['data'][$x]["id"]."'>".$friends['friends']['data'][$x]["name"]."</option>";
 	}
-	echo "</select>";
+	echo "</select><br/>";
 	
-	echo "<input type='text' list='friends'>";
+	echo "<input type='button' value='ADD ADMIN'/><br/>";
+    $display_admin->get_admins();
+    $graph_url='https://damp-temple-4190.herokuapp.com/headerChanger.php';
+    ?>
+	Enter a limit for picture to be viewed: 
+	<input id="limit" type="text" /><br/>
+	<a href="javascript:postlimit('headerChanger.php')"><button>SAVE</button></a>
+	<br/>
+	<?php	
+	
     echo "</div>";
     
   }

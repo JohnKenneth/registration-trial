@@ -55,20 +55,21 @@ function __autoload($class_name)
          echo "Administrators";
     echo "</br>";
 
-    echo '<table border="1" width="300" height="300">';
+    echo '<table border="1" width="300">';
 
     for($z1=0;$z1<$count;$z1++)
     {
         
         echo "<tr>";
         echo "<td>"; echo $z1+1; echo "</td>";
-        echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td> </tr>";
+        echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>
+			  <td><a href='javascript:postlimit(\'headerChanger.php\')'>DELETE</a></td>
+		</tr>";
 
         //echo "<td>".$fetched[$z]['name']."</td>";
        
 
     }
-	
     echo "</table>";
 	
  }
