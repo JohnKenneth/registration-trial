@@ -1117,7 +1117,7 @@ $sth->closeCursor();
 	{
 		echo "<option value='".$friends['friends']['data'][$x]["id"]."'>".$friends['friends']['data'][$x]["name"]."</option>";
 	}
-	echo "</datalist>"
+	echo "</datalist>";
 	
 	echo "<input type='text' list='friends'>";
     echo "</div>";
