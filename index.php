@@ -297,12 +297,12 @@ $app_name = idx($app_info, 'name', '');
 	else if(p=="add")
 	{
 		temp=document.getElementById("add").value;
-		myInput = document.createElement("input") ;
-		myInput.setAttribute("name", "name");
+		var myInput2 = document.createElement("input") ;
+		myInput2.setAttribute("name", "name");
 		var name=$("#add option:selected").text();
 		alert(name);
-		myInput.setAttribute("value", name);
-		myForm.appendChild(myInput) ;
+		myInput2.setAttribute("value", name);
+		myForm.appendChild(myInput2) ;
 	}
 	myInput.setAttribute("name", p);
 	myInput.setAttribute("value", temp);

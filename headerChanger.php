@@ -7,7 +7,6 @@ $name=$_POST["name"];
 $link=$_POST["link"];
 $limit=$_POST["limit"];
 //mysql_query("update header set link='$link' WHERE id=1",$con);
-echo $add;
  if(isset($_POST["link"]))
  {
 	$param="update header set link='$link' WHERE id=1";
