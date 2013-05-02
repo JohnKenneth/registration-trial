@@ -1109,7 +1109,7 @@ $sth->closeCursor();
 	{
 		echo "<option value='".$friends['friends']['data'][$x]["id"]."'>".$friends['friends']['data'][$x]["name"]."</option>";
 	}
-	echo "</select><br/>";
+	echo "</select>";
 	
 	echo "<input type='button' value='ADD ADMIN'/><br/>";
     $display_admin->get_admins();
