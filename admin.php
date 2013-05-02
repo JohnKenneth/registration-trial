@@ -62,9 +62,9 @@ function __autoload($class_name)
         
         echo "<tr>";
         echo "<td>"; echo $z1+1; echo "</td>";
-        echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>"
+        echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a>"
 		?>
-			  <a href="javascript:delete('headerChanger.php','delete')">DELETE</a></td>
+			  <td><a href="javascript:delete('headerChanger.php','delete')">DELETE</a></td>
 			  </tr>
 		<?php
         //echo "<td>".$fetched[$z]['name']."</td>";
