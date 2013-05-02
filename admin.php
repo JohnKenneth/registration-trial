@@ -28,15 +28,9 @@ function __autoload($class_name)
 
  	for($z1=0;$z1<$count;$z1++)
  	{
-         if($z1%2==0)
-        {
-        echo "</tr>";
-    }
-    elseif ($z1-1==$count) {
-        echo "</tr>";
-    }
+        
  		echo "<tr>";
- 		echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>";
+ 		echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td> </tr>";
 
  		//echo "<td>".$fetched[$z]['name']."</td>";
        
