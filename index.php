@@ -987,11 +987,11 @@ $sth->closeCursor();
          //  echo "</li>";
 
            $photos= new pic();
-           if(!isset($limit))
+           if(!isset($lim))
            {
-            $limit=100;
+            $lim=100;
            }
-            $photos->pics_registered($facebook->getAccessToken(),$user_id,$limit);
+            $photos->pics_registered($facebook->getAccessToken(),$user_id,$lim);
             
               
               }
