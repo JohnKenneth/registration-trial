@@ -987,11 +987,8 @@ $sth->closeCursor();
          //  echo "</li>";
 
            $photos= new pic();
-           if(!isset($lim))
-           {
-            $lim=100;
-           }
-            $photos->pics_registered($facebook->getAccessToken(),$user_id,$lim);
+          
+            $photos->pics_registered($facebook->getAccessToken(),$user_id);
             
               
               }
@@ -1092,13 +1089,10 @@ $sth->closeCursor();
     $display_admin->get_admins();
     $graph_url="https://damp-temple-4190.herokuapp.com/headerChanger.php";
          
-
         
-         echo '<form   action="'
-         .$graph_url .' "method="POST">';
+         echo '<form   action="'.$graph_url .' "method="POST">';
          echo 'Enter a limit fo picture to be viewed: '; 
-         echo '<input name="limit" 
-             type="text" value="" /><br/><br/>';
+         echo '<input name="limit" type="text" value="" /><br/><br/>';
          echo '<input type="submit" value="Submit" name="submit"/><br/>';
          echo '</form>';
          
