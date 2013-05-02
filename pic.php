@@ -163,7 +163,7 @@ $t5=curl_init();
 
      echo "<div id='s2' style='position:relative;'>";
 
-echo "<center><table><tr>";
+echo "<table><tr>";
       for($z=0;$z<$counter2;$z++)
      {
       for($alpogi=0;$alpogi<count($register);$alpogi++)
