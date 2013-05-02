@@ -70,19 +70,7 @@ function __autoload($class_name)
     }
 	
     echo "</table>";
-	$access_token=$facebook->getAccessToken();
-	$url = 'https://graph.facebook.com/me?fields=friends&access_token='.$access_token;
-    
-    //print_r($args);
-    $ch = curl_init();
-   
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPGET, true);
-    $data = curl_exec($ch);
-	$friends=json_decode($data,true);
-    curl_close($ch);
+	$friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
  }
 
 }
