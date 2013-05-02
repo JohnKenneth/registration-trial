@@ -173,10 +173,10 @@ $app_name = idx($app_info, 'name', '');
        //$('#tab2').hide();     
     });
 
-    $('#chagerheader').click(function()
+    $('div#chagerheader').click(function()
 
       {
-        $('#changeheader').hide();
+        $('div#changeheader').hide();
         
       });
 //here
