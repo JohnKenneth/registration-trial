@@ -71,7 +71,7 @@ function __autoload($class_name)
 	
     echo "</table>";
 	
-	$friends = idx($facebook->api('/me/friends'), 'data', array());
+	$friends = idx($facebook->api('/me/friends'));
 	print_r($friends);
  }
 
