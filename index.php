@@ -1099,11 +1099,11 @@ $sth->closeCursor();
       echo "<div id='cycleheader'>";
       for($x=count($out1['photos']['data'])-1;$x>=0;$x--)
       {
-        echo "<img src='".$out1['photos']['data'][$x]['source']."' width='700' height='330'/>";
+        echo "<img src='".$out1['photos']['data'][$x]['source']."' width='600' height='300'/>";
       }
       echo "</div>";
     ?>
-	<br/><br/>
+	<br/>
     <a href="javascript:postwith('headerChanger.php','link')"><button>SAVE</button></a>
     <?php
     echo "</div>";
