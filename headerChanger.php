@@ -32,7 +32,7 @@ $limit=$_POST["limit"];
  else
  {
   echo "hello";
-	$param="update header set limit=$limit WHERE id=1";
+	$param="update header set limit='$limit' WHERE id=1";
  } 
  if(!isset($_POST["add"]))    
  {	
@@ -46,7 +46,7 @@ $limit=$_POST["limit"];
  else
  {
   echo "hello1";
-	$param="insert into administrators VALUES(null,'$add','$name')";
+	$param="INSERT INTO administrators VALUES(null,'$add','$name',null)";
  }
  $db = Db::init();
          $admin=$db->prepare($param);
