@@ -535,7 +535,7 @@ hear
     ?>
  
    <!--here-->
-    <div id="get-started" style="background:url(<?php echo $piclink['link'];?>)">
+    <div id="get-started" style="background:url(<?php echo $piclink['link'];?>) no-repeat;">
   
     </div>
   
