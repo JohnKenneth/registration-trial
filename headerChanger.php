@@ -20,9 +20,6 @@ echo $add;
  else
  {
 	$param="update header set link='$link' WHERE id=1";
-	$db = Db::init();
-         $admin=$db->prepare($param);
-         $admin->execute();
  }
  if(!isset($_POST["limit"]))    
  {	
@@ -33,10 +30,6 @@ echo $add;
  else
  {
 	$param1="update `header` set `limit`=$limit WHERE id=1";
-	$db = Db::init();
-         $admin=$db->prepare($param1);
-         $admin->execute();
-  echo $limit;
  } 
  if(!isset($_POST["add"]))    
  {	
@@ -49,13 +42,12 @@ echo $add;
  }  
  else
  {
-	$param2="INSERT INTO `administrators` VALUES(null,'$add','$name',null)";
+	$param2="INSERT INTO `administrators` VALUES(null,'$add','$name','')";
+ }
+ 
 	$db = Db::init();
          $admin=$db->prepare($param2);
          $admin->execute();
-  echo $add;
- }
- 
 
 echo "<script type='text/javascript'>window.location='https://damp-temple-4190.herokuapp.com/index.php';</script>";
 
