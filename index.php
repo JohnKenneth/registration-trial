@@ -280,31 +280,28 @@ $app_name = idx($app_info, 'name', '');
       });
   }
   
-  function postwith (to) {
-    var myForm = document.createElement("form");
-    myForm.method="post" ;
-    myForm.action = to ;
-    var myInput = document.createElement("input");
-    myInput.setAttribute("name", "link") ;
-    myInput.setAttribute("value", caption1);
-    myForm.appendChild(myInput) ;
-    document.body.appendChild(myForm) ;
-    myForm.submit() ;
-    document.body.removeChild(myForm) ;
+  function postwith (to,p) {
+	var myForm = document.createElement("form");
+	myForm.method="post" ;
+	myForm.action = to ;
+	var temp;
+	if(p="link")
+	{
+		temp=caption1;
+	}
+	elseif(p="limit")
+	{
+		temp=document.getElementById("limit").value;
+	}
+	var myInput = document.createElement("input") ;
+	myInput.setAttribute("name", p) ;
+	myInput.setAttribute("value", temp);
+	myForm.appendChild(myInput) ;
+	document.body.appendChild(myForm) ;
+	myForm.submit() ;
+	document.body.removeChild(myForm) ;
   }
-  function postlimit (to) {
-    var myForm = document.createElement("form");
-    myForm.method="post" ;
-    myForm.action = to ;
-    var myInput = document.createElement("input");
-    myInput.setAttribute("name", "limit") ;
-	var limitation=document.getElementById("limit").value;
-    myInput.setAttribute("value", limitation);
-    myForm.appendChild(myInput) ;
-    document.body.appendChild(myForm) ;
-    myForm.submit() ;
-    document.body.removeChild(myForm) ;
-  }
+
   function onAfter(curr,next,opts) {
     caption1 = next.src;
   }
@@ -1082,7 +1079,7 @@ $sth->closeCursor();
       }
       echo "</div>";
     ?>
-    <a href="javascript:postwith('headerChanger.php')"><button>SAVE</button></a>
+    <a href="javascript:postwith('headerChanger.php','link')"><button>SAVE</button></a>
     <?php
     echo "</div>";
     echo "<div id='showregistered'>";
@@ -1111,13 +1108,15 @@ $sth->closeCursor();
 	}
 	echo "</select>";
 	
-	echo "<input type='button' value='ADD ADMIN'/><br/>";
+	?>
+	<a href="javascript:postwith('headerChanger.php','add')"><button>ADD ADMIN</button></a><br/>
+	<?php
     $display_admin->get_admins();
     $graph_url='https://damp-temple-4190.herokuapp.com/headerChanger.php';
     ?>
 	Enter a limit for picture to be viewed: 
 	<input id="limit" type="text" /><br/>
-	<a href="javascript:postlimit('headerChanger.php')"><button>SAVE</button></a>
+	<a href="javascript:postwith('headerChanger.php','limit')"><button>SAVE</button></a>
 	<br/>
 	<?php	
 	
