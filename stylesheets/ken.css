@@ -12,6 +12,6 @@
 			padding:20px;
 		}
 
-.admin div,table,img{
+.admin div,.admin table,.admin img{
 	text-align:center;
 }
