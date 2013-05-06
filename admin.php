@@ -30,7 +30,7 @@ function __autoload($class_name)
 	echo "<div id='regpagination' style='width:700px !important;'>";
  	for($z2=0;$z2<=($count/$net);$z2++)
  	{
-		echo '<table class="tables" border="1" width="600px" height="300">
+		echo '<table class="tables" border="1" width="700px" height="300">
 			<tr><th>No.</th><th>Name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
 		';
 		//$x = ($kenneth == ($count/$net)) ? ($count%$net): $net;
