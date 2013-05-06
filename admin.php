@@ -15,7 +15,7 @@ function __autoload($class_name)
  function get_registered()
  {
  	 $db = Db::init();
-         $admin=$db->prepare("select uid,name from registered");
+         $admin=$db->prepare("select * from registered");
          $admin->execute();
          $fetched=$admin->fetchAll();
          $count=$admin->rowCount();
@@ -25,7 +25,7 @@ function __autoload($class_name)
  	echo "</br>";
 
  	echo '<table border="1" width="300" height="300">
-		 <tr><th>name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th>
+		 <tr><th>name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
 	';
 	
  	for($z1=0;$z1<$count;$z1++)
@@ -34,9 +34,10 @@ function __autoload($class_name)
  		echo "<tr>";
         echo "<td>"; echo $z1+1; echo "</td>";
  		echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>
-			 <td>a".$fetched[$z1]['address']."</td>
+			 <td>".$fetched[$z1]['address']."</td>
 			 <td>".$fetched[$z1]['mobno']."</td>
 			 <td>".$fetched[$z1]['email']."</td>
+			 <td>".$fetched[$z1]['bday']."</td>
 		</tr>";
 
  		//echo "<td>".$fetched[$z]['name']."</td>";
