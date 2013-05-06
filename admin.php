@@ -33,7 +33,7 @@ function __autoload($class_name)
 		echo '<table border="1" height="300">
 			<tr><th>No.</th><th>Name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
 		';
-		$x = ($kenneth == ($count/$net)) ? ($count mod $net): $net;
+		$x = ($kenneth == ($count/$net)) ? ($count%$net): $net;
         for($z1=0;$z1<$x;$z1++)
 		{
 			$an=($net*$kenneth)+$z1;
