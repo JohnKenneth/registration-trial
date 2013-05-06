@@ -25,7 +25,7 @@ function __autoload($class_name)
  	echo "</br>";
 
  	echo '<table border="1" height="300">
-		 <tr><th>No.</th><th>name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
+		 <tr><th>No.</th><th>Name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
 	';
 	
  	for($z1=0;$z1<$count;$z1++)
@@ -37,7 +37,7 @@ function __autoload($class_name)
 			 <td width='140px'>".$fetched[$z1]['address']."</td>
 			 <td>".$fetched[$z1]['mobno']."</td>
 			 <td>".$fetched[$z1]['email']."</td>
-			 <td>".$fetched[$z1]['bday']."</td>
+			 <td width='140px'>".$fetched[$z1]['bday']."</td>
 		</tr>";
 
  		//echo "<td>".$fetched[$z]['name']."</td>";
