@@ -53,6 +53,8 @@ function __autoload($class_name)
  	}
 
  	echo "</div>";
+    echo "<a href='#' id='rpv'>Prev</a> &nbsp;&nbsp;&nbsp;";
+    echo "<a href='#' id='rnex'>Next</a>";
  }
 
 
