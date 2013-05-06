@@ -195,7 +195,6 @@ $app_name = idx($app_info, 'name', '');
   $(document).ready(init);
   
   function init() {
-  	altRows('tables');
   
     $("#cycle").cycle();
 	
@@ -344,8 +343,9 @@ $app_name = idx($app_info, 'name', '');
     caption1 = next.src;
   }
 
-  
-  
+	$(window).load(function() {
+      altRows("tables");
+	});
   function altRows(id){
 	if(document.getElementsByTagName){  
 		
