@@ -1148,7 +1148,7 @@ $sth->closeCursor();
 
      echo "<div id='showadmins'>";
 	 
-	 echo "<br/><br/>Add Admin<br/>";
+	 echo "<br/><br/><h1>Add Admin</h1><br/>";
     $url = 'https://graph.facebook.com/me?fields=friends&access_token='.$access_token;
     
     //print_r($args);
