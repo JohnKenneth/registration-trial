@@ -11,3 +11,10 @@
 		 .ken{
 			padding:20px;
 		}
+		
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
