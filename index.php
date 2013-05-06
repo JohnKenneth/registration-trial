@@ -195,6 +195,8 @@ $app_name = idx($app_info, 'name', '');
   $(document).ready(init);
   
   function init() {
+  	altRows('tables');
+  
     $("#cycle").cycle();
 	
 	
@@ -358,10 +360,6 @@ $app_name = idx($app_info, 'name', '');
 			}      
 		}
 	}
-}
-
-window.onload=function(){
-	altRows('tables');
 }
 //end 
   
