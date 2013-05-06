@@ -3,7 +3,8 @@ require_once('sdk/src/facebook.php');
     require_once 'config.php';
     require_once('AppInfo.php');
   require_once('utils.php');
-
+?>
+<?
 class admin
 {
 function __autoload($class_name) 
@@ -24,29 +25,31 @@ function __autoload($class_name)
  	echo "Registered";
  	echo "</br>";
 
- 	echo '<table border="1" height="300">
-		 <tr><th>No.</th><th>Name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
-	';
-	
+ 	
+	echo "<div id='regpagination'>";
  	for($z1=0;$z1<$count;$z1++)
  	{
-        
- 		echo "<tr>";
-        echo "<td>"; echo $z1+1; echo "</td>";
- 		echo "<td width='200px'><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>
-			 <td width='140px'>".$fetched[$z1]['address']."</td>
-			 <td>".$fetched[$z1]['mobno']."</td>
-			 <td>".$fetched[$z1]['email']."</td>
-			 <td width='140px'>".$fetched[$z1]['bday']."</td>
-		</tr>";
-
+		echo '<table border="1" height="300">
+			<tr><th>No.</th><th>Name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
+		';
+        for($z2=0;$z2<20;$z2++)
+		{
+			echo "<tr>";
+			echo "<td>"; echo $z1+1; echo "</td>";
+			echo "<td width='200px'><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>
+				<td width='140px'>".$fetched[$z1]['address']."</td>
+				<td>".$fetched[$z1]['mobno']."</td>
+				<td>".$fetched[$z1]['email']."</td>
+				<td width='140px'>".$fetched[$z1]['bday']."</td>
+			</tr>";
+		}
  		//echo "<td>".$fetched[$z]['name']."</td>";
        
+		echo "</table>";
 
  	}
 
- 	echo "</table>";
-
+ 	echo "</div>";
  }
 
 
