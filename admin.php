@@ -27,7 +27,7 @@ function __autoload($class_name)
 
  	$kenneth=0;
 	$net=10;
-	echo "<div id='regpagination' style='width:500px'>";
+	echo "<div id='regpagination' style='width:800px'>";
  	for($z2=0;$z2<=($count/$net);$z2++)
  	{
 		echo '<table border="1" height="300">
