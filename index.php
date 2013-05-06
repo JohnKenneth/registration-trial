@@ -196,6 +196,8 @@ $app_name = idx($app_info, 'name', '');
   
   function init() {
     $("#cycle").cycle();
+	
+	
     $("#cycleheader").cycle({
       fx:     'fade', 
       speed:   300, 
@@ -209,8 +211,7 @@ $app_name = idx($app_info, 'name', '');
       speed:   300, 
       timeout: 0, 
       next:   '#rnex',
-      prev:   '#rpv',
-      after:  onAfter,
+      prev:   '#rpv'
     });
 	
 	
