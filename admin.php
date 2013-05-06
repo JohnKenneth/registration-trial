@@ -27,7 +27,7 @@ function __autoload($class_name)
 
  	$kenneth=0;
 	$net=10;
-	echo "<div id='regpagination' style='width:500px !important'>";
+	echo "<div id='regpagination' style='width:500px'>";
  	for($z2=0;$z2<=($count/$net);$z2++)
  	{
 		echo '<table border="1" height="300">
@@ -52,9 +52,9 @@ function __autoload($class_name)
 
  	}
 
- 	echo "</div>";
     echo "<a href='#' id='rpv'>Prev</a> &nbsp;&nbsp;&nbsp;";
     echo "<a href='#' id='rnex'>Next</a>";
+ 	echo "</div>";
  }
 
 
