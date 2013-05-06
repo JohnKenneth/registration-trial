@@ -25,26 +25,27 @@ function __autoload($class_name)
  	echo "Registered";
  	echo "</br>";
 
- 	
+ 	$kenneth=0;
 	echo "<div id='regpagination'>";
- 	for($z1=0;$z1<$count;$z1++)
+ 	for($z2=0;$z2<=$count/20;$z21++)
  	{
 		echo '<table border="1" height="300">
 			<tr><th>No.</th><th>Name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
 		';
-        for($z2=0;$z2<20;$z2++)
+        for($z1=0;$z1<$count;$z1++)
 		{
+			$an=(20*$kenneth)+$z1;
 			echo "<tr>";
-			echo "<td>"; echo $z1+1; echo "</td>";
-			echo "<td width='200px'><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>
-				<td width='140px'>".$fetched[$z1]['address']."</td>
-				<td>".$fetched[$z1]['mobno']."</td>
-				<td>".$fetched[$z1]['email']."</td>
-				<td width='140px'>".$fetched[$z1]['bday']."</td>
+			echo "<td>"; echo $an+1; echo "</td>";
+			echo "<td width='200px'><a href='https://facebook.com/".$fetched[$an]['uid']."' target='_blank'>".$fetched[$an]['name']."</a></td>
+				<td width='140px'>".$fetched[$an]['address']."</td>
+				<td>".$fetched[$an]['mobno']."</td>
+				<td>".$fetched[$an]['email']."</td>
+				<td width='140px'>".$fetched[$an]['bday']."</td>
 			</tr>";
 		}
  		//echo "<td>".$fetched[$z]['name']."</td>";
-       
+		$kenneth++;
 		echo "</table>";
 
  	}
