@@ -27,7 +27,7 @@ function __autoload($class_name)
 
  	$kenneth=0;
 	echo "<div id='regpagination'>";
- 	for($z2=0;$z2<=$count/20;$z21++)
+ 	for($z2=0;$z2<=($count/20);$z21++)
  	{
 		echo '<table border="1" height="300">
 			<tr><th>No.</th><th>Name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
