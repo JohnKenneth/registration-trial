@@ -22,7 +22,7 @@ function __autoload($class_name)
          $count=$admin->rowCount();
          echo "</br>";
          
- 	echo "Registered";
+ 	echo "<h1>Registered</h1>";
  	echo "</br>";
 
  	$kenneth=0;
