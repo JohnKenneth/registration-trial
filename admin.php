@@ -26,15 +26,16 @@ function __autoload($class_name)
  	echo "</br>";
 
  	$kenneth=0;
+	$net=10;
 	echo "<div id='regpagination'>";
- 	for($z2=0;$z2<=($count/10);$z2++)
+ 	for($z2=0;$z2<=($count/$net);$z2++)
  	{
 		echo '<table border="1" height="300">
 			<tr><th>No.</th><th>Name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
 		';
-        for($z1=0;$z1<$count;$z1++)
+        for($z1=0;$z1<$count-((1+$net)*$kenneth);$z1++)
 		{
-			$an=(20*$kenneth)+$z1;
+			$an=($net*$kenneth)+$z1;
 			echo "<tr>";
 			echo "<td>"; echo $an+1; echo "</td>";
 			echo "<td width='200px'><a href='https://facebook.com/".$fetched[$an]['uid']."' target='_blank'>".$fetched[$an]['name']."</a></td>
