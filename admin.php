@@ -27,14 +27,14 @@ function __autoload($class_name)
 
  	$kenneth=0;
 	$net=10;
-	echo "<div id='regpagination'>";
+	echo "<div id='regpagination' style='text-align:left'>";
  	for($z2=0;$z2<=($count/$net);$z2++)
  	{
 		echo '<table border="1" height="300">
 			<tr><th>No.</th><th>Name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
 		';
-		$x = ($kenneth == ($count/$net)) ? ($count%$net): $net;
-        for($z1=0;$z1<$x;$z1++)
+		//$x = ($kenneth == ($count/$net)) ? ($count%$net): $net;
+        for($z1=0;$z1<$net;$z1++)
 		{
 			$an=($net*$kenneth)+$z1;
 			echo "<tr>";
