@@ -1015,7 +1015,7 @@ $sth->closeCursor();
 
          //  echo "</li>";
 
-           $photos= new pic();
+			$photos= new pic();
             $photos->pics_registered($facebook->getAccessToken(),$user_id);
             
               

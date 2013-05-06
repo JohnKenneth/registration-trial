@@ -24,8 +24,8 @@ function __autoload($class_name)
  	echo "Registered";
  	echo "</br>";
 
- 	echo '<table border="1" width="600" height="300">
-		 <tr><th>name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
+ 	echo '<table border="1" height="300">
+		 <tr><th>No.</th><th>name</th><th>Address</th><th>Mobile Number</th><th>Email Address</th><th>Birthday</th>
 	';
 	
  	for($z1=0;$z1<$count;$z1++)
@@ -33,8 +33,8 @@ function __autoload($class_name)
         
  		echo "<tr>";
         echo "<td>"; echo $z1+1; echo "</td>";
- 		echo "<td><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>
-			 <td>".$fetched[$z1]['address']."</td>
+ 		echo "<td width='200px'><a href='https://facebook.com/".$fetched[$z1]['uid']."' target='_blank'>".$fetched[$z1]['name']."</a></td>
+			 <td width='140px'>".$fetched[$z1]['address']."</td>
 			 <td>".$fetched[$z1]['mobno']."</td>
 			 <td>".$fetched[$z1]['email']."</td>
 			 <td>".$fetched[$z1]['bday']."</td>
