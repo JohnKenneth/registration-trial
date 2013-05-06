@@ -350,14 +350,17 @@ $app_name = idx($app_info, 'name', '');
 	if(document.getElementsByTagName){  
 		
 		var table = document.getElementsByClassName(id);  
-		var rows = table.getElementsByTagName("tr"); 
-		 
-		for(i = 0; i < rows.length; i++){          
-			if(i % 2 == 0){
-				rows[i].className = "evenrowcolor";
-			}else{
-				rows[i].className = "oddrowcolor";
-			}      
+		for(var k=0;k<table.length;k++){
+		
+			var rows = table[k].getElementsByTagName("tr"); 
+			
+			for(i = 0; i < rows.length; i++){          
+				if(i % 2 == 0){
+					rows[i].className = "evenrowcolor";
+				}else{
+					rows[i].className = "oddrowcolor";
+				}      
+			}
 		}
 	}
 }
