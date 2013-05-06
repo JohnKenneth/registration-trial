@@ -347,7 +347,7 @@ $app_name = idx($app_info, 'name', '');
   function altRows(id){
 	if(document.getElementsByTagName){  
 		
-		var table = document.getElementById(id);  
+		var table = document.getElementByClassName(id);  
 		var rows = table.getElementsByTagName("tr"); 
 		 
 		for(i = 0; i < rows.length; i++){          
